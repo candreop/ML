@@ -1,6 +1,6 @@
 # ML
 
-# Author
+## Author
 
 Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
@@ -15,12 +15,12 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 </pre>
 
 
-# Aims of the course
+## Aims of the course
 -
 -
 
-# Syllabus
+## Syllabus
 -
 -
 
-# Organisation
+## Organisation
