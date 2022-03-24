@@ -18,12 +18,18 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 
 ## Aims of the module
--
--
+- To introduce the fundamental concepts of machine learning.
+- To develop the ability of students to address common real-world problems using one of the leading open source frameworks for machine learning.
 
 ## Syllabus
--
--
+- Training neural networks, backpropagation
+- Supervised and unsupervised learning algorithms
+- Stochastic Gradient Descent (SGD)
+- Batch normalization
+- Convolutional Neural Networks (CNN)
+- Classification and semantic segmentation using CNNs
+- Generative Adversarial Networks (GANs)
+- Case studies from science and industry
 
 ## Structure
 
