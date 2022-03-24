@@ -98,8 +98,14 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ## Reading list
 
-### Key texts
-### Background reading
+### Key textbooks
+
+- Ian Goodfellow, Yoshua Bengio and Aaron Courville, Deep Learning, MIT Press (2016)
+- Charu Aggarwal, Neutral Networks and Deep Learning - A Textbook, Springer (2018)
+ 
+### Other useful reading
+
 ### Documentation for codes used in the module
+
 ### Relevant research articles
 
