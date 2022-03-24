@@ -25,7 +25,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 -
 -
 
-## Organisation
+## Structure
 
 ### ML Prep Session (2 hrs)
 
