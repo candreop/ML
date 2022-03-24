@@ -24,3 +24,5 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 -
 
 ## Organisation
+
+### Lecture 1
