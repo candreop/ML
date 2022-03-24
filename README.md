@@ -1,4 +1,6 @@
-# Machine Learning module - Liverpool Physics
+# Machine Learning 
+
+This repository includes handouts and codes I used for delivering the Machine Learning module at the Department of Physics of the University of Liverpool.
 
 ## Author
 
@@ -15,7 +17,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 </pre>
 
 
-## Aims of the course
+## Aims of the module
 -
 -
 
