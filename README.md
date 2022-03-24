@@ -1,4 +1,4 @@
-# ML
+# Machine Learning module - Liverpool Physics
 
 ## Author
 
