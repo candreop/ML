@@ -86,3 +86,6 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### ML Workshop 5 (2 hrs)
 
 
+### ML Project (10 hrs)
+
+
