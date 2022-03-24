@@ -107,6 +107,9 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Documentation for codes used in the module
 
+- PyTorch documentation, https://pytorch.org/docs/stable/
+- PyTorch tutorials, https://pytorch.org/tutorials/
+
 ### Relevant research articles
 
 - ImageNet Classification with Deep Convolutional Neural Networks, https://doi.org/10.1145/3065386
