@@ -105,6 +105,8 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
  
 ### Other useful reading
 
+- Aurélien Géron, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow - Concepts, Tools, and Techniques to Build Intelligent System, O'Reilly, 2019
+
 ### Documentation for codes used in the module
 
 - PyTorch documentation, https://pytorch.org/docs/stable/
