@@ -27,13 +27,18 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### ML Prep Session (2 hrs)
 
-- Linear Algebra reminders
+- Linear algebra reminders
 - Probability theory reminders
 
 ### ML Lecture 1 (1 hr)
 
 - Introduction
--
+- Human vs computer learning
+- Biologically inspired methods of computer learning
+- Basic architecture of neural networks
+- Single-layer networks: The Perceptron
+- Multi-layer networks
+- Backpropagation 
 
 ### ML Lecture 2 (1 hr)
 
