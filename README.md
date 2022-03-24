@@ -109,3 +109,14 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Relevant research articles
 
+- ImageNet Classification with Deep Convolutional Neural Networks,
+  https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+- GoogleNet, arXiv:1409.4842
+- R-CNN, arXiv:1311.2524
+- Fast R-CNN, arXiv:1504.08083
+- Faster R-CNN, arXiv:1506.01497
+- Fully Convolutional Neural Nets for Semantic Segmentation, arXiv:1605.06211
+- Mask R-CNN, arXiv:1703.06870
+- Multiview CNN, arXiv:1505.00880
+- Generative Adversarial Nets, arXiv:1406.2661
+- Deep Convolutional Generative Adversarial Nets, arXiv:1511.06434
