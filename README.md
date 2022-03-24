@@ -109,8 +109,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Relevant research articles
 
-- ImageNet Classification with Deep Convolutional Neural Networks,
-  https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+- ImageNet Classification with Deep Convolutional Neural Networks, https://doi.org/10.1145/3065386
 - GoogleNet, arXiv:1409.4842
 - R-CNN, arXiv:1311.2524
 - Fast R-CNN, arXiv:1504.08083
