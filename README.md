@@ -96,3 +96,10 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### ML Project (10 hrs)
 
 
+## Reading list
+
+### Key texts
+### Background reading
+### Documentation for codes used in the module
+### Relevant research articles
+
