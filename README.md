@@ -25,4 +25,64 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ## Organisation
 
-### Lecture 1
+### ML Prep Session (2 hrs)
+
+- Linear Algebra reminders
+- Probability theory reminders
+
+### ML Lecture 1 (1 hr)
+
+- Introduction
+-
+
+### ML Lecture 2 (1 hr)
+
+-
+
+### ML Lecture 3 (1 hr)
+
+### ML Lecture 4 (1 hr)
+
+### ML Lecture 5 (1 hr)
+
+### ML Lecture 6 (1 hr)
+
+### ML Lecture 7 (1 hr)
+
+### ML Lecture 8 (1 hr)
+
+### ML Lecture 9 (1 hr)
+
+### ML Lecture 10 (1 hr)
+
+### ML Lecture 11 (1 hr)
+
+### ML Lecture 12 (1 hr)
+
+### ML Lecture 13 (1 hr)
+
+### ML Lecture 14 (1 hr)
+
+### ML Lecture 15 (1 hr)
+
+
+### ML Workshop Prep Session (2 hrs)
+
+- Introduction to pyTorch
+
+
+### ML Workshop 1 (2 hrs)
+
+
+### ML Workshop 2 (2 hrs)
+
+
+### ML Workshop 3 (2 hrs)
+
+
+### ML Workshop 4 (2 hrs)
+
+
+### ML Workshop 5 (2 hrs)
+
+
