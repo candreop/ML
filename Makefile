@@ -8,34 +8,49 @@ MODULE  = ML
 ACYEAR  = 202223
 VERSION = v01
 
-s01   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 01\)
-s02   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 02\)
-s03   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 03\)
-s04   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 04\)
-s05   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 05\)
-s06   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 06\)
-s07   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 07\)
-s08   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 08\)
-s09   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 09\)
-s10   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 10\)
-s11   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 11\)
-s12   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 12\)
-sall  : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}
+01   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 01\)
+02   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 02\)
+03   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 03\)
+04   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 04\)
+05   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 05\)
+06   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 06\)
+07   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 07\)
+08   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 08\)
+09   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 09\)
+10   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 10\)
+11   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 11\)
+12   : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}\ \(Lecture\ 12\)
+all  : NAME = ${MODULE}_${ACYEAR}-Slides-${VERSION}
 
-s01   : tex_start add_tex01 tex_end pdf
-s02   : tex_start add_tex02 tex_end pdf
-s03   : tex_start add_tex03 tex_end pdf
-s04   : tex_start add_tex04 tex_end pdf
-s05   : tex_start add_tex05 tex_end pdf
-s06   : tex_start add_tex06 tex_end pdf
-s07   : tex_start add_tex07 tex_end pdf
-s08   : tex_start add_tex08 tex_end pdf
-s09   : tex_start add_tex09 tex_end pdf
-s10   : tex_start add_tex10 tex_end pdf
-s11   : tex_start add_tex11 tex_end pdf
-s12   : tex_start add_tex12 tex_end pdf
-sall  : tex_start add_tex00 add_tex01 add_tex02 add_tex03 add_tex04 add_tex05 add_tex06 add_tex07 add_tex08 add_tex09 add_tex10 add_tex11 add_tex12 tex_end pdf
-seach : s01 s02 s03 s04 s05 s06 s07 s08 s09 s10 s11 s12
+01   : tex_start add_lec01 tex_end pdf
+02   : tex_start add_lec02 tex_end pdf
+03   : tex_start add_lec03 tex_end pdf
+04   : tex_start add_lec04 tex_end pdf
+05   : tex_start add_lec05 tex_end pdf
+06   : tex_start add_lec06 tex_end pdf
+07   : tex_start add_lec07 tex_end pdf
+08   : tex_start add_lec08 tex_end pdf
+09   : tex_start add_lec09 tex_end pdf
+10   : tex_start add_lec10 tex_end pdf
+11   : tex_start add_lec11 tex_end pdf
+12   : tex_start add_lec12 tex_end pdf
+all  : tex_start \
+	add_front \
+	add_lec01 \
+	add_lec02 \
+	add_lec03 \
+	add_lec04 \
+	add_lec05 \
+	add_lec06 \
+	add_lec07 \
+	add_lec08 \
+	add_lec09 \
+	add_lec10 \
+	add_lec11 \
+	add_lec12 \
+	tex_end \
+	pdf
+each : 01 02 03 04 05 06 07 08 09 10 11 12
 
 tex_start:
 	echo '\documentclass{beamer}'           >  main_tmp.tex
@@ -45,29 +60,32 @@ tex_start:
 tex_end:
 	echo '\end{document}' >> main_tmp.tex
 
-add_tex01: FORCE
+add_front: FORCE
+	echo '\input{src/global/cover.tex}'     >> main_tmp.tex
+	echo '\input{src/global/toc.tex}'       >> main_tmp.tex
+add_lec01: FORCE
 	echo '\input{src/lecture_01/main.tex}'  >> main_tmp.tex
-add_tex02: FORCE
+add_lec02: FORCE
 	echo '\input{src/lecture_02/main.tex}'  >> main_tmp.tex
-add_tex03: FORCE
+add_lec03: FORCE
 	echo '\input{src/lecture_03/main.tex}'  >> main_tmp.tex
-add_tex04: FORCE
+add_lec04: FORCE
 	echo '\input{src/lecture_04/main.tex}'  >> main_tmp.tex
-add_tex05: FORCE
+add_lec05: FORCE
 	echo '\input{src/lecture_05/main.tex}'  >> main_tmp.tex
-add_tex06: FORCE
+add_lec06: FORCE
 	echo '\input{src/lecture_06/main.tex}'  >> main_tmp.tex
-add_tex07: FORCE
+add_lec07: FORCE
 	echo '\input{src/lecture_07/main.tex}'  >> main_tmp.tex
-add_tex08: FORCE
+add_lec08: FORCE
 	echo '\input{src/lecture_08/main.tex}'  >> main_tmp.tex
-add_tex09: FORCE
+add_lec09: FORCE
 	echo '\input{src/lecture_09/main.tex}'  >> main_tmp.tex
-add_tex10: FORCE
+add_lec10: FORCE
 	echo '\input{src/lecture_10/main.tex}'  >> main_tmp.tex
-add_tex11: FORCE
+add_lec11: FORCE
 	echo '\input{src/lecture_11/main.tex}'  >> main_tmp.tex
-add_tex12: FORCE
+add_lec12: FORCE
 	echo '\input{src/lecture_12/main.tex}'  >> main_tmp.tex
 
 pdf: FORCE
