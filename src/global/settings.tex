@@ -15,9 +15,21 @@
 \usepackage{soul}      % strikethrough text with \st
 \usepackage{cancel}    % diagonal strikethrough in math mode
 \usepackage{mathtools} % \xRightarrow{text} etc
-\usepackage{tikz}
-\usepackage{circuitikz}
-\usepackage{hyperref}  % URLs
+
+% add URLs
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks, linkcolor=blue
+}
+
+%\hypersetup{citecolor=DeepPink4}
+%\hypersetup{linkcolor=DarkRed}
+%\hypersetup{urlcolor=DarkBlue}
+%\usepackage{cleveref}
+%\usepackage{hyperref}  
+
+%\usepackage{tikz}
+%\usepackage{circuitikz}
 %\usetikzlibrary{shapes}
 %\usetikzlibrary{plotmarks}
 %\usetikzlibrary{trees}
@@ -34,6 +46,7 @@
 \newcommand{\nextlecture}{-1}
 \newcommand{\summarizedlecture}{-1}
 \newcommand{\lecturesummarytitle}{Summary }
+
 
 \definecolor{darkpowderblue}{RGB}{0,51,153}
 
