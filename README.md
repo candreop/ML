@@ -44,15 +44,16 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Human vs computer learning
 - Biologically inspired methods of computer learning
 - Basic architecture of neural networks
-- Single-layer networks: The Perceptron
-- Multi-layer networks
-- Backpropagation 
 
 ### ML Lecture 2 (1 hr)
 
+- Single-layer networks: The Perceptron
 -
 
 ### ML Lecture 3 (1 hr)
+
+- Multi-layer networks
+- Backpropagation 
 
 ### ML Lecture 4 (1 hr)
 
