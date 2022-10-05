@@ -53,7 +53,8 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### ML Lecture 3 (1 hr)
 
 - Multi-layer networks
-- Backpropagation 
+- Training neural networks with backpropagation 
+- Practical issues in neural network training
 
 ### ML Lecture 4 (1 hr)
 
