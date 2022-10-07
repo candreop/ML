@@ -48,7 +48,12 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### ML Lecture 2 (1 hr)
 
 - Single-layer networks: The Perceptron
--
+- Loss functions
+- Heuristic optimization of the original Mark I perceptron
+- Stochastic gradient-descent method
+- Percepton criterion
+- Activation functions and their properties
+- Connections with least-squares regression, logistic regregression and support vector machines
 
 ### ML Lecture 3 (1 hr)
 
