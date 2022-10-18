@@ -30,6 +30,10 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Classification and semantic segmentation using CNNs
 - Generative Adversarial Networks (GANs)
 - Case studies from science and industry
+- Least-squares regression and classification.
+- Widrow-Hoff learning rule; Adaptive linear neuron (Adaline); Delta rule; Fisher discriminant
+- Logistic regression
+- Support vector machines
 
 ## Structure
 
@@ -53,7 +57,8 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Stochastic gradient-descent method
 - Percepton criterion
 - Activation functions and their properties
-- Connections with least-squares regression, logistic regregression and support vector machines
+- Connections with least-squares regression and classification. Widrow-Hoff learning rule.
+- Connections with logistic regregression and support vector machines
 
 ### ML Lecture 3 (1 hr)
 
