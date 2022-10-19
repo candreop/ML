@@ -50,23 +50,31 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Basic architecture of neural networks
 
 ### ML Lecture 2 (1 hr)
+#### Shallow Neural Networks part I 
 
-- Single-layer networks: The Perceptron
+- Single-layer networks: The perceptron
 - Loss functions
 - Heuristic optimization of the original Mark I perceptron
 - Stochastic gradient-descent method
 - Percepton criterion
 - Activation functions and their properties
-- Connections with least-squares regression and classification. Widrow-Hoff learning rule.
-- Connections with logistic regregression and support vector machines
+- Least-squares regression and classification. Widrow-Hoff learning rule.
+- Closed form solutions of least-squares regression
+- Logistic regregression 
+- Support vector machines
+- Connecting the perceptron with least-squared regression, logistic regression and support vector machines
 
 ### ML Lecture 3 (1 hr)
+#### Shallow Neural Networks part II - Multiclass models
+
+- The multiclass perceptron
+- Multiclass (Weston-Watkins) support vector machines
+ 
+### ML Lecture 4 (1 hr)
 
 - Multi-layer networks
 - Training neural networks with backpropagation 
 - Practical issues in neural network training
-
-### ML Lecture 4 (1 hr)
 
 ### ML Lecture 5 (1 hr)
 
