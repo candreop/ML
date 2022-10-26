@@ -44,9 +44,13 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Lecture 1 - Introduction (1 hr)
 
+- Precursors of artificial intelligence
+- History of artificial intelligence
 - Human vs computer learning
+- Different learning paradigms: Supervised, unsupervised and reinforcement learning
 - Biologically inspired methods of computer learning
 - Basic architecture of neural networks
+- Fundamental concepts
 
 ### Lecture 2 - Shallow Neural Networks, part I (1 hr)
 
