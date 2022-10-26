@@ -69,11 +69,10 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Multiclass (Weston-Watkins) support vector machines.
 - Multinomial logistic regression (Softmax classifier).
  
-### Lecture 4 (1 hr)
+### Lecture 4 - Deep Neural Networks and Backpropagation (1 hr)
 
-- Multi-layer networks
+- Multi-layer networks: Deep feedforward networks, or multilayer perceptons
 - Training neural networks with backpropagation 
-- Practical issues in neural network training
 
 ### Lecture 5 - Practical issues in neural network training (1 hr)
 
