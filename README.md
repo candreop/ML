@@ -50,11 +50,11 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Lecture 2 - Shallow Neural Networks, part I (1 hr)
 
-- Single-layer networks: The perceptron
-- Loss functions
-- Heuristic optimization of the original Mark I perceptron
-- Stochastic gradient-descent method
-- Percepton criterion
+- Single-layer networks: The perceptron.
+- Loss functions.
+- Heuristic optimization of the original Mark I perceptron.
+- Stochastic gradient-descent method.
+- Percepton criterion.
 - Activation functions and their properties.
 - Variants of the perceptron and connection with other regression and classification models.
 - Least-squares regression and classification. Widrow-Hoff learning rule.
@@ -64,8 +64,9 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Lecture 3 - Shallow Neural Networks, part II (1 hr)
 
-- The multiclass perceptron
-- Multiclass (Weston-Watkins) support vector machines
+- The multiclass perceptron.
+- Multiclass (Weston-Watkins) support vector machines.
+- Multinomial logistic regression (Softmax classifier).
  
 ### Lecture 4 (1 hr)
 
