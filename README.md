@@ -62,12 +62,12 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Logistic regregression.
 - Support vector machines.
 
-### ML Lecture 3 - Shallow Neural Networks, part II (1 hr)
+### Lecture 3 - Shallow Neural Networks, part II (1 hr)
 
 - The multiclass perceptron
 - Multiclass (Weston-Watkins) support vector machines
  
-### ML Lecture 4 (1 hr)
+### Lecture 4 (1 hr)
 
 - Multi-layer networks
 - Training neural networks with backpropagation 
