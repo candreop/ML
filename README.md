@@ -37,11 +37,6 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ## Structure
 
-### ML Prep Session (2 hrs)
-
-- Linear algebra reminders
-- Probability theory reminders
-
 ### Lecture 1 - Introduction (1 hr)
 
 - Precursors of artificial intelligence
@@ -98,11 +93,6 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### Lecture 14 (1 hr)
 
 ### Lecture 15 (1 hr)
-
-
-### Workshop Prep Session (2 hrs)
-
-- Introduction to pyTorch
 
 
 ### Workshop 1 (2 hrs)
