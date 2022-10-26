@@ -44,6 +44,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Human vs computer learning
 - Different learning paradigms: Supervised, unsupervised and reinforcement learning
 - Artificial intelligence, machine learning and deep learning
+- Machine learning tasks
 - Biologically inspired methods of computer learning
 - Basic architecture of neural networks
 - Fundamental concepts
@@ -76,9 +77,9 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Lecture 5 - Practical issues in neural network training (1 hr)
 
-### Lecture 6 (1 hr)
+### Lecture 6 - Recurrent Neural Networks (1 hr)
 
-### Lecture 7 (1 hr)
+### Lecture 7 - Convolutional Neural Networks (1 hr)
 
 ### Lecture 8 (1 hr)
 
