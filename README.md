@@ -42,30 +42,27 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Linear algebra reminders
 - Probability theory reminders
 
-### ML Lecture 1 (1 hr)
+### Lecture 1 - Introduction (1 hr)
 
-- Introduction
 - Human vs computer learning
 - Biologically inspired methods of computer learning
 - Basic architecture of neural networks
 
-### ML Lecture 2 (1 hr)
-#### Shallow Neural Networks part I 
+### Lecture 2 - Shallow Neural Networks, part I (1 hr)
 
 - Single-layer networks: The perceptron
 - Loss functions
 - Heuristic optimization of the original Mark I perceptron
 - Stochastic gradient-descent method
 - Percepton criterion
-- Activation functions and their properties
+- Activation functions and their properties.
+- Variants of the perceptron and connection with other regression and classification models.
 - Least-squares regression and classification. Widrow-Hoff learning rule.
-- Closed form solutions of least-squares regression
-- Logistic regregression 
-- Support vector machines
-- Connecting the perceptron with least-squared regression, logistic regression and support vector machines
+- Closed form solutions of least-squares regression.
+- Logistic regregression.
+- Support vector machines.
 
-### ML Lecture 3 (1 hr)
-#### Shallow Neural Networks part II - Multiclass models
+### ML Lecture 3 - Shallow Neural Networks, part II (1 hr)
 
 - The multiclass perceptron
 - Multiclass (Weston-Watkins) support vector machines
@@ -76,50 +73,50 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Training neural networks with backpropagation 
 - Practical issues in neural network training
 
-### ML Lecture 5 (1 hr)
+### Lecture 5 - Practical issues in neural network training (1 hr)
 
-### ML Lecture 6 (1 hr)
+### Lecture 6 (1 hr)
 
-### ML Lecture 7 (1 hr)
+### Lecture 7 (1 hr)
 
-### ML Lecture 8 (1 hr)
+### Lecture 8 (1 hr)
 
-### ML Lecture 9 (1 hr)
+### Lecture 9 (1 hr)
 
-### ML Lecture 10 (1 hr)
+### Lecture 10 (1 hr)
 
-### ML Lecture 11 (1 hr)
+### Lecture 11 (1 hr)
 
-### ML Lecture 12 (1 hr)
+### Lecture 12 (1 hr)
 
-### ML Lecture 13 (1 hr)
+### Lecture 13 (1 hr)
 
-### ML Lecture 14 (1 hr)
+### Lecture 14 (1 hr)
 
-### ML Lecture 15 (1 hr)
+### Lecture 15 (1 hr)
 
 
-### ML Workshop Prep Session (2 hrs)
+### Workshop Prep Session (2 hrs)
 
 - Introduction to pyTorch
 
 
-### ML Workshop 1 (2 hrs)
+### Workshop 1 (2 hrs)
 
 
-### ML Workshop 2 (2 hrs)
+### Workshop 2 (2 hrs)
 
 
-### ML Workshop 3 (2 hrs)
+### Workshop 3 (2 hrs)
 
 
-### ML Workshop 4 (2 hrs)
+### Workshop 4 (2 hrs)
 
 
-### ML Workshop 5 (2 hrs)
+### Workshop 5 (2 hrs)
 
 
-### ML Project (10 hrs)
+### Project (10 hrs)
 
 
 ## Reading list
