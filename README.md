@@ -43,6 +43,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - History of artificial intelligence
 - Human vs computer learning
 - Different learning paradigms: Supervised, unsupervised and reinforcement learning
+- Artificial intelligence, machine learning and deep learning
 - Biologically inspired methods of computer learning
 - Basic architecture of neural networks
 - Fundamental concepts
