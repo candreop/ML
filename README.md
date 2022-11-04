@@ -72,6 +72,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### Lecture 4 - Deep Neural Networks and Backpropagation (1 hr)
 
 - Multi-layer networks: Deep feedforward networks, or multilayer perceptons
+- Simple example: Learning XOR
 - Training neural networks with backpropagation 
 
 ### Lecture 5 - Practical issues in neural network training (1 hr)
