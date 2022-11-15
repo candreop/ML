@@ -78,8 +78,16 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 ### Lecture - Learning algorithms and backpropagation ( hr)
 - Gradient-based optimization
 - Stochastic gradient descent
-- Mini-batch stochastic gradient descent
-- Beyond the gradient: Jacobian and Hessian matrices
+- Polyak momentum
+- Nesterov momentum
+- Adaptive learning rates
+- Second order methods
+    - Beyond the gradient: Jacobian and Hessian matrices
+    - Newton's method
+    - Conjugate gradient
+    - Broyden–Fletcher–Goldfarb–Shanno (BFGS) algorithm
+- Batch normalization
+- Supervised pretraining / greedy algorithms
 - Training neural networks with backpropagation
 
 ### Lecture  - Practical issues in neural network training ( hr)
@@ -135,7 +143,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ### Lecture  (1 hr)
 
-### Lecture  (1 hr)
+### Lecture  Deep Reinforcement Learning (1 hr)
 
 ### Lecture  (1 hr)
 
