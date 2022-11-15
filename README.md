@@ -109,8 +109,6 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Dropout
   - Adversarial Training
 
-### Lecture  - Recurrent Neural Networks (1 hr)
-
 ### Lecture  - Convolutional Neural Networks (1 hr)
   - Historical perspective and neuroscientific basis
   - Convolution operation and motivation
@@ -131,21 +129,13 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Applications
 
 
-### Lecture  (1 hr)
+### Lecture  - Recurrent and recursive networks ( hr)
 
-### Lecture  (1 hr)
+### Lecture  - Autoencoders ( hr)
 
-### Lecture  (1 hr)
+### Lecture  - Deep Reinforcement Learning ( hr)
 
-### Lecture  (1 hr)
-
-### Lecture  (1 hr)
-
-### Lecture  (1 hr)
-
-### Lecture  Deep Reinforcement Learning (1 hr)
-
-### Lecture  (1 hr)
+### Lecture  - Deep Generative Models (1 hr)
 
 
 ### Workshop 1 (2 hrs)
