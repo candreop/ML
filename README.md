@@ -45,6 +45,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Different learning paradigms: Supervised, unsupervised and reinforcement learning
 - Artificial intelligence, machine learning and deep learning
 - Machine learning tasks
+- A simple practical example: Linear regression.
 - Biologically inspired methods of computer learning
 - Basic architecture of neural networks
 - Fundamental concepts
@@ -69,13 +70,33 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Multiclass (Weston-Watkins) support vector machines.
 - Multinomial logistic regression (Softmax classifier).
  
-### Lecture 4 - Deep Neural Networks and Backpropagation (1 hr)
+### Lecture 4 - Introduction to Deep Networks
 
 - Multi-layer networks: Deep feedforward networks, or multilayer perceptons
-- Simple example: Learning XOR
-- Training neural networks with backpropagation 
+- Simple example: Learning XOR 
+
+### Lecture 5 - Learning algorithms and backpropagation (1 hr)
+- Gradient-based optimization
+- Stochastic gradient descent
+- Beyond the gradient: Jacobian and Hessian matrices
+- Training neural networks with backpropagation
 
 ### Lecture 5 - Practical issues in neural network training (1 hr)
+
+- Capacity, overfitting and underfitting
+- Vanishing and exploding gradient problems
+- Difficulties in convergence
+- Local optima
+- Regularization methods for deep learning
+  - Norm penalties: L2 and L1 regularization
+  - Dataset augmentation
+  - Noise robustness
+  - Multitask learning
+  - Early stopping
+  - Parameter sharing
+  - Ensemble methods
+  - Dropout
+  - Adversarial Training
 
 ### Lecture 6 - Recurrent Neural Networks (1 hr)
 
