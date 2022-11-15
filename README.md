@@ -37,7 +37,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 
 ## Structure
 
-### Lecture 1 - Introduction (1 hr)
+### Lecture  - Introduction ( hr)
 
 - Precursors of artificial intelligence
 - History of artificial intelligence
@@ -50,7 +50,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Basic architecture of neural networks
 - Fundamental concepts
 
-### Lecture 2 - Shallow Neural Networks, part I (1 hr)
+### Lecture  - Shallow Neural Networks, part I ( hr)
 
 - Single-layer networks: The perceptron.
 - Loss functions.
@@ -64,29 +64,32 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
 - Logistic regregression.
 - Support vector machines.
 
-### Lecture 3 - Shallow Neural Networks, part II (1 hr)
+### Lecture  - Shallow Neural Networks, part II ( hr)
 
 - The multiclass perceptron.
 - Multiclass (Weston-Watkins) support vector machines.
 - Multinomial logistic regression (Softmax classifier).
  
-### Lecture 4 - Introduction to Deep Networks
+### Lecture  - Introduction to Deep Networks
 
 - Multi-layer networks: Deep feedforward networks, or multilayer perceptons
 - Simple example: Learning XOR 
 
-### Lecture 5 - Learning algorithms and backpropagation (1 hr)
+### Lecture - Learning algorithms and backpropagation ( hr)
 - Gradient-based optimization
 - Stochastic gradient descent
+- Mini-batch stochastic gradient descent
 - Beyond the gradient: Jacobian and Hessian matrices
 - Training neural networks with backpropagation
 
-### Lecture 5 - Practical issues in neural network training (1 hr)
+### Lecture  - Practical issues in neural network training ( hr)
 
 - Capacity, overfitting and underfitting
 - Vanishing and exploding gradient problems
+  - Leaky ReLU and maxout 
 - Difficulties in convergence
 - Local optima
+- Bias-Variance tradeoff
 - Regularization methods for deep learning
   - Norm penalties: L2 and L1 regularization
   - Dataset augmentation
@@ -98,25 +101,43 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Dropout
   - Adversarial Training
 
-### Lecture 6 - Recurrent Neural Networks (1 hr)
+### Lecture  - Recurrent Neural Networks (1 hr)
 
-### Lecture 7 - Convolutional Neural Networks (1 hr)
+### Lecture  - Convolutional Neural Networks (1 hr)
+  - Historical perspective and neuroscientific basis
+  - Convolution operation and motivation
+  - Variants of convolution function
+  - Basic structure
+     - Padding
+     - Strides
+     - ReLU layer
+     - Pooling
+     - Fully connected layers
+     - 
+  - Training a convolutional neural network
+  - Typical convolutional architectures
+     - AlexNet
+     - GoogLeNet
+     - ResNet
+  - The effects of depth
+  - Applications
 
-### Lecture 8 (1 hr)
 
-### Lecture 9 (1 hr)
+### Lecture  (1 hr)
 
-### Lecture 10 (1 hr)
+### Lecture  (1 hr)
 
-### Lecture 11 (1 hr)
+### Lecture  (1 hr)
 
-### Lecture 12 (1 hr)
+### Lecture  (1 hr)
 
-### Lecture 13 (1 hr)
+### Lecture  (1 hr)
 
-### Lecture 14 (1 hr)
+### Lecture  (1 hr)
 
-### Lecture 15 (1 hr)
+### Lecture  (1 hr)
+
+### Lecture  (1 hr)
 
 
 ### Workshop 1 (2 hrs)
