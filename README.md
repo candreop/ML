@@ -97,7 +97,7 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Leaky ReLU and maxout 
 - Difficulties in convergence
 - Local optima
-- Bias-Variance tradeoff
+- Bias-variance trade-off
 - Regularization methods for deep learning
   - Norm penalties: L2 and L1 regularization
   - Dataset augmentation
@@ -105,15 +105,14 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Multitask learning
   - Early stopping
   - Parameter sharing
-  - Ensemble methods
-  - Dropout
+  - Ensemble methods: Bagging, subsampling and dropout
   - Adversarial Training
 
 ### Lecture  - Convolutional Neural Networks (1 hr)
   - Historical perspective and neuroscientific basis
-  - Convolution operation and motivation
-  - Variants of convolution function
-  - Basic structure
+  - Convolution and cross-correlation
+  - Motivation: Sparse interactions, parameter sharing and equivariant representations
+  - Basic structure of convolutional neural networks
      - Padding
      - Strides
      - ReLU layer
