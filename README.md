@@ -122,6 +122,8 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Training a convolutional neural network
   - Typical convolutional architectures
      - AlexNet
+     - ZFNet
+     - VGG
      - GoogLeNet
      - ResNet
   - The effects of depth
