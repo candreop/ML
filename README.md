@@ -130,8 +130,13 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Applications
 
 
-### Lecture  - Recurrent and recursive networks ( hr)
+### Lecture  - Recurrent Neural Networks ( hr)
 
+  - Data types with sequential dependencies amongst attributes: Time series, text and biological data
+  - Types of sequence-centric applications and challenges
+  - Basic structure of Recurrent Neural Networks
+  - Training Recurrent Neural Networks: Backpropagation Through Time
+  
 ### Lecture  - Autoencoders ( hr)
 
 ### Lecture  - Deep Reinforcement Learning ( hr)
