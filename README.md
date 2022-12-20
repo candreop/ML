@@ -130,13 +130,20 @@ Prof. Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
   - Applications
 
 
-### Lecture  - Recurrent Neural Networks ( hr)
+### Lecture  - Recurrent Neural Networks (2 hr)
 
   - Data types with sequential dependencies amongst attributes: Time series, text and biological data
   - Types of sequence-centric applications and challenges
-  - Basic structure of Recurrent Neural Networks
-  - Training Recurrent Neural Networks: Backpropagation Through Time
-  
+  - Basic structure of Recurrent Neural Networks (RNN)
+  - Training RNNs: (Truncated) Backpropagation Through Time (BPTT)
+  - Bidirectional RNNs
+  - Multilayer RNNs
+  - Practical issues in training RNNs
+  - Echo-State Networks and Liquid-State Machines
+  - Long Short-Term Memory (LSTM)
+  - Gated Recurrent Units (GRUs)
+  - RNN applications
+
 ### Lecture  - Autoencoders ( hr)
 
 ### Lecture  - Deep Reinforcement Learning ( hr)
