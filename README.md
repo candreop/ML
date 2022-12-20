@@ -6,7 +6,7 @@ This repository includes handouts and codes I used for delivering the Machine Le
 
 **Professor Costas Andreopoulos**, *FHEA*  
 
-University of Liverpool, Department of Physics <br />
+Department of Physics, **University of Liverpool**  <br />
 Oliver Lodge Lab 316, Liverpool L69 7ZE, UK 
 
 e-mail: constantinos.andreopoulos \at cern.ch
