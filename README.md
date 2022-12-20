@@ -4,20 +4,14 @@ This repository includes handouts and codes I used for delivering the Machine Le
 
 ## Author
 
-Professor Costas Andreopoulos, **FHEA**  < constantinos.andreopoulos \at cern.ch >
+**Professor Costas Andreopoulos**, *FHEA*  
 
-University of Liverpool, Department of Physics
+University of Liverpool, Department of Physics <br />
 Oliver Lodge Lab 316, Liverpool L69 7ZE, UK 
 
-<pre>
- University of Liverpool          |  U.K. Research & Innovation (UKRI)
- Faculty of Science & Engineering |  Science & Technology Facilities Council (STFC)
- School of Physical Sciences      |  Rutherford Appleton Laboratory 
- Department of Physics            |  Particle Physics Department
- Oliver Lodge Lab 316             |  Harwell Oxford Campus, R1 2.89
- Liverpool L69 7ZE, UK            |  Oxfordshire OX11 0QX, UK          
- tel: +44-(0)1517-943201          |  tel: +44-(0)1235-445091 
-</pre>
+e-mail: constantinos.andreopoulos \at cern.ch
+
+tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 
 
 ## Aims of the module
