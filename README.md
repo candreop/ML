@@ -147,20 +147,35 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 
 ### Lecture  - Deep Generative Models (1 hr)
 
+### Lecture  - Case Studies in Science and Technology (2 hr)
+  - Event and Particle Identification in High Energy Physics
+  - Generative Models for Fast Simulations 
+  - Denoising Raw Data
+  - Vertex and Track Reconstruction in High Energy Physics
+  - Image Recognition in Astronomy
+  - Real-Time Accelerator Control
+  -
+  
+### Tools and Platforms for Deep Learning
+  - PyTorch
+  - TensorFlow and Keras
+  - MATLAB
+  - GPU computing
+  
+  
+### Workshop 1 (2 hrs) - Introduction to PyTorch
 
-### Workshop 1 (2 hrs)
+
+### Workshop 2 (2 hrs) -
 
 
-### Workshop 2 (2 hrs)
+### Workshop 3 (2 hrs) -
 
 
-### Workshop 3 (2 hrs)
+### Workshop 4 (2 hrs) -
 
 
-### Workshop 4 (2 hrs)
-
-
-### Workshop 5 (2 hrs)
+### Workshop 5 (2 hrs) -
 
 
 ### Project (10 hrs)
@@ -182,6 +197,10 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 - Official PyTorch documentation, https://pytorch.org/docs/stable/
 - Official PyTorch tutorials, https://pytorch.org/tutorials/
 - PyTorch tutorial by Giles Strong, https://github.com/GilesStrong/pytorch_tutorial_2022
+
+### Other useful resources on the web
+
+- A Living Review of Machine Learning for Particle and Nuclear Physics, https://github.com/iml-wg/HEPML-LivingReview
 
 ### Relevant research articles
 
