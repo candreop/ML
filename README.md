@@ -34,7 +34,7 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 
 ## Structure
 
-### Lecture 01 - Introduction (2 hrs)
+### Part 01 - Introduction to Machine Learning (2 hrs)
 
 - Precursors of artificial intelligence
 - History of artificial intelligence
@@ -47,7 +47,7 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 - Basic architecture of neural networks
 - Fundamental concepts
 
-### Lecture 02 - Shallow Neural Networks, part I (2 hrs)
+### Part 02 - Shallow Neural Networks (3 hrs)
 
 - Single-layer networks: The perceptron.
 - Loss functions.
@@ -56,23 +56,20 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 - Percepton criterion.
 - Activation functions and their properties.
 - Variants of the perceptron and connection with other regression and classification models.
-- Least-squares regression and classification. Widrow-Hoff learning rule.
-- Closed form solutions of least-squares regression.
-- Logistic regregression.
-- Support vector machines.
-
-### Lecture 03 - Shallow Neural Networks, part II (2 hrs)
-
+    - Least-squares regression and classification. Widrow-Hoff learning rule.
+    - Closed form solutions of least-squares regression.
+    - Logistic regregression.
+    - Support vector machines.
 - The multiclass perceptron.
 - Multiclass (Weston-Watkins) support vector machines.
 - Multinomial logistic regression (Softmax classifier).
  
-### Lecture 04 - Introduction to Deep Networks (2 hrs)
+### Part 03 - Introduction to Deep Networks (2 hrs)
 
 - Multi-layer networks: Deep feedforward networks, or multilayer perceptons
 - Simple example: Learning XOR 
 
-### Lecture 05 - Learning algorithms and backpropagation (2 hrs)
+### Part 04 - Learning algorithms and backpropagation (2 hrs)
 
 - Gradient-based optimization
 - Stochastic gradient descent
@@ -88,7 +85,7 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 - Supervised pretraining / greedy algorithms
 - Training neural networks with backpropagation
 
-### Lecture 06 - Practical issues in neural network training (2 hrs)
+### Part 05 - Practical issues in neural network training (2 hrs)
 
 - Capacity, overfitting and underfitting
 - Vanishing and exploding gradient problems
@@ -106,7 +103,7 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
   - Ensemble methods: Bagging, subsampling and dropout
   - Adversarial Training
 
-### Lecture 07 - Convolutional Neural Networks (2 hrs)
+### Part 06 - Convolutional Neural Networks (2 hrs)
 
   - Historical perspective and neuroscientific basis
   - Convolution and cross-correlation
@@ -128,7 +125,7 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
   - Applications
 
 
-### Lecture 08 - Recurrent Neural Networks (2 hrs)
+### Part 07 - Recurrent Neural Networks (2 hrs)
 
   - Data types with sequential dependencies amongst attributes: Time series, text and biological data
   - Types of sequence-centric applications and challenges
@@ -142,13 +139,13 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
   - Gated Recurrent Units (GRUs)
   - RNN applications
 
-### Lecture 09 - Autoencoders (2 hrs)
+### Part 08 - Autoencoders (2 hrs)
 
-### Lecture 10 - Deep Reinforcement Learning (2 hrs)
+### Part 09 - Deep Reinforcement Learning (2 hrs)
 
-### Lecture 11 - Deep Generative Models (2 hrs)
+### Part 10 - Deep Generative Models (2 hrs)
 
-### Lecture 12 - Case Studies in Science and Technology (2 hrs)
+### Part 11 - Case Studies in Science and Technology (2 hrs)
   - Event and Particle Identification in High Energy Physics
   - Generative Models for Fast Simulations 
   - Denoising Raw Data
