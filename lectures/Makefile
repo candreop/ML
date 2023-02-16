@@ -70,25 +70,25 @@ add_front: FORCE
 	echo '\input{front_matter/toc.tex}'   >> tmp.tex
 
 add_part01: FORCE
-	echo '\input{tex/01/main.tex}'  >> tmp.tex
+	echo '\input{parts/01/main.tex}'  >> tmp.tex
 add_part02: FORCE
-	echo '\input{tex/02/main.tex}'  >> tmp.tex
+	echo '\input{parts/02/main.tex}'  >> tmp.tex
 add_part03: FORCE
-	echo '\input{tex/03/main.tex}'  >> tmp.tex
+	echo '\input{parts/03/main.tex}'  >> tmp.tex
 add_part04: FORCE
-	echo '\input{tex/04/main.tex}'  >> tmp.tex
+	echo '\input{parts/04/main.tex}'  >> tmp.tex
 add_part05: FORCE
-	echo '\input{tex/05/main.tex}'  >> tmp.tex
+	echo '\input{parts/05/main.tex}'  >> tmp.tex
 add_part06: FORCE
-	echo '\input{tex/06/main.tex}'  >> tmp.tex
+	echo '\input{parts/06/main.tex}'  >> tmp.tex
 add_part07: FORCE
-	echo '\input{tex/07/main.tex}'  >> tmp.tex
+	echo '\input{parts/07/main.tex}'  >> tmp.tex
 add_part08: FORCE
-	echo '\input{tex/08/main.tex}'  >> tmp.tex
+	echo '\input{parts/08/main.tex}'  >> tmp.tex
 add_part09: FORCE
-	echo '\input{tex/09/main.tex}'  >> tmp.tex
+	echo '\input{parts/09/main.tex}'  >> tmp.tex
 add_part10: FORCE
-	echo '\input{tex/10/main.tex}'  >> tmp.tex
+	echo '\input{parts/10/main.tex}'  >> tmp.tex
 
 pdf: FORCE
 	pdflatex tmp.tex
