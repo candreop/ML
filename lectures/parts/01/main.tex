@@ -2,27 +2,46 @@
 \renewcommand{\thislecture}{1 }
 \renewcommand{\nextlecture}{2 }
 
+\section{Introduction to Machine Learning}
+
 %
 % Cover page
 %
 
-\title[\modulename / Lecture \thislecture]
-{
-  \modulename / Lecture \thislecture \\
-  {\it Contents}\\
+\title[\modulename - Part \thislecture]
+{ 
+  {\bf 
+   \modulename - 
+    Part \thislecture\\
+  }
+  \vspace{0.5cm}
+  {\it 
+   \color{yellow}
+    Introduction to Machine Learning\\
+  }
 }
 
-\input{front_matter/author.tex}
+\input{common/author.tex}
 
 \begin{frame}[plain]
   \titlepage
 \end{frame}
 
 % Plan for lecture 01
-\input{tex/01/plan.tex}
+\begin{frame}{Outline for \secname}
+    \tableofcontents[currentsection, hideothersubsections, sectionstyle=show/show]
+\end{frame}
+\input{parts/01/plan.tex}
 
-% Plan for lecture 01
-\input{tex/01/ai_history.tex}
+% History of AI
+\subsection{History of AI}
+\subsection{Blah}
+\subsection{Blah}
+\subsection{Blah}
+\subsection{Blah}
+\subsection{Blah}
+\subsection{Blah}
+\input{topics/ai_history/eras.tex}
 
 %---
 \begin{frame}{Blah}
@@ -32,12 +51,12 @@
 
 % Main points to remember
 \renewcommand{\lecturesummarytitle}{Main points to remember }
-\input{tex/01/summary.tex}
+\input{parts/01/summary.tex}
 
 % Preview of next lecture
-\input{tex/01/next.tex}
+\input{parts/01/next.tex}
 
 % References / Suggested reading for this lecture
-\input{tex/01/reading.tex}
+\input{parts/01/reading.tex}
 
 % Optional material

@@ -1,0 +1,108 @@
+%
+% Blocks:
+%  001      - white bg with baby blue header bg, black fg
+%  minirem  - mini reminder in a main slide
+%  que      - question block in main slides
+%  ans      - answer block in main slides
+%  exmplque - question block for worked example slides
+%  exmplans - question block for worked example slides
+%
+
+% 001
+\newenvironment<>{block001}[1]{%
+\begin{actionenv}#2%
+  \definecolor{block001_header}{RGB}{204,229,255}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=block001_header}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+% minirem
+\newenvironment<>{blockminirem}[1]{%
+\begin{actionenv}#2%
+  \definecolor{blockminirem_header}{RGB}{143,0,0}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=white,bg=blockminirem_header}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+% que
+\newenvironment<>{blockque}[1]{%
+\begin{actionenv}#2%
+  \definecolor{blockque_header}{RGB}{204,229,255}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=blockque_header}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+% ans
+\newenvironment<>{blockans}[1]{%
+\begin{actionenv}#2%
+  \definecolor{blockans_header}{RGB}{204,229,255}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=blockans_header}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+% exmplque
+\newenvironment<>{blockexmplque}[1]{%
+\begin{actionenv}#2%
+  \definecolor{blockexmplque_header}{RGB}{235,189,145}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=blockexmplque_header}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+% exmplans
+\newenvironment<>{blockexmplans}[1]{%
+\begin{actionenv}#2%
+  \definecolor{blockexmplans_header}{RGB}{235,189,145}
+  \def\insertblocktitle{#1}%
+  \par%
+  \mode<presentation>{%
+    \setbeamercolor{block title}{fg=black,bg=blockexmplans_header}
+    \setbeamercolor{block body}{fg=black,bg=white}
+    \setbeamercolor{itemize item}{fg=orange!20!black}
+    \setbeamertemplate{itemize item}[triangle]
+  }%
+  \usebeamertemplate{block begin}}
+  {\par\usebeamertemplate{block end}
+\end{actionenv}}
+
+
+
