@@ -31,39 +31,41 @@ part_07   : tex_start add_part07 tex_end pdf
 part_08   : tex_start add_part08 tex_end pdf 
 part_09   : tex_start add_part09 tex_end pdf 
 part_10   : tex_start add_part10 tex_end pdf 
-all       : tex_start  \
-	    add_front_matter  \
-	    add_part01 \
-	    add_part02 \
-	    add_part03 \
-	    add_part04 \
-	    add_part05 \
-	    add_part06 \
-	    add_part07 \
-	    add_part08 \
-	    add_part09 \
-	    add_part10 \
-		add_back_matter \
-  	    tex_end    \
-	    pdf	       
-each :      part_01 \
-	    part_02 \
-	    part_03 \
-	    part_04 \
-	    part_05 \
-	    part_06 \
-	    part_07 \
-	    part_08 \
-	    part_09 \
-	    part_10 \
 
-test :  tex_start  \
-	    add_front_matter  \
-	    add_part01 \
-	    add_part02 \
+all       : 	tex_start \
+		add_front_matter \
+		add_part01 \
+		add_part02 \
+		add_part03 \
+		add_part04 \
+		add_part05 \
+		add_part06 \
+		add_part07 \
+		add_part08 \
+		add_part09 \
+		add_part10 \
 		add_back_matter \
-  	    tex_end    \
-	    pdf	       
+  		tex_end \
+		pdf	       
+
+each :		part_01 \
+		part_02 \
+		part_03 \
+		part_04 \
+		part_05 \
+		part_06 \
+		part_07 \
+		part_08 \
+		part_09 \
+		part_10 \
+
+test :  	tex_start \
+		add_front_matter \
+		add_part01 \
+		add_part02 \
+		add_back_matter \
+		tex_end \
+		pdf	       
 
 tex_start:
 	echo '\documentclass{beamer}'         > tmp.tex
@@ -79,6 +81,7 @@ add_front_matter: FORCE
 
 add_back_matter: FORCE
 	echo '\input{common/bibliography.tex}' >> tmp.tex
+	echo '\input{common/index.tex}'        >> tmp.tex
 
 add_part01: FORCE
 	echo '\input{parts/01/main.tex}'  >> tmp.tex
@@ -103,6 +106,8 @@ add_part10: FORCE
 
 pdf: FORCE
 	pdflatex tmp.tex
+	biber tmp
+	makeindex tmp
 	pdflatex tmp.tex
 	mv tmp.pdf ${NAME}.pdf
 
