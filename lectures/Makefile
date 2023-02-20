@@ -34,6 +34,7 @@ part_10   : tex_start add_part10 tex_end pdf
 
 all       : 	tex_start \
 		add_front_matter \
+		add_module_info \
 		add_part01 \
 		add_part02 \
 		add_part03 \
@@ -61,6 +62,7 @@ each :		part_01 \
 
 test :  	tex_start \
 		add_front_matter \
+		add_module_info \
 		add_part01 \
 		add_part02 \
 		add_back_matter \
@@ -77,11 +79,15 @@ tex_end:
 
 add_front_matter: FORCE
 	echo '\input{common/cover.tex}'      >> tmp.tex
+	echo '\input{common/about.tex}'      >> tmp.tex
 	echo '\input{common/toc.tex}'        >> tmp.tex
 
 add_back_matter: FORCE
 	echo '\input{common/bibliography.tex}' >> tmp.tex
 	echo '\input{common/index.tex}'        >> tmp.tex
+
+add_module_info: FORCE
+	echo '\input{parts/00/main.tex}'  >> tmp.tex
 
 add_part01: FORCE
 	echo '\input{parts/01/main.tex}'  >> tmp.tex
