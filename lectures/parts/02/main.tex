@@ -2,33 +2,39 @@
 \renewcommand{\thispart}{2 }
 \renewcommand{\nextpart}{3 }
 
-%
-% Cover page
-%
-
 \section{Shallow Neural Networks}
 
-\title[\modulename - Part \thispart]
-{
-  {\bf 
-   \modulename - 
-   Part \thispart\\
-  }
-  \vspace{0.5cm}
-  {\it 
-   \color{yellow}
-    Shallow Neural Networks\\
-  }
-}
+% Cover page
+\input{common/cover_part.tex}
 
-\input{common/author.tex}
+% Outline
+\input{common/toc_part.tex}
 
-\begin{frame}[plain]
-  \titlepage
-\end{frame}
+% \title[\modulename - Part \thispart]
+% {
+%   {\bf 
+%    \modulename - 
+%    Part \thispart\\
+%   }
+%   \vspace{0.5cm}
+%   {\it 
+%    \color{yellow}
+%     \secname\\
+%   }
+% }
+% \input{common/author.tex}
+% \begin{frame}[plain]
+%   \titlepage
+% \end{frame}
 
-% Plan 
-\input{parts/02/plan.tex}
+% Outline
+% \begin{frame}[t,allowframebreaks]{Outline for Part \thispart -}
+%   Part \thispart (\secname) covers the following topics:\\
+%   \vspace{0.5cm}
+%   \setcounter{tocdepth}{2}
+%   \tableofcontents[currentsection, hideothersubsections, sectionstyle=hide/hide]
+% \end{frame}
+
 
 \subsection{Single-layer networks: The perceptron}
 \input{topics/perceptron/introduction.tex}
@@ -38,13 +44,14 @@
 \subsection{Stochastic gradient-descent method}
 \subsection{Percepton criterion}
 \subsection{Activation functions and their properties}
-\subsection{Variants of the perceptron and connection with other regression and classification models}
+\subsection{Variants of the perceptron and 
+    connection with other regression and classification models}
+
+\subsubsection{Least-squares regression and classification. Widrow-Hoff learning rule}
+\subsubsection{Closed form solutions of least-squares regression}
+\subsubsection{Logistic regregression}
+\subsubsection{Support vector machines}
+
 \subsection{The multiclass perceptron}
 \subsection{Multiclass (Weston-Watkins) support vector machines}
 \subsection{Multinomial logistic regression (Softmax classifier)}
-\subsection{Blah}
-\subsection{Blah}
-\subsection{Blah}
-\subsection{Blah}
-\subsection{Blah}
-\subsection{Blah}

@@ -84,6 +84,7 @@ add_front_matter: FORCE
 
 add_back_matter: FORCE
 	echo '\input{common/bibliography.tex}' >> tmp.tex
+	echo '\input{common/glossary.tex}'     >> tmp.tex
 	echo '\input{common/index.tex}'        >> tmp.tex
 
 add_module_info: FORCE
@@ -113,6 +114,7 @@ add_part10: FORCE
 pdf: FORCE
 	pdflatex tmp.tex
 	biber tmp
+	makeglossaries tmp
 	makeindex tmp
 	pdflatex tmp.tex
 	mv tmp.pdf ${NAME}.pdf
