@@ -49,26 +49,6 @@ all       : 	tex_start \
   		tex_end \
 		pdf	       
 
-each :		part_01 \
-		part_02 \
-		part_03 \
-		part_04 \
-		part_05 \
-		part_06 \
-		part_07 \
-		part_08 \
-		part_09 \
-		part_10 \
-
-test :  	tex_start \
-		add_front_matter \
-		add_module_info \
-		add_part01 \
-		add_part02 \
-		add_back_matter \
-		tex_end \
-		pdf	       
-
 tex_start:
 	echo '\documentclass{beamer}'         > tmp.tex
 	echo '\input{settings/all.tex}'      >> tmp.tex
