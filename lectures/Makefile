@@ -58,15 +58,15 @@ tex_end:
 	echo '\end{document}' >> tmp.tex
 
 add_front_matter: FORCE
-	echo '\input{common/cover.tex}'      >> tmp.tex
-	echo '\input{common/about.tex}'      >> tmp.tex
-	echo '\input{common/toc.tex}'        >> tmp.tex
-	echo '\input{common/notation.tex}'   >> tmp.tex
+	echo '\input{front/cover.tex}'      >> tmp.tex
+	echo '\input{front/about.tex}'      >> tmp.tex
+	echo '\input{front/toc.tex}'        >> tmp.tex
+	echo '\input{front/notation.tex}'   >> tmp.tex
 
 add_back_matter: FORCE
-	echo '\input{common/bibliography.tex}' >> tmp.tex
-	echo '\input{common/glossary.tex}'     >> tmp.tex
-	echo '\input{common/index.tex}'        >> tmp.tex
+	echo '\input{back/bibliography.tex}' >> tmp.tex
+	echo '\input{back/glossary.tex}'     >> tmp.tex
+	echo '\input{back/index.tex}'        >> tmp.tex
 
 add_module_info: FORCE
 	echo '\input{parts/00/main.tex}'  >> tmp.tex
