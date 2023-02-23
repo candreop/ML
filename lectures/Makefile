@@ -61,6 +61,7 @@ add_front_matter: FORCE
 	echo '\input{common/cover.tex}'      >> tmp.tex
 	echo '\input{common/about.tex}'      >> tmp.tex
 	echo '\input{common/toc.tex}'        >> tmp.tex
+	echo '\input{common/notation.tex}'   >> tmp.tex
 
 add_back_matter: FORCE
 	echo '\input{common/bibliography.tex}' >> tmp.tex
