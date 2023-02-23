@@ -1,6 +1,29 @@
-%\newacronym{ai}{AI}{Artificial Intelligence}
-%\newacronym{ml}{ML}{Machine Learning}
-%\newacronym{dl}{DL}{Deep Learning}
+%
+% Acronyms
+%
+
+%\newacronym {ai} {AI} {Artificial Intelligence}
+%\newacronym {ml} {ML} {Machine Learning}
+%\newacronym {dl} {DL} {Deep Learning}
+
+%
+% Glossary
+%
+
+\newglossaryentry{aig}{
+  name=artificial intelligence,
+  description={
+    The capacity of computers or other machines to exhibit or simulate intelligent behaviour;
+    the field of study concerned with this\cite{OED}}
+}
+
+\newglossaryentry{ai}{
+  type=\acronymtype,
+  name={AI},
+  description={Artificial Intelligence},
+  first={Artificial Intelligence (AI)\glsadd{artificial intelligence}},
+  see=[Glossary:]{aig}
+}
 
 \newglossaryentry{perceptron}{
   name=perceptron,
@@ -36,7 +59,7 @@
 \newglossaryentry{Rosenblatt}{
   name=Rosenblatt,
   description={
-    American psychologist known in the field of Artificial Intelligence. 
+    American psychologist known in the field of Articial Intelligence. 
     Sometimes called the father of Deep Learning.
     Built a hardware implementation of the perceptron}
 }
