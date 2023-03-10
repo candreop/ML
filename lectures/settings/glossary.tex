@@ -1,5 +1,14 @@
-\usepackage[acronym,nonumberlist]{glossaries}
-%\usepackage[acronym]{glossaries}
+%\usepackage[acronym,nonumberlist]{glossaries}
+\usepackage[acronym]{glossaries}
+
+\glsaddkey
+    {hyphenated}        % new key
+    {\relax}            % default value if "hyphenated" isn't used in \newglossaryentry
+    {\glsentryhyph}     % analogous to \glsentrytext
+    {\Glsentryhyph}     % analogous to \Glsentrytext
+    {\glshyph}          % analogous to \glstext
+    {\Glshyph}          % analogous to \Glstext
+    {\GLShyph}          % analogous to \GLStext
 
 \makeglossaries
 

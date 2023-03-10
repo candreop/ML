@@ -19,7 +19,7 @@ part_08   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_08
 part_09   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_09
 part_10   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_10
 all       : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}
-test      : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}
+dev       : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}
 
 part_01   : tex_start add_part01 tex_end pdf 
 part_02   : tex_start add_part02 tex_end pdf 
@@ -45,6 +45,13 @@ all       : 	tex_start \
 		add_part08 \
 		add_part09 \
 		add_part10 \
+		add_back_matter \
+  		tex_end \
+		pdf	       
+
+dev      : 	tex_start \
+		add_front_matter \
+		add_part02 \
 		add_back_matter \
   		tex_end \
 		pdf	       

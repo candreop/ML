@@ -1,46 +1,79 @@
 
-\newacronym {ai} {AI} {Artificial Intelligence\glsadd{aig}}
-
 \newglossaryentry{aig}{
   name={artificial intelligence},
   description={
-    The capacity of computers or other machines to exhibit or simulate intelligent behaviour}
+    The capacity of computers or other machines to exhibit or simulate intelligent behaviour
+  }
 }
+\newglossaryentry{ai}{
+  type=\acronymtype,
+  name={AI},
+  description={Artificial Intelligence},
+  first={Artificial Intelligence (AI)\glsadd{aig}},
+  see=[Glossary:]{aig}
+}
+% \newacronym {ai} {AI} {Artificial Intelligence\gls{aig}}
+
 
 \newacronym {ml} {ML} {Machine Learning}
 
 \newacronym {dl} {DL} {Deep Learning}
 
+\newglossaryentry{svmg}{
+  name={support vector machine},
+  plural={support vector machines},
+  description={
+  }
+}
+\newglossaryentry{svm}{
+  type=\acronymtype,
+  name={SVM},
+  description={Support Vector Machine},
+  first={Support Vector Machine (SVM)\glsadd{svmg}},
+  plural={SVMs},
+  see=[Glossary:]{svmg}
+}
+%\newacronym {svm} {SVM} {Support Vector Machine\gsl{svmg}}
 
 \newglossaryentry{perceptron}{
   name=perceptron,
   description={
     A perceptron is the simplest neural network. 
-    It contains a single input layer and an output node}
+    It contains a single input layer and an output node
+  }
+}
+
+\newglossaryentry{perceptron criterion}{
+  name={perceptron criterion},
+  description={
+  }
 }
 
 \newglossaryentry{feature engineering}{
   name=feature engineering,
   description={
-    Using domain knowledge to extract features of raw data}
+    Using domain knowledge to extract features of raw data
+  }
 }
 
 \newglossaryentry{activation function}{
   name=activation function,
   description={
-    Define }
+  }
 }
 
 \newglossaryentry{McCulloch-Pitts neuron}{
   name=McCulloch-Pitts neuron,
   description={
-    A single-layer perceptron}
+    A single-layer perceptron
+  }
 }
 
 \newglossaryentry{Mark 1 perceptron}{
   name=Mark 1 perceptron,
   description={
-    The original, custom-built hardware implementation of perceptron}
+    The original, custom-built hardware implementation of perceptron
+  }
 }
 
 \newglossaryentry{Rosenblatt}{
@@ -48,6 +81,82 @@
   description={
     American psychologist known in the field of Articial Intelligence. 
     Sometimes called the father of Deep Learning.
-    Built a hardware implementation of the perceptron}
+    Built a hardware implementation of the perceptron
+  }
 }
 
+\newglossaryentry{gradient descent}{
+  name={gradient descent},
+  hyphenated={gradient-descent},
+  description={
+  }
+}
+
+\newglossaryentry{supervised learning}{
+  name={supervised learning},
+  description={
+  }
+}
+
+\newglossaryentry{hinge loss}{
+  name={hinge loss},
+  description={
+  }
+}
+
+\newglossaryentry{loss function}{
+  name={loss function},
+  description={
+  }
+}
+
+\newglossaryentry{objective function}{
+  name={objective function},
+  description={
+  }
+}
+
+\newglossaryentry{least squares}{
+  name={least squares},
+  description={
+  }
+}
+
+\newglossaryentry{0/1 loss function}{
+  name={0/1 loss function},
+  description={
+  }
+}
+
+\newglossaryentry{linear model}{
+  name={linear model},
+  plural={linear models},
+  description={
+    Define a linear model
+  }
+}
+
+\newglossaryentry{classification}{
+  name={classification},
+  description={
+  }
+}
+
+\newglossaryentry{regression}{
+  name={Regression},
+  description={
+    A technique that relates a dependent variable to one or more independent variables.
+  }
+}
+
+\newglossaryentry{stochastic}{
+  name={stochastic},
+  description={
+  }
+}
+
+\newglossaryentry{epoch}{
+  name={epoch},
+  description={
+  }
+}
