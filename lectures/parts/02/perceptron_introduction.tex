@@ -171,93 +171,6 @@
 %
 %
 
-\begin{frame}[t]{How does the perceptron learn?}
-
-    The error of the prediction is:
-    \begin{equation}
-        E(\vect{x}) = y - \hat{y}
-        \label{eq:perceptron_prediction_error}
-    \end{equation}        
-    where $\hat{y}$ is given by Eq. \ref{eq:perceptron_prediction_wo_bias} 
-    (or Eq. \ref{eq:perceptron_prediction_w_bias})\\
-    \vspace{0.5cm}
-
-    $E(\vect{x})$ takes values from the set: \{ -2, 0, +2 \}.\\
-    \begin{center}
-        \begin{tabular}{rrcr}
-            \hline
-            $y$  & $\hat{y}$ & classification & $E(\vect{x})$ \\
-            \hline
-            -1   & -1  &   correct &   0  \\
-            -1   & +1  &   wrong   &  -2  \\
-            +1   & -1  &   wrong   &  +2  \\
-            +1   & +1  &   correct &   0  \\
-            \hline
-    \end{tabular}
-    \end{center}
-
-    Similarly, to other \index{linear models}linear models in ML:
-    If $E(\vect{x}) \ne 0$, the {\bf weights need to be updated in a 
-    direction opposite to that of the error gradient}. \\
-    \vspace{0.2cm}
-    The weight update rule will be derived later in this lecture.
-
-\end{frame}
-
-%
-%
-%
-
-\begin{frame}[t]{The perceptron as a computational unit}
-
-The function computed by the \index{perceptron}\gls{perceptron},
-as well as the learning process, is similar to that of several
-other types of \index{linear model}\glspl{linear model} in \gls{ml}.
-
-The \gls{perceptron} can be seen as a {\bf computational unit}.
-
-We can combine multiple units and create more powerful models.
-
-\begin{center}
-    \includegraphics[width=0.70\textwidth]{./images/perceptron/combining_units.png}\\
-    {\scriptsize \color{col:attribution} 
-    Image reproduced from p.18 of \cite{Aggarwal:2018SpringerDL}}\\
- \end{center}
-
-
-\end{frame}
-
-%
-%
-%
-
-\begin{frame}[t]{Choice of activation function}
-
-    In the function computed by the \index{perceptron}\gls{perceptron}: 
-    \begin{equation}
-        \hat{y} = sign\Big\{ \vect{w}^T \cdot \vect{x} \Big\} = sign\Big\{ \sum_{i=1}^{d} w_i x_i \Big\}
-    \end{equation}        
-    the {\em sign} plays the role of the \index{activation function}\gls{activation function}.\\
-    \vspace{0.2cm}
-
-    Different choices can be made, 
-    simulating other \index{linear model}\glspl{linear model} in \gls{ml}.
-    \begin{itemize}
-        \item least-squares regression
-        \item support vector machine
-        \item logistic regression
-    \end{itemize}
-    and others.
-
-    Simple variation to the \gls{perceptron}, can capture a wide variety of optimization methods.
-    We will return to this point later in the lecture.\\
-
-\end{frame}
-
-%
-%
-%
-
 \begin{frame}[t]{The Mark 1 perceptron}
 
     The \index{perceptron}perceptron was invented in 1943 
@@ -301,18 +214,85 @@ We can combine multiple units and create more powerful models.
 %
 %
 
-\begin{frame}[t]{Heuristic update process of the Mark 1 perceptron}
+\begin{frame}[t]{The perceptron as a computational unit}
+
+    The function computed by the \index{perceptron}\gls{perceptron},
+    as well as the learning process, is similar to that of several
+    other types of \index{linear model}\glspl{linear model} in \gls{ml}.
     
-    Mark 1 used a {\bf heuristic weight optimization}, performed in hardware.\\
-    \vspace{0.2cm}
-    Weight updates designed to minimize the number of misclassifications:\\
+    The \gls{perceptron} can be seen as a {\bf computational unit}.
+    
+    We can combine multiple units and create more powerful models.
+    
+    \begin{center}
+        \includegraphics[width=0.70\textwidth]{./images/perceptron/combining_units.png}\\
+        {\scriptsize \color{col:attribution} 
+        Image reproduced from p.18 of \cite{Aggarwal:2018SpringerDL}}\\
+     \end{center}
+    
+    
+    \end{frame}
+
+%
+%
+%
+
+\begin{frame}[t]{How does the perceptron learn?}
+
+    Our goal is to {\bf reduce the number of misclassifications}.\\
+    \vspace{0.3cm}
+
+    The error of the prediction is:
     \begin{equation}
-        \vect{w} \rightarrow \vect{w^\prime} = \vect{w} + \alpha \Big(y - \hat{y}\Big) \vect{x}
-        \label{eq:percepton_weight_update_1}
+        E(\vect{x}) = y - \hat{y}
+        \label{eq:perceptron_prediction_error}
+    \end{equation}        
+    where $\hat{y}$ is given by Eq. \ref{eq:perceptron_prediction_wo_bias} 
+    (or Eq. \ref{eq:perceptron_prediction_w_bias})\\
+    \vspace{0.5cm}
+
+    $E(\vect{x})$ takes values from the set: \{ -2, 0, +2 \}.\\
+    \begin{center}
+        \begin{tabular}{rrcr}
+            \hline
+            $y$  & $\hat{y}$ & classification & $E(\vect{x})$ \\
+            \hline
+            -1   & -1  &   correct &   0  \\
+            -1   & +1  &   wrong   &  -2  \\
+            +1   & -1  &   wrong   &  +2  \\
+            +1   & +1  &   correct &   0  \\
+            \hline
+    \end{tabular}
+    \end{center}
+
+    If $E(\vect{x}) \ne 0$, the {\bf weights need to be updated}, but how?\\
+
+\end{frame}
+
+%
+%
+%
+
+\begin{frame}[t]{How does the perceptron learn?}
+
+    The learning process follows the {\em error gradient}.\\
+    \vspace{0.4cm}   
+
+    Almost all neural network learning problems are expressed in a similar way, 
+    with the minimization of a suitable 
+    \index{loss function}\gls{loss function} (or 
+    \index{objective function}\gls{objective function}) $L$.\\
+    \begin{equation}
+        \vect{w} \rightarrow \vect{w^\prime} = \vect{w} - \alpha \nabla_{\vect{w}} L
+        \label{eq:weight_update_grad_descent}
     \end{equation}
     where $\alpha$ regulates the learning rate.\\
-    \vspace{0.3cm}
-    The process tries to determine the linear hyperplane: 
+    \vspace{0.4cm}
+
+    {\color{red}grad descent}
+    In the \index{perceptron}\gls{perceptron},
+    as with all \index{linear model}\glspl{linear model},
+    the process tries to determine the linear hyperplane: 
     \begin{equation}
         \vect{w}^T \cdot \vect{x} = 0
         \label{eq:percepton_hyperplane_1}
@@ -329,11 +309,12 @@ We can combine multiple units and create more powerful models.
 
 \end{frame}
 
+
 %
 %
 %
 
-\begin{frame}[t]{Heuristic update process of the Mark 1 perceptron}
+\begin{frame}[t]{How does the perceptron learn?}
     
     \begin{center}
         \includegraphics[width=0.55\textwidth]{./images/perceptron/data_linearly_separable.png}\\
@@ -348,29 +329,47 @@ We can combine multiple units and create more powerful models.
 
 \end{frame}
 
+
+
 %
 %
 %
 
-\begin{frame}[t]{Perceptron loss function}
+\begin{frame}[t]{Heuristic update process of the Mark 1 perceptron}
 
-    Almost all neural network learning problems are expressed in a similar way, 
-    with the minimization of a suitable 
-    \index{loss function}\gls{loss function} (or 
-    \index{objective function}\gls{objective function}) $L$.\\
-    \begin{equation}
+    As we have seen (Eq. \ref{eq:weight_update_grad_descent}), 
+    the \index{perceptron}\gls{perceptron} 
+    learning algorithm can be expressed as:
+    \begin{equation*}
         \vect{w} \rightarrow \vect{w^\prime} = \vect{w} - \alpha \nabla_{\vect{w}} L
-    \end{equation}
-    \vspace{0.4cm}
+    \end{equation*}
 
-    The {\bf heuristic weight optimization} 
-    of the Mark 1 \index{perceptron}\gls{perceptron},
-    was not derived from a \gls{loss function} 
+    Mark 1 used a {\bf heuristic weight optimization}, performed in hardware.\\
+    It was not derived from a \index{loss function}\gls{loss function} 
     using \index{gradient descent}\gls{gradient descent}.\\
-    \vspace{0.4cm}
-    
-    What differentiable \gls{loss function} 
-    does the \index{perceptron}\gls{perceptron} optimize?\\
+    \vspace{0.2cm} 
+    Updates were designed to minimize the number of misclassifications:\\
+    \begin{equation}
+        \vect{w} \rightarrow \vect{w^\prime} = 
+        \vect{w} + \alpha \Big(y - \hat{y}\Big) \vect{x} =
+        \vect{w} + \alpha E(\vect{x}) \vect{x} 
+        \label{eq:percepton_weight_update_1}
+    \end{equation}
+
+    A comparison of the above equations shows that, 
+    implicitly, the \index{perceptron}\gls{perceptron} 
+    uses the following gradient: 
+    \begin{equation}
+        \nabla_{\vect{w}} L = 
+          \sum_{(\vect{x},y) \in \mathcal{D}} 
+          (y - \hat{y}) \vect{x}
+    \label{eq:percepton_smooth_gradient_1}  
+    \end{equation}
+
+
+    % To better understand the \gls{perceptron}, we need to ask:\\
+    % What differentiable \gls{loss function} does the 
+    % \gls{perceptron} (implicitly) optimize?\\
 
 \end{frame}
 
@@ -380,74 +379,60 @@ We can combine multiple units and create more powerful models.
 %
 %
 
-\begin{frame}[t]{Perceptron loss function}
+\begin{frame}[t,allowframebreaks]{Perceptron loss function -}
 
-    Our goal is to {\bf reduce the number of misclassifications}.\\
+    What differentiable \gls{loss function} does the 
+    \gls{perceptron} (implicitly) optimize?\\
     \vspace{0.3cm}
-    The \index{loss function}\gls{loss function}, $L$,
-    can be expressed in a form that resembles 
+
+    A \index{gradient descent}\glshyph{gradient descent} 
+    update proportional to $y-\hat{y}$, 
+    is naturally caused by a squared loss function like $(y-\hat{y})^2$.\\
+    \vspace{0.3cm}
+
+    So, the \index{loss function}\gls{loss function}, $L$,
+    could be expressed in a form that resembles 
     \index{least-squares}\gls{least squares} 
-    \index{regression}\gls{regression}\footnote{
-        A \index{gradient descent}\glshyph{gradient descent} 
-      update proportional to $y-\hat{y}$, 
-      is naturally caused by a squared loss function like $(y-\hat{y})^2$.\\
-    }:\\
+    \index{regression}\gls{regression}:\\
     \begin{equation}
         L(\vect{w}) = 
         \sum_{(\vect{x},y) \in \mathcal{D}} 
-        \Big(y - \hat{y}(\vect{x};\vect{w})\Big)^2 
-        \label{eq:percepton_leastsquares_loss_1}  
-    \end{equation}
-    Using Eq. \ref{eq:perceptron_prediction_wo_bias}, the above can be written as:
-    \begin{equation}
-        L(\vect{w}) = 
+        \Big(y - \hat{y}(\vect{x};\vect{w})\Big)^2 =
         \sum_{(\vect{x},y) \in \mathcal{D}} 
         \Bigg(y - sign\Big\{ \vect{w}^T \cdot \vect{x} \Big\}\Bigg)^2
-        \label{eq:percepton_leastsquares_loss_2}  
+        \label{eq:percepton_leastsquares_loss_1}  
     \end{equation}
-    \vspace{0.3cm}
-    We seek a vector $\vect{w}$ that minimizes $L$. \\
-    Minimizing $L$, requires the calculation of the gradient $\nabla_{\vect{w}} L$.
 
-\end{frame}
-
-%
-%
-%
-
-\begin{frame}[t]{Perceptron loss function}
-
-    % \begin{equation}
-    %     \nabla_{\vect{w}} L = 
-    %         \nabla_{\vect{w}} \Bigg\{ 
-    %           \sum_{(\vect{x},y) \in \mathcal{D}} \Bigg(y - sign\Big\{ \vect{w}^T \cdot \vect{x} \Big\}\Bigg)^2
-    %         \Bigg\} 
-    %  \end{equation}
-
-    Unlike in \index{least-squares}\gls{least squares} \index{regression}\gls{regression},
-    where the gradient of the \index{loss function}\gls{loss function} is a smooth and continuous function, 
+    Unlike in \index{least-squares}\gls{least squares} 
+    \index{regression}\gls{regression},
+    where the gradient of the \index{loss function}\gls{loss function} 
+    is a smooth and continuous function, 
     here we have to deal with the gradient of the {\em sign} function. \\
+
+    \framebreak
+
     \vspace{0.3cm}
-    The \index{loss function}\gls{loss function} of Eq.~\ref{eq:percepton_leastsquares_loss_2}
+
+    % Unlike in \index{least-squares}\gls{least squares} 
+    % \index{regression}\gls{regression},
+    % where the gradient of the \index{loss function}\gls{loss function} 
+    % is a smooth and continuous function, 
+    % here we have to deal with the gradient of the {\em sign} function. \\
+    % \vspace{0.3cm}
+
+    The \index{loss function}\gls{loss function} of Eq.~\ref{eq:percepton_leastsquares_loss_1}
     {\bf does not provide useful gradients}:\\ 
     \begin{itemize}
         \item It jumps between values at specific points, and
         \item it is constant over large areas of its parameter space.\\
     \end{itemize}
     \vspace{0.3cm}
+
     Can we replace this staircase-like function, 
     with another smooth and differentiable function 
     more suitable for \index{gradient descent}\gls{gradient descent}?\\
     \vspace{0.3cm}
-    Implicitly, the \index{perceptron}\gls{perceptron} 
-    uses the following smooth approximation for the gradient of the 
-    \index{loss function}\gls{loss function}: 
-    \begin{equation}
-        \nabla_{\vect{w}} L = 
-          \sum_{(\vect{x},y) \in \mathcal{D}} 
-          (y - \hat{y}) \vect{x}
-    \label{eq:percepton_smooth_loss_1}  
-    \end{equation}
+
 
 \end{frame}
 
@@ -457,24 +442,17 @@ We can combine multiple units and create more powerful models.
 
 \begin{frame}[t]{Stochastic gradient descent for the perceptron}
 
-    The \index{loss function}\gls{loss function}, $L$, 
-    of Eq.~\ref{eq:percepton_smooth_loss_1}
-    is defined over the complete training set $\mathcal{D}$.\\
-    \vspace{0.3cm}
-
-    However, the training algorithm feeds in 
-    {\bf single training instances} $(\vect{x},y)$.\\
+    The basic training algorithm feeds 
+    {\bf single training instances} $(\vect{x},y)$ into the network.
     For each instance, the algorithm:
     \begin{itemize}
+        \item calculates the prediction $\hat{y}(\vect{x})$ 
         \item evaluates the prediction error $E(\vect{x})$ 
         from Eq.~\ref{eq:perceptron_prediction_error}
         ($E(\vect{x}) = y - \hat{y}$)
         \item updates the weights 
-        using Eq.~\ref{eq:percepton_weight_update_1}, which can be re-written as:
-        \begin{equation}
-          \vect{w} \rightarrow \vect{w^\prime} = \vect{w} + \alpha E(\vect{x}) \vect{x}
-          \label{eq:percepton_weight_update_2}
-        \end{equation}
+        using Eq.~\ref{eq:percepton_weight_update_1} 
+        ($\vect{w} \rightarrow \vect{w^\prime} = \vect{w} + \alpha E(\vect{x}) \vect{x}$)
     \end{itemize}
 
     Non-zero updates are made only if we make mistakes. ($E(\vect{x}) \ne 0$.)\\
@@ -502,12 +480,9 @@ We can combine multiple units and create more powerful models.
 \begin{frame}[t]{Mini-batch stochastic gradient descent}
 
     It is also possible to have a training algorithm that does not 
-    update the weight after a single training example was fed into the network,
-    but 
-    single training instances into the network,  $(\vect{x},y)$.\\
+    update the weight after a single training example was fed into the network.\\
 
-    Eq.~\ref{eq:percepton_weight_update_2} 
-
+    Weight updated can happen a small batch of examples:
     \begin{equation}
         \vect{w} \rightarrow \vect{w^\prime} = 
           \vect{w} + \alpha \sum_{(\vect{x},y) \in \mathcal{S}} E(\vect{x}) \vect{x}
@@ -577,6 +552,37 @@ We can combine multiple units and create more powerful models.
 
 
 \end{frame}
+
+
+
+
+%
+%
+%
+
+\begin{frame}[t]{Choice of activation function}
+
+    In the function computed by the \index{perceptron}\gls{perceptron}: 
+    \begin{equation}
+        \hat{y} = sign\Big\{ \vect{w}^T \cdot \vect{x} \Big\} = sign\Big\{ \sum_{i=1}^{d} w_i x_i \Big\}
+    \end{equation}        
+    the {\em sign} plays the role of the \index{activation function}\gls{activation function}.\\
+    \vspace{0.2cm}
+
+    Different choices can be made, 
+    simulating other \index{linear model}\glspl{linear model} in \gls{ml}.
+    \begin{itemize}
+        \item least-squares regression
+        \item support vector machine
+        \item logistic regression
+    \end{itemize}
+    and others.
+
+    Simple variation to the \gls{perceptron}, can capture a wide variety of optimization methods.
+    We will return to this point later in the lecture.\\
+
+\end{frame}
+
 
 %
 %
