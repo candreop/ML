@@ -1,21 +1,30 @@
 %
-% Books
+% Main textbooks
 %
 
 @book{Aggarwal:2018SpringerDL,
-    author = "Charu C. Aggarwal",
+    author = "{Charu C. Aggarwal}",
     title = "{Neural Network and Deep Learning}",
     year = "2018",
     publisher="Springer",
+    address = "",
     doi = "10.1007/978-3-319-94463-0",
 }
 
+@book{Goodfellow:2017MITDL,
+    author = "{Ian Goodfellow, Yoshua Bengio and Aaron Courville}",
+    title = "{Deep Learning}",
+    year = "2017",
+    publisher = "MIT Press",
+    isbn = "9780262035613",
+    note = "Series: Adaptive computation and machine learning series"
+}
+
 %
-% Articles
+% Articles 
 %
 
 % Original perceptron
-
 @article{McCulloch:1943p,
     author = "Warren S.McCulloch and Walter Pitts",
     title = "{A logical calculus of the ideas immanent in nervous activity}",
@@ -35,6 +44,176 @@
     year = "1958"
 }
 
+% Widrow Hoff
+@inproceedings{Widrow:1960as,
+  author = {Widrow, Bernard and Hoff, Marcian E.},
+  biburl = {https://www.bibsonomy.org/bibtex/24c3b6ae932deb6bb1d04ad76c9c94a69/schaul},
+  booktitle = {1960 {IRE} {WESCON} Convention Record, Part 4},
+  address = {New York},
+  pages = {96--104},
+  publisher = {{IRE}},
+  title = {Adaptive Switching Circuits},
+  year = 1960
+}
+
+% Neocognitron
+@article{Fukushima:1980nc,
+  author = {Fukushima, Kunihiko},
+  title = {{N}eocognitron: {A} Self-Organizing Neural Network Model 
+    for a Mechanism of Pattern Recognition Unaffected by Shift in Position},
+  journal = {Biological Cybernetics},
+  pages = {193--202},
+  volume = 36,
+  year = 1980,
+  doi = "10.1007/BF00344251"
+}
+
+@article{Fukushima:1988nc,
+  author = {Kunihiko Fukushima},
+  title = {Neocognitron: A hierarchical neural network capable of visual pattern recognition},
+  journal = {Neural Networks},
+  volume = {1},
+  number = {2},
+  pages = {119-130},
+  year = {1988},
+  issn = {0893-6080},
+  doi = {https://doi.org/10.1016/0893-6080(88)90014-7},
+  url = {https://www.sciencedirect.com/science/article/pii/0893608088900147}
+}
+
+% Early back-propagation network 
+@incollection{Rumelhart:1986erp,
+  author = {Rumelhart, David E. and Hinton, Geoffrey E. and Williams, Ronald J.},
+  booktitle = {Parallel Distributed Processing: Explorations 
+    in the Microstructure of Cognition, {V}olume 1: {F}oundations},
+  editor = {Rumelhart, David E. and Mcclelland, James L.},
+  pages = {318--362},
+  publisher = {MIT Press},
+  title = {Learning Internal Representations by Error Propagation},
+  year = 1986
+}
+
+% Recurrent neural network for speech recognition (1991)
+@article{Robinson:1991rerp,
+  author = {Robinson, Tony and Fallside, Frank},
+  journal = {Computer Speech and Language},
+  pages = {259--274},
+  title = {A recurrent error propagation network speech recognition system},
+  volume = 5,
+  number = 3,
+  year = 1991,
+  doi = {https://doi.org/10.1016/0885-2308(91)90010-N},
+  url = {https://www.sciencedirect.com/science/article/pii/088523089190010N}
+}
+
+% Multilayer perceptron for speech recognition (1991) 
+@inproceedings{Bengio:1991pma,
+     author = {Bengio, Yoshua and De Mori, Renato and Flammia, Giovanni and Kompe, Ralf},
+      title = {Phonetically motivated acoustic parameters for continuous speech recognition using artificial neural networks},
+  booktitle = {Proceedings of EuroSpeech'91},
+       year = {1991},
+   location = {Genova, Italy},
+cat={C},
+}
+
+% LeNet-5 (1998)
+@inproceedings{LeCun:1998ln5,
+  author = {LeCun, Yann and Bottou, Léon and Bengio, Yoshua and Haffner, Patrick},
+  booktitle = {Proceedings of the IEEE},
+  citeseerurl = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.42.7665},
+  file = {:neural_nets/lecun-98.pdf:PDF;:lecun-98.pdf:PDF},
+  groups = {public},
+  number = 11,
+  pages = {2278--2324},
+  title = {Gradient-Based Learning Applied to Document Recognition},
+  url = {http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.42.7665},
+  volume = 86,
+  year = 1998
+}
+
+% Mean field sigmoid belief network (1996)
+@article{Saul:1996mf,
+  author = {Saul, L. K., Jaakkola, T. and Jordan, M. I.},
+  journal = {Journal of Artificial Intelligence},
+  title = {Mean Field Theory for Sigmoid Belief Networks},
+  volume = 4,
+  year = 1996,
+  eprint={9603102},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  doi = "https://doi.org/10.1613/jair.251"
+}
+
+% Echo state network (2004) (Jaeger and Haas, 2004)
+
+% Deep belief network (2006) (Hinton et al., 2006)
+
+% GPU-accelerated convolutional network (2006) (Chellapilla et al., 2006)
+
+% Deep Boltzmann machine (2009) (Salakhutdinov and Hinton, 2009a)
+
+% GPU-accelerated deep belief network (2009) (Raina et al., 2009)
+
+% Unsupervised convolutional network (2009) (Jarrett et al., 2009)
+
+% GPU-accelerated multilayer perceptron (2010) (Ciresan et al., 2010)
+
+% OMP-1 network (2011) (Coates and Ng, 2011)
+
+% Distributed autoencoder (2012) 
+@inproceedings{Le:2012daut,
+  author    = {Quoc V. Le and
+               Marc'Aurelio Ranzato and
+               Rajat Monga and
+               Matthieu Devin and
+               Greg Corrado and
+               Kai Chen and
+               Jeffrey Dean and
+               Andrew Y. Ng},
+  title     = {Building high-level features using large scale unsupervised learning},
+  booktitle = {Proceedings of the 29th International Conference on Machine Learning,
+               {ICML} 2012, Edinburgh, Scotland, UK, June 26 - July 1, 2012},
+  year      = {2012},
+  url       = {http://icml.cc/2012/papers/73.pdf}
+}
+
+% Multi-GPU convolutional network (2012)
+@incollection{Krizhevsky:2012img,
+  author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.},
+  booktitle = {Advances in Neural Information Processing Systems 25},
+  editor = {Pereira, F. and Burges, C. J. C. and Bottou, L. and Weinberger, K. Q.},
+  pages = {1097--1105},
+  publisher = {Curran Associates, Inc.},
+  title = {ImageNet Classification with Deep Convolutional Neural Networks},
+  url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf},
+  year = 2012
+}
+
+% COTS HPC unsupervised convolutional network (2013)
+@inproceedings{Coates:2013cots,
+  author = {Coates, Adam and Huval, Brody and Wang, Tao and Wu, David J. and Catanzaro, Bryan and Ng, Andrew Y.},
+  booktitle = {ICML (3)},
+  ee = {http://proceedings.mlr.press/v28/coates13.html},
+  pages = {1337-1345},
+  publisher = {JMLR.org},
+  series = {JMLR Workshop and Conference Proceedings},
+  title = {Deep learning with COTS HPC systems.},
+  url = {http://dblp.uni-trier.de/db/conf/icml/icml2013.html#CoatesHWWCN13},
+  volume = 28,
+  year = 2013
+}
+
+% GoogLeNet
+@misc{Szegedy:2014gnet,
+  title={Going Deeper with Convolutions}, 
+  author={Christian Szegedy and Wei Liu and Yangqing Jia and Pierre Sermanet and Scott Reed and Dragomir Anguelov and Dumitru Erhan and Vincent Vanhoucke and Andrew Rabinovich},
+  year={2014},
+  eprint={1409.4842},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  doi = {https://doi.org/10.48550/arXiv.1409.4842}
+}
+
 % SVM
 @article{Vapnik:1995svm,
     author = "Corina Cortes and Vladimir Vapnik",
@@ -45,6 +224,27 @@
     number = "",
     pages = "273-297",
     year = "1995"
+}
+
+% First studies of the visual cortex (V1) motivating CNNs
+@article{Hubel:1959v1,
+  author = {Hubel, D. and Wiesel, T.},
+  journal = {Journal of Physiology},
+  pages = {574--591},
+  title = {Receptive fields of single neurones in the cat's striate cortex},
+  volume = 148,
+  year = 1959,
+  doi = {10.1113/jphysiol.1959.sp006308}
+}
+@article{Hubel:1962v1,
+  author = {Hubel, D. and Wiesel, T.},
+  journal = {Journal of Physiology},
+  pages = {106--154},
+  title = {Receptive fields, binocular interaction, and functional 
+    architecture in the cat's visual cortex},
+  volume = 160,
+  year = 1962,
+  doi = {10.1113/jphysiol.1962.sp006837}
 }
 
 %
@@ -60,6 +260,24 @@
   title = {History of artificial intelligence},
   howpublished = {\url{https://en.wikipedia.org/wiki/History_of_artificial_intelligence}},
   note = {Accessed: 2023-02-20}
+}
+
+@misc{Wikipedia:VisualCortex,
+  title = {Visual cortex},
+  howpublished = {\url{https://en.wikipedia.org/wiki/Visual_cortex}},
+  note = {Accessed: 2023-04-02}
+}
+
+@misc{Scholarpedia:AreaV1,
+  title = {Area V1},
+  howpublished = {\url{http://www.scholarpedia.org/article/Area_V1}},
+  note = {Accessed: 2023-04-02}
+}
+
+@misc{Wikipedia:Convolution,
+  title = {Convolution},
+  howpublished = {\url{https://en.wikipedia.org/wiki/Convolution}},
+  note = {Accessed: 2023-04-02}
 }
 
 @misc{Wikipedia:LinearSeparability,
@@ -91,4 +309,17 @@ note = {Accessed: 2023-03-21}
   howpublished = {\url{https://ai.plainenglish.io/the-rise-and-fall-of-the-perceptron-c04ae53ea465}},  
   note = {Accessed: 2023-02-23}
 }
+
+@misc{HarvardBrainTour:HubelAndWiesel,
+  title = {A Nobel Partnership: Hubel and Wiesel},
+  howpublished = {\url{https://braintour.harvard.edu/archives/portfolio-items/hubel-and-wiesel}},  
+  note = {Accessed: 2023-04-04}
+}
+
+@misc{GoodPsychology:HubelAndWiesel,
+  title = {Feature Detectors: Hubel and Wiesel experiment},
+  howpublished = {\url{https://goodpsychology.wordpress.com/2013/03/13/235/}},  
+  note = {Accessed: 2023-04-04}
+}
+
 

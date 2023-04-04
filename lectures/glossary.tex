@@ -1,3 +1,6 @@
+%
+% Glossary entries with associated acronym entry
+%
 
 \newglossaryentry{aig}{
   name={artificial intelligence},
@@ -12,8 +15,6 @@
   first={Artificial Intelligence (AI)\glsadd{aig}},
   see=[Glossary:]{aig}
 }
-% \newacronym {ai} {AI} {Artificial Intelligence\gls{aig}}
-
 
 \newacronym {ml} {ML} {Machine Learning}
 
@@ -33,18 +34,64 @@
   plural={SVMs},
   see=[Glossary:]{svmg}
 }
-%\newacronym {svm} {SVM} {Support Vector Machine\gsl{svmg}}
 
-\newglossaryentry{perceptron}{
-  name=perceptron,
+\newglossaryentry{cnng}{
+  name={convolutional neural network},
+  plural={convolutional neural networks},
   description={
-    A perceptron is the simplest neural network. 
-    It contains a single input layer and an output node
+  }
+}
+\newglossaryentry{cnn}{
+  type=\acronymtype,
+  name={CNN},
+  description={Convolutional Neural Network},
+  first={Convolutional Neural Network (CNN)\glsadd{cnng}},
+  plural={CNNs},
+  see=[Glossary:]{cnng}
+}
+
+%
+% Glossary entries without associated acronym entry
+%
+
+\newglossaryentry{0/1 loss function}{
+  name={0/1 loss function},
+  description={
   }
 }
 
-\newglossaryentry{perceptron criterion}{
-  name={perceptron criterion},
+\newglossaryentry{activation function}{
+  name=activation function,
+  description={
+  }
+}
+
+\newglossaryentry{classification}{
+  name={classification},
+  description={
+  }
+}
+
+\newglossaryentry{convolution}{
+  name={convolution},
+  description={
+  }
+}
+
+\newglossaryentry{cross-correlation}{
+  name={cross-correlation},
+  description={
+  }
+}
+
+\newglossaryentry{cerebral cortex}{
+  name={cerebral cortex},
+  description={
+  }
+}
+
+\newglossaryentry{epoch}{
+  name={epoch},
   description={
   }
 }
@@ -56,8 +103,35 @@
   }
 }
 
-\newglossaryentry{activation function}{
-  name=activation function,
+\newglossaryentry{gradient descent}{
+  name={gradient descent},
+  hyphenated={gradient-descent},
+  description={
+  }
+}
+
+\newglossaryentry{hinge loss}{
+  name={hinge loss},
+  description={
+  }
+}
+
+\newglossaryentry{least squares}{
+  name={least squares},
+  description={
+  }
+}
+
+\newglossaryentry{linear model}{
+  name={linear model},
+  plural={linear models},
+  description={
+    Define a linear model
+  }
+}
+
+\newglossaryentry{loss function}{
+  name={loss function},
   description={
   }
 }
@@ -76,36 +150,8 @@
   }
 }
 
-\newglossaryentry{Rosenblatt}{
-  name=Rosenblatt,
-  description={
-    American psychologist known in the field of Articial Intelligence. 
-    Sometimes called the father of Deep Learning.
-    Built a hardware implementation of the perceptron
-  }
-}
-
-\newglossaryentry{gradient descent}{
-  name={gradient descent},
-  hyphenated={gradient-descent},
-  description={
-  }
-}
-
-\newglossaryentry{supervised learning}{
-  name={supervised learning},
-  description={
-  }
-}
-
-\newglossaryentry{hinge loss}{
-  name={hinge loss},
-  description={
-  }
-}
-
-\newglossaryentry{loss function}{
-  name={loss function},
+\newglossaryentry{neocognitron}{
+  name=neocognitron,
   description={
   }
 }
@@ -116,31 +162,52 @@
   }
 }
 
-\newglossaryentry{least squares}{
-  name={least squares},
+\newglossaryentry{perceptron}{
+  name=perceptron,
+  description={
+    A perceptron is the simplest neural network. 
+    It contains a single input layer and an output node
+  }
+}
+
+\newglossaryentry{perceptron criterion}{
+  name={perceptron criterion},
   description={
   }
 }
 
-\newglossaryentry{0/1 loss function}{
-  name={0/1 loss function},
+\newglossaryentry{primary visual cortex}{
+  name={primary visual cortex},
   description={
+   The area of the \gls{visual cortex} that receives sensory input from
+   the \gls{lateral geniculate nucleus}. 
+   See also 
+   \gls{visual area 1 (V1)}, 
+   \gls{Brodmann area 17}, and 
+   \gls{striate cortex}
   }
 }
+% ---- alternative terms of the above
+\newglossaryentry{visual area 1 (V1)}{
+  name={visual area 1 (V1)},
+  description={
+   Another term for the \gls{primary visual cortex} (see that entry for explanation)
+  }
+}
+\newglossaryentry{Brodmann area 17}{
+  name={Brodmann area 17},
+  description={
+   Another term for the \gls{primary visual cortex} (see that entry for explanation) 
+  }
+}
+\newglossaryentry{striate cortex}{
+  name={striate cortex},
+  description={
+   Another term for the \gls{primary visual cortex} (see that entry for explanation) 
+  }
+}
+% ----
 
-\newglossaryentry{linear model}{
-  name={linear model},
-  plural={linear models},
-  description={
-    Define a linear model
-  }
-}
-
-\newglossaryentry{classification}{
-  name={classification},
-  description={
-  }
-}
 
 \newglossaryentry{regression}{
   name={regression},
@@ -155,8 +222,38 @@
   }
 }
 
-\newglossaryentry{epoch}{
-  name={epoch},
+\newglossaryentry{supervised learning}{
+  name={supervised learning},
   description={
   }
 }
+
+\newglossaryentry{visual cortex}{
+  name={visual cortex},
+  description={
+   The area of the \gls{cerebral cortex} that processes visual information.
+  }
+}
+
+\newglossaryentry{lateral geniculate nucleus}{
+  name={lateral geniculate nucleus},
+  description={
+   A structure in the thalamus of the mammalian brain and a key element 
+   of the visual pathway. It connects the thalamus with the optic nerve.
+  }
+}
+
+%
+% People
+%
+
+\newglossaryentry{Rosenblatt}{
+  name={Rosenblatt, Frank},
+  description={
+    American psychologist known in the field of Articial Intelligence. 
+    Sometimes called the father of Deep Learning.
+    Built a hardware implementation of the perceptron
+  }
+}
+
+
