@@ -61,87 +61,20 @@
 \subsection{From the Neocognitron to modern convolutional architectures}
 \input{parts/06/from_neocognitron_to_modern_architectures.tex}
 
-
-%
-%
-%
-
+% Discuss the mathematical operations of convolution and cross-correlation
 \subsection{The convolution and cross-correlation operations}
 \input{parts/06/convolution.tex}
 
+% Discuss the main motivations for the use of convolutional architectures:
+% sparse connectivity, parameter sharing, equivariant representations
 \subsection{Motivation}
-\begin{frame}[t,allowframebreaks]{Ad}
-
-    \glspl{cnn} use \index{convolution} \gls{convolution}
-    operations in at least one of their layers, instead of general matrix multiplication.
-
-    As it is discussed in \cite{Goodfellow:2017MITDL} 
-    (see Sec. 9.2 for a detailed discussion), \gls{convolution} 
-    enables:
-    \begin{itemize}
-        \item Sparse connectivity
-        \item Parameter sharing
-        \item Equivariant representations
-    \end{itemize}
-
-\end{frame}
-
+\input{parts/06/motivations_for_convolutional_architectures.tex}
 \subsubsection{Sparse connectivity}
-\begin{frame}[t,allowframebreaks]{Sparse connectivity -}
-
-    \begin{itemize}
-        \item 
-        In the fully connected neural networks described earlier in this module, 
-        {\bf every output unit interacts with every input unit} 
-    \end{itemize}
-
-    \framebreak
-
-    \begin{columns}
-        \begin{column}{0.50\textwidth}
-         \begin{center}
-          \includegraphics[width=1.0\textwidth]
-          {./images/cnn/sparse_connectivity/goodfellow17_sparse_connectivity_from_above_01.png}\\
-          {\scriptsize \color{col:attribution} 
-          Image reproduced from p.327 of \cite{Goodfellow:2017MITDL}}\\
-         \end{center}
-        \end{column}
-        \begin{column}{0.50\textwidth}
-        \end{column}
-    \end{columns}
-
-    \framebreak
-
-    \begin{columns}
-        \begin{column}{0.50\textwidth}
-         \begin{center}
-          \includegraphics[width=1.0\textwidth]
-          {./images/cnn/sparse_connectivity/goodfellow17_sparse_connectivity_from_below_01.png}\\
-          {\scriptsize \color{col:attribution} 
-          Image reproduced from p.327 of \cite{Goodfellow:2017MITDL}}\\
-         \end{center}
-        \end{column}
-        \begin{column}{0.50\textwidth}
-        \end{column}
-    \end{columns}
-
-\end{frame}
-
-%
-%
-%
-
-\begin{frame}[t,allowframebreaks]{Parameter sharing -}
-
-\end{frame}
-
-%
-%
-%
-
-\begin{frame}[t,allowframebreaks]{Equivariant representations -}
-
-\end{frame}
+\input{parts/06/sparse_connectivity.tex}
+\subsubsection{Parameter sharing}
+\input{parts/06/parameter_sharing.tex}
+\subsubsection{Equivariant representations}
+\input{parts/06/equivariant_representations.tex}
 
 %
 %
