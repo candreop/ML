@@ -1,0 +1,72 @@
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{From the Neocognitron to modern architectures -}
+
+    The \index{neocognitron}\gls{neocognitron} 
+    was an important development towards high-performing neural network
+    architectures for computer vision.\\
+    \vspace{0.2cm}
+    Many key ideas are employed in modern architectures:    
+    \begin{itemize}
+        \item Creating a hierarchical network organisation
+        \item Learning simple image features and combining them to produce more complex representations
+    \end{itemize}
+    \vspace{0.2cm}
+    
+    The \gls{neocognitron} 
+    also differed from modern 
+    \index{CNN}\index{convolutional neural network}\glspl{cnn}
+    in important ways:
+    \begin{itemize}
+        \item Not using the backpropagation training method
+        \item Not using weight sharing
+    \end{itemize}
+
+    \framebreak
+    
+    First fully convolutional architecture (\gls{LeNet-5}) was developed circa 2000.\\
+    \vspace{0.2cm}
+    Since then, \index{CNN}\index{convolutional neural network}\glspl{cnn}
+    grew in prominence and achieved astonishing accuracy.\\
+    \vspace{0.2cm}
+    Indeed, \glspl{cnn} have been consistent winners
+    of the \index{ILSVRC}\index{ImageNet}\gls{ilsvrc}.\\ 
+    \vspace{0.2cm}
+    Some well-known architectures are listed below:\\
+
+    \begin{itemize}
+
+        \item 
+        \index{LeNet-5}\gls{LeNet-5}\cite{LeCun:1998ln5};
+        First fully convolutional architecture 
+
+        \item 
+        \index{AlexNet}\gls{AlexNet}\cite{Krizhevsky:2012alexnet};
+        Winner of \gls{ilsvrc} for 2012.
+    
+        \item 
+        \index{ZFNet}\gls{ZFNet}\cite{Zaremba:2016zfnet};
+        Winner of \gls{ilsvrc} for 2013.
+    
+        \item 
+        \index{GoogLeNet}\gls{GoogLeNet} 
+        (or \index{Inception}\gls{Inception} v1)
+        \cite{Szegedy:2014gnet};
+        Winner of \gls{ilsvrc} for 2014.
+    
+        \item 
+        \index{VGG}\gls{VGG}\cite{Simonyan:2015vgg};
+        A close second of \gls{ilsvrc} for 2014.
+    
+        \item 
+        \index{ResNet}\gls{ResNet}\cite{He:2016resnet};
+        Winner of \gls{ilsvrc} for 2015.    
+    \end{itemize}
+
+    \vspace{0.2cm}
+    Some of these architectures will be discussed in detail later.
+    
+    \end{frame}
+    
