@@ -2,6 +2,7 @@
 % Glossary entries with associated acronym entry
 %
 
+% AI
 \newglossaryentry{aig}{
   name={artificial intelligence},
   description={
@@ -16,25 +17,7 @@
   see=[Glossary:]{aig}
 }
 
-\newacronym {ml} {ML} {Machine Learning}
-
-\newacronym {dl} {DL} {Deep Learning}
-
-\newglossaryentry{svmg}{
-  name={support vector machine},
-  plural={support vector machines},
-  description={
-  }
-}
-\newglossaryentry{svm}{
-  type=\acronymtype,
-  name={SVM},
-  description={Support Vector Machine},
-  first={Support Vector Machine (SVM)\glsadd{svmg}},
-  plural={SVMs},
-  see=[Glossary:]{svmg}
-}
-
+% CNN
 \newglossaryentry{cnng}{
   name={convolutional neural network},
   plural={convolutional neural networks},
@@ -50,6 +33,45 @@
   see=[Glossary:]{cnng}
 }
 
+% ML
+\newacronym {ml} {ML} {Machine Learning}
+
+% DL
+\newacronym {dl} {DL} {Deep Learning}
+
+% SVM
+\newglossaryentry{svmg}{
+  name={support vector machine},
+  plural={support vector machines},
+  description={
+  }
+}
+\newglossaryentry{svm}{
+  type=\acronymtype,
+  name={SVM},
+  description={Support Vector Machine},
+  first={Support Vector Machine (SVM)\glsadd{svmg}},
+  plural={SVMs},
+  see=[Glossary:]{svmg}
+}
+
+% ILSVRC
+\newglossaryentry{ilsvrcg}{
+  name={support vector machine},
+  plural={support vector machines},
+  description={
+    An annual competition in the field of computer vision.
+    See also \gls{ImageNet}
+  }
+}
+\newglossaryentry{ilsvrc}{
+  type=\acronymtype,
+  name={ILSVRC},
+  description={ImageNet Large Scale Visual Recognition Challenge},
+  first={ImageNet Large Scale Visual Recognition Challenge (ILSVRC)\glsadd{ilsvrcg}},
+  see=[Glossary:]{ilsvrcg}
+}
+
 %
 % Glossary entries without associated acronym entry
 %
@@ -60,9 +82,24 @@
   }
 }
 
+\newglossaryentry{AlexNet}{
+  name={AlexNet},
+  description={
+  }
+}
+
 \newglossaryentry{activation function}{
   name=activation function,
   description={
+  }
+}
+
+\newglossaryentry{cell-plane}{
+  name={cell-plane},
+  plural={cell-planes},
+  description={
+    A group of cells within a layer of 
+    \gls{neuron}-like S-cells or C-cells in a \gls{neocognitron}.
   }
 }
 
@@ -74,6 +111,13 @@
 
 \newglossaryentry{convolution}{
   name={convolution},
+  description={
+  }
+}
+
+\newglossaryentry{complex cell}{
+  name={complex cell},
+  plural={complex cells},
   description={
   }
 }
@@ -103,6 +147,19 @@
   }
 }
 
+\newglossaryentry{Inception}{
+  name={Inception},
+  description={
+  }
+}
+
+\newglossaryentry{GoogLeNet}{
+  name={GoogLeNet},
+  description={
+    Also known as \gls{Inception}
+  }
+}
+
 \newglossaryentry{gradient descent}{
   name={gradient descent},
   hyphenated={gradient-descent},
@@ -113,6 +170,14 @@
 \newglossaryentry{hinge loss}{
   name={hinge loss},
   description={
+  }
+}
+
+\newglossaryentry{ImageNet}{
+  name={ImageNet},
+  description={
+    A database with more than 14 million hand-annotated images
+    containing more than 20,000 distinct object categories.
   }
 }
 
@@ -136,6 +201,13 @@
   }
 }
 
+\newglossaryentry{LeNet-5}{
+  name={LeNet-5},
+  description={
+    One of the first convolutional network architectures.
+  }
+}
+
 \newglossaryentry{McCulloch-Pitts neuron}{
   name=McCulloch-Pitts neuron,
   description={
@@ -152,6 +224,12 @@
 
 \newglossaryentry{neocognitron}{
   name=neocognitron,
+  description={
+  }
+}
+
+\newglossaryentry{neuron}{
+  name=neuron,
   description={
   }
 }
@@ -208,11 +286,23 @@
 }
 % ----
 
-
 \newglossaryentry{regression}{
   name={regression},
   description={
     A technique that relates a dependent variable to one or more independent variables.
+  }
+}
+
+\newglossaryentry{ResNet}{
+  name={ResNet},
+  description={
+  }
+}
+
+\newglossaryentry{simple cell}{
+  name={simple cell},
+  plural={simple cells},
+  description={
   }
 }
 
@@ -235,6 +325,12 @@
   }
 }
 
+\newglossaryentry{VGG}{
+  name={VGG},
+  description={
+  }
+}
+
 \newglossaryentry{lateral geniculate nucleus}{
   name={lateral geniculate nucleus},
   description={
@@ -243,16 +339,51 @@
   }
 }
 
+\newglossaryentry{ZFNet}{
+  name={ZFNet},
+  description={
+  }
+}
+
 %
-% People
+% Notable people
 %
 
-\newglossaryentry{Rosenblatt}{
-  name={Rosenblatt, Frank},
+\newglossaryentry{Fukushima}{
+  type=people,
+  name={K.Fukushima},
+  sort={Fukushima, Kunihiko},
   description={
-    American psychologist known in the field of Articial Intelligence. 
+    Japanese computer scientist who developed the \gls{neocognitron} 
+    inspired by the biological \gls{primary virtual cortex} studies of
+    \gls{Hubel} and \gls{Wiesel}.
+  }
+}
+
+\newglossaryentry{Hubel}{
+  type=people,
+  name={D.Hubel},
+  sort={Hubel, David},
+  description={
+  }
+}
+
+\newglossaryentry{Rosenblatt}{
+  type=people,
+  name={F.Rosenblatt},
+  sort={Rosenblatt, Frank},
+  description={
+    American psychologist known in the field of Artificial Intelligence. 
     Sometimes called the father of Deep Learning.
     Built a hardware implementation of the perceptron
+  }
+}
+
+\newglossaryentry{Wiesel}{
+  type=people,
+  name={T.Wiesel},
+  sort={Wiesel, Torsten},
+  description={
   }
 }
 

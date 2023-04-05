@@ -47,34 +47,20 @@
 
 \end{frame}
 
-
+% Discuss studies of the primary visual cortex (V1) by Hubel, Wiesel and others,
+% and describe the workings of V1
 \subsection{Biological inspirations}
 \input{parts/06/biological_inspirations.tex}
 
-%
-%
-%
+% Discuss the Neocognitron
+\subsection{Convolutional Network precursors: Neocognitron}
+\input{parts/06/neocognitron.tex}
 
-\begin{frame}[t,allowframebreaks]{Neocognitron -}
+% Give a list of modern architectures, but defer detailed description 
+% till after the basics of convolutional networks are described
+\subsection{From the Neocognitron to modern convolutional architectures}
+\input{parts/06/from_neocognitron_to_modern_architectures.tex}
 
-    In 1908, K. Fukushima \cite{Fukushima:1980nc, Fukushima:1988nc}, 
-    inspired by the biological visual cortex work of T.Hubel and T.Wiesel,
-    created the \index{neocognitron}\gls{neocognitron}
-    as a model of the visual system.
-
-    The \gls{neocognitron} is the precursor of the \gls{cnn}.
-
-    \framebreak
-
-    \begin{center}
-        \includegraphics[width=0.90\textwidth]
-           {./images/neocognitron/fukushima88_hierarchical_network_structure_01.png}\\
-        Hierarchical network structure of the \gls{neocognitron}.\\
-        {\scriptsize \color{col:attribution} 
-        Image reproduced from \cite{Fukushima:1988nc} (Fig.2)}\\
-    \end{center}
-
-\end{frame}
 
 %
 %
@@ -102,6 +88,14 @@
 
 \subsubsection{Sparse connectivity}
 \begin{frame}[t,allowframebreaks]{Sparse connectivity -}
+
+    \begin{itemize}
+        \item 
+        In the fully connected neural networks described earlier in this module, 
+        {\bf every output unit interacts with every input unit} 
+    \end{itemize}
+
+    \framebreak
 
     \begin{columns}
         \begin{column}{0.50\textwidth}
@@ -166,3 +160,14 @@
     \end{enumerate}
 
 \end{frame}
+
+\subsection{Case studies}
+
+
+\subsubsection{LeNet-5}
+
+\subsubsection{AlexNet}
+
+\subsubsection{GoogLeNet}
+
+\subsubsection{ResNet}

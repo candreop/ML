@@ -4,23 +4,24 @@
 % single column
 % -------------------------------------------------
 %
-% \newenvironment{theindex}{%
-%   \let\item\par % definitions for subitem etc 
-% }{}
+\newenvironment{theindex}{%
+  \let\item\par % definitions for subitem etc 
+}{}
 %\newcommand\indexspace{} % complains that: \indexspace already defined.
 
 % multiple columns 
 % -------------------------------------------------
-% This doesn't seem to work well if \printindex is inserted between
+% It doesn't seem to work well if \printindex is inserted between
 % \begin{frame}[t,allowframebreaks]{Index -} ... \end{frame}
 % It inserts an empty page, then tries to fit everything in the second index page...
 %
-\newenvironment{theindex}{%
-  \scriptsize
-  \let\item\par % definitions for subitem etc
-  \begin{multicols}{2}
-}{\end{multicols}}
-%\newcommand\indexspace{} % complains that: \indexspace already defined.
+% But also, as shown below, it tries to fit everything in one page...
+% \newenvironment{theindex}{%
+%   \scriptsize
+%   \let\item\par % definitions for subitem etc
+%   \begin{multicols}{2}
+% }{\end{multicols}}
+% %\newcommand\indexspace{} % complains that: \indexspace already defined.
 
 \makeindex
 
