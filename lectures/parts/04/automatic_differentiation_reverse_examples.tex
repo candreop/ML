@@ -1,0 +1,172 @@
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{
+    Reverse Mode of Automatic Differentiation: Example} 
+
+    %
+    % forward
+    %
+
+    Forward phase:
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=1.0]
+    
+        % \draw[help lines] (0,0) grid (11,4);
+        
+        \node[input_graph_node] (w1) at (0.0, 4.0) {$w_1$};
+        \node[input_graph_node] (w2) at (0.0, 1.0) {$w_2$};
+    
+        \node[general_graph_node] (u1) at (5.3, 4.0) {$()^2$};
+        \node[general_graph_node] (u2) at (5.3, 1.0) {$()^2$};
+    
+        \node[general_graph_node] (u3) at (9.0, 2.5) {$+$};
+    
+        \drawgraphlinebigarrow (w1.east) 
+        to 
+        node[above,midway]
+        {\scriptsize $w_1$}
+        node[below,midway]
+        {\scriptsize \color{blue} 
+         $\displaystyle \frac{\partial w_1}{\partial w_1} = 1$}
+        (u1.west) ;
+    
+        \drawgraphlinebigarrow (w2.east) 
+        to 
+        node[above,midway]
+        {\scriptsize $w_2$}
+        node[below,midway]
+        {\scriptsize \color{blue} 
+          $\displaystyle \frac{\partial w_2}{\partial w_2} = 1$}
+        (u2.west) ;
+    
+        \drawgraphlinebigarrow (u1.east) 
+        to[bend left =20] 
+        node[above,midway,xshift=-0.3cm,yshift=0cm] 
+        {\scriptsize $u_1=w_1^2$}
+        node[below,midway,xshift=-0.3cm,yshift=-0.2cm] 
+        {\scriptsize \color{green} 
+          $\displaystyle \frac{\partial u_1}{\partial w_1}=2w_1$}
+        (u3.north west) ;
+    
+        \drawgraphlinebigarrow (u2.east) 
+        to[bend right=20] 
+        node[above,midway,xshift=-0.3cm,yshift=0cm] 
+        {\scriptsize $u_2=w_2^2$}
+        node[below,midway,xshift=-0.3cm,yshift=-0.2cm] 
+        {\scriptsize \color{green} 
+          $\displaystyle \frac{\partial u_2}{\partial w_2}=2w_2$}
+        (u3.south west) ;
+    
+        \drawinvisiblegraphline (u3.east) 
+        to 
+        node[above,midway,xshift=0.0cm] 
+        {\scriptsize \color{black} $u_3=u_1+u_2$} 
+        node[below,midway,xshift=0.0cm,yshift=0.0cm] 
+        {\scriptsize \color{red} 
+          $\displaystyle \frac{\partial u_3}{\partial u_1}=1,
+            \frac{\partial u_3}{\partial u_2}=1$} 
+        (11.5,1.8);
+    
+        \end{tikzpicture}
+    \end{center}
+
+    \framebreak
+    
+    %
+    % backward
+    %
+    
+    Backward phase:\\
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=1.0]
+    
+        % \draw[help lines] (0,0) grid (11,4);
+        
+        \node[input_graph_node] (w1) at (0.0, 4.0) {$w_1$};
+        \node[input_graph_node] (w2) at (0.0, 1.0) {$w_2$};
+    
+        \node[general_graph_node] (u1) at (5.3, 4.0) {$()^2$};
+        \node[general_graph_node] (u2) at (5.3, 1.0) {$()^2$};
+    
+        \node[general_graph_node] (u3) at (9.0, 2.5) {$+$};
+    
+        \drawgraphlinebigarrow (w1.east) 
+        to 
+        node[above,midway]
+        {\scriptsize $w_1$}
+        node[below,midway]
+        {\scriptsize 
+         \color{blue}  $\displaystyle \frac{\partial w_1}{\partial w_1}$
+         \color{green} $\displaystyle \frac{\partial u_1}{\partial w_1}$
+         \color{red}   $\displaystyle \frac{\partial u_3}{\partial u_1}$
+         \color{black} $=$ 
+         \color{blue}  $(1)$
+         \color{green} $(2w_1)$
+         \color{red}   $(1)$
+        }
+        (u1.west) ;
+    
+        \drawgraphlinebigarrow (w2.east) 
+        to 
+        node[above,midway]
+        {\scriptsize $w_2$}
+        node[below,midway]
+        {\scriptsize 
+         \color{blue}  $\displaystyle \frac{\partial w_2}{\partial w_2}$
+         \color{green} $\displaystyle \frac{\partial u_2}{\partial w_2}$
+         \color{red}   $\displaystyle \frac{\partial u_3}{\partial u_2}$
+         \color{black} $=$ 
+         \color{blue}  $(1)$
+         \color{green} $(2w_2)$
+         \color{red}   $(1)$
+        }
+        (u2.west) ;
+    
+        \drawgraphlinebigarrow (u1.east) 
+        to[bend left =20] 
+        node[above,midway,xshift=-0.3cm,yshift=0cm] 
+        {\scriptsize $u_1=w_1^2$}
+        node[below,midway,xshift=-0.3cm,yshift=-0.2cm] 
+        {\scriptsize 
+         \color{green} $\displaystyle \frac{\partial u_1}{\partial w_1}$
+         \color{red} $\displaystyle \frac{\partial u_3}{\partial u_1}$
+         \color{black} $=$ 
+         \color{green} $2w_1$
+         \color{red} $1$
+        }
+        (u3.north west) ;
+    
+        \drawgraphlinebigarrow (u2.east) 
+        to[bend right=20] 
+        node[above,midway,xshift=-0.3cm,yshift=0cm] 
+        {\scriptsize $u_2=w_2^2$}
+        node[below,midway,xshift=-0.3cm,yshift=-0.2cm] 
+        {\scriptsize 
+         \color{green} $\displaystyle \frac{\partial u_2}{\partial w_2}$
+         \color{red} $\displaystyle \frac{\partial u_3}{\partial u_2}$
+         \color{black} $=$ 
+         \color{green} $2w_2$
+         \color{red} $1$
+        }
+        (u3.south west) ;
+    
+        \drawinvisiblegraphline (u3.east) 
+        to 
+        node[above,midway,xshift=0.0cm] 
+        {\scriptsize \color{black} $u_3=u_1+u_2$} 
+        node[below,midway,xshift=0.0cm,yshift=0.0cm] 
+        {\scriptsize \color{red} 
+          $\displaystyle 
+           \frac{\partial u_3}{\partial u_1}=1,
+           \frac{\partial u_3}{\partial u_2}=1$} 
+        (11.5,1.8);
+    
+        \end{tikzpicture}
+    \end{center}
+    
+\end{frame}
+    

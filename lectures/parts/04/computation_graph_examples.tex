@@ -1,0 +1,193 @@
+%
+% Example computation graph for a simple function R->R
+%
+
+\begin{frame}[t,allowframebreaks]{
+  Example Computation Graph of function $f: \mathbb{R} \rightarrow \mathbb{R}$ -} 
+   
+  \vspace{-0.2cm}
+  Consider the following example function $f$ of a single argument $w$:\\
+  %\vspace{-0.3cm}
+  \begin{equation}
+    f(w) =  w^2ln(w) + tanh(w)
+    \label{eq:computational_graph_example_function_1}
+  \end{equation}
+  %\vspace{-0.2cm}
+  Its computation graph is shown below.\\
+  %\vspace{-0.2cm}
+
+  \begin{center}
+     \begin{tikzpicture}[scale=0.92]
+   
+       %\draw[help lines] (0,0) grid (11,6);
+       
+       \node[input_graph_node]   (w)  at (0.0, 5.0) {$w$};
+       \node[general_graph_node] (u1) at (2.6, 5.0) {$()^2$};
+       \node[general_graph_node] (u2) at (2.6, 3.0) {$ln$};
+       \node[general_graph_node] (u3) at (2.6, 1.0) {\small $tanh$};
+       \node[general_graph_node] (u4) at (6.1, 4.0) {$\times$};
+       \node[general_graph_node] (u5) at (7.6, 2.0) {$+$};
+   
+       \drawgraphlinebigarrow (w.east)       
+          to node[above, midway]
+          {\small $w$}(u1.west) ;
+       \drawgraphlinebigarrow (w.south east) 
+          to[bend right] node[left]
+          {}(u2.west) ;
+       \drawgraphlinebigarrow (w.south)      
+         to[bend right=40] node[left]
+         {}(u3.west) ;
+   
+       \drawgraphlinebigarrow (u1.east)       
+         to[bend left =10] node[above,midway,xshift=-0.5cm,yshift=0.2cm]
+         {\small \color{black} $u_1=w^2$}
+         (u4.north west) ;
+       \drawgraphlinebigarrow (u2.east)       
+         to[bend right=10] node[below,midway,xshift=-0.3cm,yshift=-0.2cm]
+         {\small \color{black} $u_2=ln(w)$}
+         (u4.south west) ;
+       \drawgraphlinebigarrow (u3.east) 
+         to[looseness=1,bend right=15] node[below,midway,xshift=-0.9cm,yshift=-0.1cm]
+         {\small \color{black} $u_3=tanh(w)$}
+         (u5.south west) ;
+   
+       \drawgraphlinebigarrow (u4.east) 
+         to[bend left=10] 
+         node[above,midway,xshift=0.5cm,yshift=0.4cm]
+         {\small \color{black} $u_4=u_1 u_2$}
+         (u5.north) ;
+   
+       \drawinvisiblegraphline (u5.east) 
+         to 
+         node[above,midway,xshift=-0.3cm] 
+         {\small \color{black} $u_5=u_3+u_4$} 
+         (11,2);
+   
+     \end{tikzpicture}
+  \end{center}
+   
+  \framebreak
+   
+  Note that {\bf each child node is a function of its parent nodes}. However,
+  if we unfold the definition of each node, everything is a function of $w$.\\
+  \vspace{0.2cm}
+  The computation flows forward (the graph is evaluated from left to right),
+  and the final node ($u_5$) evaluates the function $f(w)$.\\
+  \vspace{-0.3cm}
+     
+  \begin{center}
+     \begin{tikzpicture}[scale=0.92]
+   
+       %\draw[help lines] (0,0) grid (11,6);
+       
+       \node[input_graph_node]   (w)  at (0.0, 5.0) {$w$};
+       \node[general_graph_node] (u1) at (2.6, 5.0) {$()^2$};
+       \node[general_graph_node] (u2) at (2.6, 3.0) {$ln$};
+       \node[general_graph_node] (u3) at (2.6, 1.0) {\small $tanh$};
+       \node[general_graph_node] (u4) at (6.1, 4.0) {$\times$};
+       \node[general_graph_node] (u5) at (7.6, 2.0) {$+$};
+   
+       \drawgraphlinebigarrow (w.east)       
+          to node[above, midway]
+          {\small $w=$ \color{magenta} 3}(u1.west) ;
+       \drawgraphlinebigarrow (w.south east) 
+          to[bend right] node[left]
+          {}(u2.west) ;
+       \drawgraphlinebigarrow (w.south)      
+         to[bend right=40] node[left]
+         {}(u3.west) ;
+   
+       \drawgraphlinebigarrow (u1.east)       
+         to[bend left =10] node[above,midway,xshift=-0.2cm,yshift=0.2cm]
+         {\small \color{black} $u_1=w^2=$ \color{magenta} 9}
+         (u4.north west) ;
+       \drawgraphlinebigarrow (u2.east)       
+         to[bend right=10] node[below,midway,xshift=0.4cm,yshift=-0.2cm]
+         {\small \color{black} $u_2=ln(w)=$ \color{magenta} 1.0986}
+         (u4.south west) ;
+       \drawgraphlinebigarrow (u3.east) 
+         to[looseness=1,bend right=15] node[below,midway,xshift=-0.2cm,yshift=-0.1cm]
+         {\small \color{black} $u_3=tanh(w)=$ \color{magenta} 0.9951}
+         (u5.south west) ;
+   
+       \drawgraphlinebigarrow (u4.east) 
+         to[bend left=10] 
+         node[above,midway,xshift=1.2cm,yshift=0.4cm]
+         {\small \color{black} $u_4=u_1 u_2=$ \color{magenta} 9.8874}
+         (u5.north) ;
+   
+       \drawinvisiblegraphline (u5.east) 
+         to 
+         node[above,midway,xshift=0.6cm] 
+         {\small \color{black} $u_5=u_3+u_4=$ \color{magenta} 10.8825} 
+         (11,2);
+   
+     \end{tikzpicture}
+  \end{center}
+     
+\end{frame}
+   
+%
+% Another example computation graph for a simple function R^2->R
+%
+   
+\begin{frame}[t]{
+  Example Computation Graph of function $f: \mathbb{R}^2 \rightarrow \mathbb{R}$} 
+   
+  Similar computation graphs can be constructed for functions 
+  that receive multi-dimensional inputs (and/or produce multi-dimensional outputs).\\
+  \vspace{0.2cm} 
+  A trivial example is shown below for a simple function
+  $f: \mathbb{R}^2 \rightarrow \mathbb{R}$:
+  \begin{equation}
+    f \Big(\mathbf{w}=(w_1,w_2)\Big) =  w_1^2 + w_2^2 
+    \label{eq:computational_graph_example_function_2}
+  \end{equation}
+   
+  \begin{center}
+     \begin{tikzpicture}[scale=1.0]
+       % \draw[help lines] (0,0) grid (11,4);
+       
+       \node[input_graph_node] (w1) at (0.0, 3.0) {$w_1$};
+       \node[input_graph_node] (w2) at (0.0, 1.0) {$w_2$};
+   
+       \node[general_graph_node] (u1) at (3.0, 3.0) {$()^2$};
+       \node[general_graph_node] (u2) at (3.0, 1.0) {$()^2$};
+   
+       \node[general_graph_node] (u3) at (7.8, 2.0) {$+$};
+   
+       \drawgraphlinebigarrow (w1.east) 
+       to 
+       node[above,midway]
+       {\scriptsize $w_1$}
+       (u1.west) ;
+   
+       \drawgraphlinebigarrow (w2.east) 
+       to 
+       node[above,midway]
+       {\scriptsize $w_2$}
+       (u2.west) ;
+   
+       \drawgraphlinebigarrow (u1.east) 
+       to[bend left =20] 
+       node[above,midway,xshift=-0.3cm,yshift=0cm] 
+       {\scriptsize $u_1=w_1^2$}
+       (u3.north west) ;
+   
+       \drawgraphlinebigarrow (u2.east) 
+       to[bend right=20] 
+       node[above,midway,xshift=-0.3cm,yshift=0cm] 
+       {\scriptsize $u_2=w_2^2$}
+       (u3.south west) ;
+   
+       \drawinvisiblegraphline (u3.east) 
+       to 
+       node[above,midway,xshift=0.2cm] 
+       {\scriptsize \color{black} $u_3=u_1+u_2$} 
+       (10.5,2.0);
+   
+     \end{tikzpicture}
+  \end{center}
+   
+\end{frame}
+   

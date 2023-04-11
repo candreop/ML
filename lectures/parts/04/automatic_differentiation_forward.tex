@@ -1,0 +1,40 @@
+%
+% Forward Mode of Automatic Differentiation
+%
+
+\begin{frame}[t]{Forward Mode of Automatic Differentiation} 
+
+  A decomposition of a function $\vect{f}$ 
+  into a \gls{computation graph},
+  also allows us to break down the action of the 
+  \index{Jacobian matrix}\gls{Jacobian matrix} $\vect{J}_{f}$.\\
+  \vspace{0.2cm}
+    
+  The action of $\vect{J}_{f}$
+  can be {\bf evaluated sequentially} 
+  using Eq.~\ref{eq:ad_jacobian_composite_function_2}.\\
+  \vspace{0.2cm}
+
+  Given a vector $\vect{u}_0$, an iteration of forward \gls{ad}
+  numerically evaluates $\vect{J_f} \cdot \vect{u}_0$:\\    
+  \vspace{-0.4cm}
+  \begin{equation}
+    \begin{split}
+      \vect{J_f} \cdot \vect{u}_0 
+      & = J_{f_{\ell}} \cdot J_{f_{\ell-1}} \cdot ... \cdot J_{f_2} \cdot J_{f_1} \cdot u_0 \\
+      & = J_{f_{\ell}} \cdot J_{f_{\ell-1}} \cdot ... \cdot J_{f_2} \cdot u_1 \\
+      & = J_{f_{\ell}} \cdot J_{f_{\ell-1}} \cdot ... \cdot u_2 \\
+      & = ... \\
+      & = J_{f_{\ell}} \cdot u_{\ell-1}  \\
+      & = u_{\ell}  \\
+    \end{split}
+  \end{equation}
+    
+  where the vectors $\vect{u_k}$ satisfy the recursive relationship:\\
+  \vspace{-0.3cm}
+  \begin{equation}
+    u_k = J_k u_{k-1} %\textrm{, for } k=1,...,\ell
+  \end{equation}
+    
+\end{frame}
+  

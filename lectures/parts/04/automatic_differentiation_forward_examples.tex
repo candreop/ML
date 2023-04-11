@@ -1,0 +1,180 @@
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{
+    Example / Forward Mode of Automatic Differentiation -} 
+   
+  \vspace{-0.2cm}
+  We have studied the computation graph of the function 
+  $f: \mathbb{R} \rightarrow \mathbb{R}$ given 
+  in Eq.~\ref{eq:computational_graph_example_function_1}.
+  We will use that graph to evaluate the derivative $df/dw$.\\
+   
+  % Show the computation graph again and highlight derivatives at each node
+  %
+   
+  \begin{center}
+    \begin{tikzpicture}[scale=0.90]
+   
+       %\draw[help lines] (0,0) grid (11,6);
+       
+       \node[input_graph_node]   (w)  at (0.0, 5.0) {$w$};
+       \node[general_graph_node] (u1) at (2.6, 5.0) {$()^2$};
+       \node[general_graph_node] (u2) at (2.6, 3.0) {$ln$};
+       \node[general_graph_node] (u3) at (2.6, 1.0) {\small $tanh$};
+       \node[general_graph_node] (u4) at (6.1, 4.0) {$\times$};
+       \node[general_graph_node] (u5) at (7.6, 2.0) {$+$};
+   
+       \drawgraphlinebigarrow (w.east)       
+          to node[above, midway]
+          {\small \color{black} $w$, 
+            \color{red} $\displaystyle \frac{dw}{dw}$}(u1.west) ;
+       \drawgraphlinebigarrow (w.south east) 
+          to[bend right] node[left]
+          {}(u2.west) ;
+       \drawgraphlinebigarrow (w.south)      
+         to[bend right=40] node[left]
+         {}(u3.west) ;
+   
+       \drawgraphlinebigarrow (u1.east)       
+         to[bend left =10] node[above,midway,xshift=-0.3cm,yshift=0.2cm]
+         {\small \color{black} $u_1=w^2$, 
+           \color{red} $\displaystyle \frac{du_1}{dw}$}
+         (u4.north west) ;
+       \drawgraphlinebigarrow (u2.east)       
+         to[bend right=10] node[below,midway,xshift=-0.1cm,yshift=-0.2cm]
+         {\small \color{black} $u_2=ln(w)$,
+           \color{red} $\displaystyle \frac{du_2}{dw}$}
+         (u4.south west) ;
+       \drawgraphlinebigarrow (u3.east) 
+         to[looseness=1,bend right=15] node[below,midway,xshift=-0.7cm,yshift=-0.1cm]
+         {\small \color{black} $u_3=tanh(w)$,
+           \color{red} $\displaystyle \frac{du_3}{dw}$}
+         (u5.south west) ;
+   
+       \drawgraphlinebigarrow (u4.east) 
+         to[bend left=10] 
+         node[above,midway,xshift=0.7cm,yshift=0.4cm]
+         {\small \color{black} $u_4=u_1 u_2$,
+           \color{red} $\displaystyle \frac{du_4}{dw}$}
+         (u5.north) ;
+   
+       \drawinvisiblegraphline (u5.east) 
+         to 
+         node[above,midway,xshift=0.0cm] 
+         {\small \color{black} $u_5=u_3+u_4$,
+           \color{red} $\displaystyle \frac{du_5}{dw}$} 
+         (11,2);
+   
+    \end{tikzpicture}
+  \end{center}
+   
+  \framebreak
+   
+  % List the derivatives of u1,...,u5
+  %
+   
+  \vspace{-0.1cm}
+   
+  \begin{equation}
+    \frac{d u_1}{d w} =  
+    \frac{d}{dw} \Big(w^2\Big) = 2w
+  \end{equation}
+   
+  \vspace{-0.1cm}
+   
+  \begin{equation}
+    \frac{du_2}{dw} =  
+    \frac{d}{dw} \Big( ln(w) \Big) = \frac{1}{w}
+  \end{equation}
+   
+  \vspace{-0.1cm}
+   
+  \begin{equation}
+    \frac{du_3}{dw} =  
+    \frac{d}{dw} \Big( tanh(w) \Big) = 1-tanh^2(w)
+  \end{equation}
+   
+  \vspace{-0.1cm}
+   
+  \begin{equation}
+    \frac{du_4}{dw} =  
+      \frac{d}{dw} \Big( u_1 u_2 \Big) = 
+      2w ln(w) + w
+  \end{equation}
+   
+  \vspace{-0.3cm}
+   
+  \begin{equation}
+    \frac{du_5}{dw} =  
+      \frac{d}{dw} \Big( u_3 + u_4 \Big) = 
+      \frac{du_3}{dw} + \frac{du_4}{dw} =
+      1-tanh^2(w) + 2w ln(w) + w
+  \end{equation}
+   
+  \framebreak
+   
+  \begin{center}
+    \begin{tikzpicture}
+   
+       %\draw[help lines] (0,0) grid (11,6);
+       
+       \node[input_graph_node]   (w)  at (0.0, 5.0) {$w$};
+       \node[general_graph_node] (u1) at (2.6, 5.0) {$()^2$};
+       \node[general_graph_node] (u2) at (2.6, 3.0) {$ln$};
+       \node[general_graph_node] (u3) at (2.6, 1.0) {\small $tanh$};
+       \node[general_graph_node] (u4) at (6.1, 4.0) {$\times$};
+       \node[general_graph_node] (u5) at (7.6, 2.0) {$+$};
+   
+       \drawgraphlinebigarrow (w.east)       
+          to node[above, midway]
+          {\small $\color{black} w, 
+           \color{red} \cancelto{1}{\displaystyle \frac{dw}{dw}}$}(u1.west) ;
+       \drawgraphlinebigarrow (w.south east) 
+          to[bend right] node[left]
+          {}(u2.west) ;
+       \drawgraphlinebigarrow (w.south)      
+         to[bend right=40] node[left]
+         {}(u3.west) ;
+   
+       \drawgraphlinebigarrow (u1.east)       
+         to[bend left =10] node[above,midway,xshift=0.4cm]
+         {\small $\color{black} u_1=w^2, 
+           \color{red} \displaystyle \frac{du_1}{dw}=2w$}
+         (u4.north west) ;
+       \drawgraphlinebigarrow (u2.east)       
+         to[bend right=10] node[below,midway,xshift=0.4cm]
+         {\small $\color{black} u_2=ln(w), 
+           \color{red} \displaystyle \frac{du_2}{dw}=\frac{1}{w}$}
+         (u4.south west) ;
+   
+       \drawgraphlinebigarrow (u3.east) 
+         to[looseness=1,bend right=15] node[below,midway,xshift=0.6cm]
+         {\small $\color{black} u_3=tanh(w), 
+           \color{red} \displaystyle \frac{du_3}{dw}=1-tanh^2(w)$}
+         (u5.south west) ;
+   
+       \drawgraphlinebigarrow (u4.east) 
+         to[bend left=10] 
+         node[above,midway,xshift=0.9cm,yshift=1cm]
+         {\small \color{black} $u_4=u_1 u_2$}
+         node[below,midway,xshift=1.8cm,yshift=1cm]
+         {\small \color{red} 
+           $\displaystyle \frac{du_4}{dw}=\frac{du_1}{dw}u_2+u_1\frac{du_2}{dw}$}
+         (u5.north) ;
+   
+       \drawinvisiblegraphline (u5.east) 
+         to 
+         node[above,midway,xshift=0.0cm] 
+         {\small \color{black} $u_5=u_3+u_4$} 
+         node[below,midway,xshift=0.0cm] 
+         {\small \color{red} 
+           $\displaystyle \frac{du_5}{dw}=\frac{du_3}{dw}+\frac{du_4}{dw}$} 
+         (11,2);
+   
+     \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+   

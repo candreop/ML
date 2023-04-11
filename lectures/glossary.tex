@@ -2,6 +2,23 @@
 % Glossary entries with associated acronym entry
 %
 
+% AD
+\newglossaryentry{adg}{
+  name={automatic differentiation},
+  description={
+    A technique to evaluate the derivative of a function specified by a \gls{computation graph},
+    which is easily programmable, efficient and numerically stable.
+    See also \gls{algorithmic differentiation} and \gls{computational differentiation}.
+  }
+}
+\newglossaryentry{ad}{
+  type=\acronymtype,
+  name={AD},
+  description={Automatic Differentiation},
+  first={Automatic Differentiation (AD)\glsadd{adg}},
+  see=[Glossary:]{adg}
+}
+
 % AI
 \newglossaryentry{aig}{
   name={artificial intelligence},
@@ -15,6 +32,26 @@
   description={Artificial Intelligence},
   first={Artificial Intelligence (AI)\glsadd{aig}},
   see=[Glossary:]{aig}
+}
+
+% CIFAR
+\newglossaryentry{cifarg}{
+  name={CIFAR},
+  description={
+    Canadian Institute For Advanced Research. 
+    Its Neural Computation & Adaptive Perception program brought together 
+    computer scientists, neuroscientists, biologists, physicists, and others,
+    and is credited with major advances in \gls{ML}.
+    Many datasets commonly used to train \gls{ML} algorithms are named after CIFAR.
+    See \gls{CIFAR-10}, \gls{CIFAR-100}
+  }
+}
+\newglossaryentry{cifar}{
+  type=\acronymtype,
+  name={CIFAR},
+  description={Canadian Institute For Advanced Research},
+  first={Canadian Institute For Advanced Research (CIFAR)\glsadd{cifarg}},
+  see=[Glossary:]{cifarg}
 }
 
 % CNN
@@ -33,11 +70,83 @@
   see=[Glossary:]{cnng}
 }
 
-% ML
-\newacronym {ml} {ML} {Machine Learning}
-
 % DL
-\newacronym {dl} {DL} {Deep Learning}
+\newglossaryentry{dlg}{
+  name={deep learning},
+  description={
+  }
+}
+\newglossaryentry{dl}{
+  type=\acronymtype,
+  name={DL},
+  description={Deep Learning},
+  first={Deep Learning (DL)\glsadd{dlg}},
+  see=[Glossary:]{dlg}
+}
+
+% % VGG
+% \newglossaryentry{vggg}{
+%   name={Visual Geometry Group},
+%   description={
+%     A research group in Oxford.
+%   }
+% }
+% \newglossaryentry{vgg}{
+%   type=\acronymtype,
+%   name={VGG},
+%   description={Visual Geometry Group},
+%   first={Visual Geometry Group (VGG)\glsadd{vggg}},
+%   see=[Glossary:]{vggg}
+% }
+
+% ILSVRC
+\newglossaryentry{ilsvrcg}{
+  name={ILSVRC},
+  description={
+    An annual competition in the field of computer vision.
+    See also \gls{ImageNet}
+  }
+}
+\newglossaryentry{ilsvrc}{
+  type=\acronymtype,
+  name={ILSVRC},
+  description={ImageNet Large Scale Visual Recognition Challenge},
+  first={ImageNet Large Scale Visual Recognition Challenge (ILSVRC)\glsadd{ilsvrcg}},
+  see=[Glossary:]{ilsvrcg}
+}
+
+% ML
+\newglossaryentry{mlg}{
+  name={machine learning},
+  description={
+  }
+}
+\newglossaryentry{ml}{
+  type=\acronymtype,
+  name={ML},
+  description={Machine Learning},
+  first={Machine Learning (ML)\glsadd{mlg}},
+  see=[Glossary:]{mlg}
+}
+
+% ReLU
+\newglossaryentry{relug}{
+  name={rectified linear unit},
+  plural={rectified linear units},
+  description={
+    A type of simple and piecewise linear \gls{activation function} 
+    (0 for negative values of its argument, x, and equal to x otherwise) that,
+    nevertheless, introduces the property of non-linearity to a \gls{dlg} model.
+  }
+}
+\newglossaryentry{relu}{
+  type=\acronymtype,
+  name={ReLU},
+  description={Rectified Linear Unit},
+  first={Rectified Linear Unit (ReLU)\glsadd{relug}},
+  plural={ReLUs},
+  see=[Glossary:]{relug}
+}
 
 % SVM
 \newglossaryentry{svmg}{
@@ -55,22 +164,6 @@
   see=[Glossary:]{svmg}
 }
 
-% ILSVRC
-\newglossaryentry{ilsvrcg}{
-  name={support vector machine},
-  plural={support vector machines},
-  description={
-    An annual competition in the field of computer vision.
-    See also \gls{ImageNet}
-  }
-}
-\newglossaryentry{ilsvrc}{
-  type=\acronymtype,
-  name={ILSVRC},
-  description={ImageNet Large Scale Visual Recognition Challenge},
-  first={ImageNet Large Scale Visual Recognition Challenge (ILSVRC)\glsadd{ilsvrcg}},
-  see=[Glossary:]{ilsvrcg}
-}
 
 %
 % Glossary entries without associated acronym entry
@@ -82,15 +175,31 @@
   }
 }
 
-\newglossaryentry{AlexNet}{
-  name={AlexNet},
+\newglossaryentry{activation function}{
+  name=activation function,
   description={
   }
 }
 
-\newglossaryentry{activation function}{
-  name=activation function,
+\newglossaryentry{activation map}{
+  name={activation map},
   description={
+    Also known as \gls{feature map}
+  }
+}
+
+\newglossaryentry{AlexNet}{
+  name={AlexNet},
+  description={
+    A \glspl{cnn} architecture.
+    Winner of \gls{ilsvrc} for 2012
+  }
+}
+
+\newglossaryentry{algorithmic differentiation}{
+  name={algorithmic differentiation},
+  description={
+    Another term for \gls{adg}
   }
 }
 
@@ -99,7 +208,25 @@
   plural={cell-planes},
   description={
     A group of cells within a layer of 
-    \gls{neuron}-like S-cells or C-cells in a \gls{neocognitron}.
+    \gls{neuron}-like S-cells or C-cells in a \gls{neocognitron}
+  }
+}
+
+\newglossaryentry{CIFAR-10}{
+  name={CIFAR-10},
+  description={
+    A labelled collection of 60k 32x32 colour images
+    assembled by \gls{Krizhevsky}, \gls{Nair}, and \gls{Hinton}
+    It includes 6k images for each of 10 distinct classes
+    (airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks)
+  }
+}
+
+\newglossaryentry{CIFAR-100}{
+  name={CIFAR-100},
+  description={
+    A labelled collection of 60k 32x32 colour images similar to \gls{CIFAR-10}.
+    It includes 600 images for each of 100 distinct classes.
   }
 }
 
@@ -109,8 +236,28 @@
   }
 }
 
+\newglossaryentry{computational differentiation}{
+  name={computational differentiation},
+  description={
+    Another term for \gls{adg}.
+  }
+}
+
+\newglossaryentry{computation graph}{
+  name={computation graph},
+  description={
+  }
+}
+
 \newglossaryentry{convolution}{
   name={convolution},
+  description={
+  }
+}
+
+\newglossaryentry{convolutional layer}{
+  name={convolutional layer},
+  plural={convolutional layers},
   description={
   }
 }
@@ -147,16 +294,51 @@
   }
 }
 
+\newglossaryentry{feature map}{
+  name={feature map},
+  description={
+    Also known as \gls{activation map}
+  }
+}
+
+\newglossaryentry{feed forward}{
+  name={feed forward},
+  hyphenated={feed-forward},
+  description={
+  }
+}
+
+\newglossaryentry{filter}{
+  name={filter},
+  plural={filters},
+  description={
+    See also \gls{kernel}
+  }
+}
+
+\newglossaryentry{Jacobian matrix}{
+  name={Jacobian matrix},
+  description={
+    The Jacobian matrix $J$ of a function $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$,
+    is a $m \times n$ matrix of all its first order derivatives
+  }
+}
+
 \newglossaryentry{Inception}{
   name={Inception},
   description={
+    A \glspl{cnn} architecture.
+    Its v1 was the winner of \gls{ilsvrc} for 2014.
+    Also known as \gls{GoogLeNet}
   }
 }
 
 \newglossaryentry{GoogLeNet}{
   name={GoogLeNet},
   description={
-    Also known as \gls{Inception}
+    A \glspl{cnn} architecture.
+    Winner of \gls{ilsvrc} for 2014.
+    Also known as \gls{Inception} (v1)
   }
 }
 
@@ -177,7 +359,15 @@
   name={ImageNet},
   description={
     A database with more than 14 million hand-annotated images
-    containing more than 20,000 distinct object categories.
+    containing more than 20,000 distinct object categories
+  }
+}
+
+\newglossaryentry{kernel}{
+  name={kernel},
+  plural={kernels},
+  description={
+    See also \gls{filter}.
   }
 }
 
@@ -191,7 +381,6 @@
   name={linear model},
   plural={linear models},
   description={
-    Define a linear model
   }
 }
 
@@ -204,7 +393,7 @@
 \newglossaryentry{LeNet-5}{
   name={LeNet-5},
   description={
-    One of the first convolutional network architectures.
+    The first convolutional network architecture.
   }
 }
 
@@ -240,6 +429,12 @@
   }
 }
 
+\newglossaryentry{padding}{
+  name={padding},
+  description={
+  }
+}
+
 \newglossaryentry{perceptron}{
   name=perceptron,
   description={
@@ -250,6 +445,12 @@
 
 \newglossaryentry{perceptron criterion}{
   name={perceptron criterion},
+  description={
+  }
+}
+
+\newglossaryentry{pooling}{
+  name={pooling},
   description={
   }
 }
@@ -289,13 +490,15 @@
 \newglossaryentry{regression}{
   name={regression},
   description={
-    A technique that relates a dependent variable to one or more independent variables.
+    A technique that relates a dependent variable to one or more independent variables
   }
 }
 
 \newglossaryentry{ResNet}{
   name={ResNet},
   description={
+    A \glspl{cnn} architecture.
+    Winner of \gls{ilsvrc} for 2015.
   }
 }
 
@@ -308,6 +511,12 @@
 
 \newglossaryentry{stochastic}{
   name={stochastic},
+  description={
+  }
+}
+
+\newglossaryentry{stride}{
+  name={stride},
   description={
   }
 }
@@ -328,6 +537,7 @@
 \newglossaryentry{VGG}{
   name={VGG},
   description={
+    A \glspl{cnn} architecture. A close second of \gls{ilsvrc} for 2013.
   }
 }
 
@@ -335,13 +545,15 @@
   name={lateral geniculate nucleus},
   description={
    A structure in the thalamus of the mammalian brain and a key element 
-   of the visual pathway. It connects the thalamus with the optic nerve.
+   of the visual pathway. It connects the thalamus with the optic nerve
   }
 }
 
 \newglossaryentry{ZFNet}{
   name={ZFNet},
   description={
+    A \glspl{cnn} architecture.
+    Winner of \gls{ilsvrc} for 2013.
   }
 }
 
@@ -349,14 +561,30 @@
 % Notable people
 %
 
+\newglossaryentry{Bengio}{
+  type=people,
+  name={Y.Bengio},
+  sort={Bengio, Yoshua},
+  description={
+  }
+}
+
 \newglossaryentry{Fukushima}{
   type=people,
   name={K.Fukushima},
   sort={Fukushima, Kunihiko},
   description={
     Japanese computer scientist who developed the \gls{neocognitron} 
-    inspired by the biological \gls{primary virtual cortex} studies of
-    \gls{Hubel} and \gls{Wiesel}.
+    inspired by the biological \gls{primary visual cortex} studies of
+    \gls{Hubel} and \gls{Wiesel}
+  }
+}
+
+\newglossaryentry{Hinton}{
+  type=people,
+  name={G.Hinton},
+  sort={Hinton, Geoffrey},
+  description={
   }
 }
 
@@ -364,6 +592,30 @@
   type=people,
   name={D.Hubel},
   sort={Hubel, David},
+  description={
+  }
+}
+
+\newglossaryentry{Krizhevsky}{
+  type=people,
+  name={A.Krizhevsky},
+  sort={Krizhevsky, Alex},
+  description={
+  }
+}
+
+\newglossaryentry{LeCun}{
+  type=people,
+  name={Y.LeCun},
+  sort={LeCun, Yann},
+  description={
+  }
+}
+
+\newglossaryentry{Nair}{
+  type=people,
+  name={V.Nair},
+  sort={Nair, Vinod},
   description={
   }
 }

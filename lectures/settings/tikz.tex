@@ -1,0 +1,35 @@
+
+\usepackage{tikz}
+\usetikzlibrary{graphs}
+\usetikzlibrary{arrows.meta,arrows}
+
+%
+% Commands and styles used for depicting computation graphs
+%
+
+\newcommand{\drawinvisiblegraphline}{
+    \draw [color=white]}
+
+\newcommand{\drawgraphlinebigarrow}{
+    \draw [-{Stealth[length=2mm,width=2mm]}]}
+
+\newcommand{\drawgraphdashedlinebigarrow}{
+    \draw [-{Stealth[length=2mm,width=2mm]},dashed]}
+
+\tikzstyle{general_graph_node}=[
+    circle,
+    minimum size = 1.1cm,
+    draw=black,
+    thick,
+    fill=orange,
+    text=black
+]
+
+\tikzstyle{input_graph_node}=[
+    circle,
+    minimum size = 0.9cm,
+    draw=black,
+    thick,
+    fill=lightgray,
+    text=black
+]
