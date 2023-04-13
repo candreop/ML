@@ -1,0 +1,59 @@
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{Linear models cannot learn XOR -} 
+
+    We can choose a linear form for the model $f(\mathbf{x};\mathbf{\theta})$,
+    where the parameter set $\mathbf{\theta}$ consists 
+    of a set of weights $\mathbf{w}$ and a bias $b$.        
+
+    \begin{columns}[t]
+        \begin{column}{0.50\textwidth}
+            \vspace{-0.6cm}
+            \begin{center}
+                \begin{tikzpicture}[scale=1]
+                  %\draw[help lines] (0,0) grid (6,3.7);
+                  \node[ann_processing_node] (o)  at (3.0, 1.5) {$\sum$};
+                  \node[ann_input_node]      (x1) at (0.0, 3.0) {$x_1$};
+                  \node[ann_input_node]      (x2) at (0.0, 1.5) {$x_2$};
+                  \node[ann_bias_node]       (b)  at (1.0, 0.0) {$+1$};
+              
+                  \drawgraphlinebigarrow (x1.east) 
+                  to node[above, midway] 
+                  {\small $w_1$}(o.north west) ;
+              
+                  \drawgraphlinebigarrow (x2.east) 
+                  to node[above, midway] 
+                  {\small $w_2$}(o.west) ;
+              
+                  \drawgraphlinebigarrow (b.east) 
+                  to node[above, midway] 
+                  {\small $b$}(o.south west) ;
+              
+                  \drawgraphlinebigarrow (o.east) 
+                  to node[above,midway] 
+                  {\small \color{black} $f(\mathbf{x};\mathbf{w},b)$} (6.0,1.5);              
+                \end{tikzpicture}
+            \end{center}        
+        \end{column}
+        \begin{column}{0.50\textwidth}
+            \begin{equation}
+                f(\mathbf{x};\mathbf{w},b) = \mathbf{x}^{T} \mathbf{w} + b
+                \label{eq:learn_xor_model_1}
+            \end{equation}
+        \end{column}
+    \end{columns}
+      
+    In principle, the loss function of Eq.~\ref{eq:learn_xor_loss_function_1} 
+    could be minimised using some of the techniques we started 
+    to develop in Part \prevpart.\\
+    
+    Owing to the simplicity of the problem, 
+    it is possible to obtain a solution in closed form.
+
+    \framebreak
+
+    {\color{red}Show solution}
+
+\end{frame}

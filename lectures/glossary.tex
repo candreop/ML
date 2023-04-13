@@ -129,6 +129,21 @@
   see=[Glossary:]{mlg}
 }
 
+% % MNIST
+% \newglossaryentry{mnistg}{
+%   name={MNIST},
+%   description={
+%   }
+% }
+% \newglossaryentry{mnist}{
+%   type=\acronymtype,
+%   name={MNIST},
+%   description={Modified National Institute of Standards and Technology},
+%   first={Modified National Institute of Standards and Technology (MNIST)\glsadd{mnistg}},
+%   see=[Glossary:]{mnistg}
+% }
+
+
 % ReLU
 \newglossaryentry{relug}{
   name={rectified linear unit},
@@ -148,6 +163,22 @@
   see=[Glossary:]{relug}
 }
 
+% SNARC
+\newglossaryentry{snarcg}{
+  name={SNARC},
+  description={
+    Stochastic Neural Analog Reinforcement Calculator. 
+    The first neural net machine built by \gls{Minsky} and \gls{Edmonds}
+  }
+}
+\newglossaryentry{snarc}{
+  type=\acronymtype,
+  name={SNARC},
+  description={Stochastic Neural Analog Reinforcement Calculator},
+  first={Stochastic Neural Analog Reinforcement Calculator (SNARC)\glsadd{snarcg}},
+  see=[Glossary:]{snarcg}
+}
+
 % SVM
 \newglossaryentry{svmg}{
   name={support vector machine},
@@ -164,6 +195,17 @@
   see=[Glossary:]{svmg}
 }
 
+%
+% Acronyms without associated glossary entry
+%
+
+% MSE
+\newglossaryentry{mse}{
+  type=\acronymtype,
+  name={MSE},
+  description={Mean Squared Error},
+  first={Mean Squared Error (MSE)}
+}
 
 %
 % Glossary entries without associated acronym entry
@@ -200,6 +242,14 @@
   name={algorithmic differentiation},
   description={
     Another term for \gls{adg}
+  }
+}
+
+\newglossaryentry{back propagation}{
+  name={back propagation},
+  hyphenated={back-propagation},
+  description={
+    Another term for the Reverse Mode of \gls{ad}
   }
 }
 
@@ -397,6 +447,12 @@
   }
 }
 
+\newglossaryentry{mean square error loss function}{
+  name={\gls{mse} loss function},
+  description={
+  }
+}
+
 \newglossaryentry{McCulloch-Pitts neuron}{
   name=McCulloch-Pitts neuron,
   description={
@@ -569,6 +625,14 @@
   }
 }
 
+\newglossaryentry{Edmonds}{
+  type=people,
+  name={D.Edmonds},
+  sort={Edmonds, Dean},
+  description={
+  }
+}
+
 \newglossaryentry{Fukushima}{
   type=people,
   name={K.Fukushima},
@@ -612,10 +676,34 @@
   }
 }
 
+\newglossaryentry{McCulloch}{
+  type=people,
+  name={W.McCulloch},
+  sort={McCulloch, Warren},
+  description={
+  }
+}
+
+\newglossaryentry{Minsky}{
+  type=people,
+  name={M.Minsky},
+  sort={Minsky, Marvin},
+  description={
+  }
+}
+
 \newglossaryentry{Nair}{
   type=people,
   name={V.Nair},
   sort={Nair, Vinod},
+  description={
+  }
+}
+
+\newglossaryentry{Pitts}{
+  type=people,
+  name={W.Pitts},
+  sort={Pitts, Walter},
   description={
   }
 }
@@ -625,9 +713,29 @@
   name={F.Rosenblatt},
   sort={Rosenblatt, Frank},
   description={
-    American psychologist known in the field of Artificial Intelligence. 
-    Sometimes called the father of Deep Learning.
+    American psychologist known in the field of \gls{ai}. 
+    Sometimes called the father of \gls{dl}.
     Built a hardware implementation of the perceptron
+  }
+}
+
+\newglossaryentry{Rumelhart}{
+  type=people,
+  name={D.E.Rumelhart},
+  sort={Rumelhart, David Everett},
+  description={
+    American psychologist known for several contributions in the
+    field of mathematical psychology and \gls{ai}.
+    Together with \gls{Hinton} and \gls{Williams},
+    he published a highly influential paper on \gls{back propagation}
+  }
+}
+
+\newglossaryentry{Turing}{
+  type=people,
+  name={A.M.Turing},
+  sort={Turing, Alan},
+  description={
   }
 }
 
@@ -639,4 +747,11 @@
   }
 }
 
+\newglossaryentry{Williams}{
+  type=people,
+  name={R.J.Williams},
+  sort={Williams, Ronald J.},
+  description={
+  }
+}
 

@@ -1,0 +1,76 @@
+%
+% Learning the XOR function
+%
+
+\begin{frame}[t,allowframebreaks]{Learning the XOR function -} 
+
+    The XOR (exclusive or, or exclusive disjunction) function
+    is an operation on two variables that take binary values (0,1).\\
+    \vspace{0.2cm}
+
+    \begin{columns}[t]
+        \begin{column}{0.32\textwidth}
+            \vspace{-1.1cm}
+            \begin{center}
+                \begin{tabular}{ c c | c }
+                 $x_1$ & $x_2$ & $y = x_1 \oplus x_2$ \\ 
+                 \hline
+                 0 & 0 & 0 \\  
+                 0 & 1 & 1 \\   
+                 1 & 0 & 1 \\  
+                 1 & 1 & 0 \\   
+                \end{tabular}
+                %\label{tab:xor_truth}
+            \end{center}
+        \end{column}
+        \begin{column}{0.68\textwidth}
+            Let $x_1$, $x_2$ be the two input binary values
+            and $y$ be the output of the operation, denoted as $x_1 \oplus x_2$.\\
+            \vspace{0.2cm}
+            $y$ is 1 only if exactly one of $x_1$, $x_2$ is 1.\\ 
+            \vspace{0.2cm}
+            The full truth table is given on the left.\\
+        \end{column}
+    \end{columns}
+
+    \vspace{0.3cm}
+
+    We would like to construct a model 
+    $f(\mathbf{x};\mathbf{\theta}):\{0,1\}^2\rightarrow\{0,1\}$ 
+    that {\bf learns the XOR function} 
+    by adjusting the parameters in $\mathbf{\theta}$.
+    \begin{itemize}
+        \item 
+        This function is defined only for 
+        4 points $\mathbf{x}=(x_1,x_2)^T$.
+        \begin{itemize}
+         \item 
+         $\mathbf{x} \in \mathbb{X} 
+          = \{(0,0)^T, (0,1)^T, (1,0)^T, (1,1)^T\}$.
+        \end{itemize}
+        \item 
+        The training set $\mathbb{D}$ contains 
+        4 training examples $(\mathbf{x},y)$,
+        constructed from $\mathbf{x} \in \mathbb{X}$ 
+        and the truth table given above.
+    \end{itemize}
+
+\framebreak
+
+    We can treat this as a regression problem, and use a 
+    \gls{mean square error loss function}:
+    \begin{equation}
+        \mathcal{L}(\mathbf{\theta}) =  
+        \frac{1}{4} 
+        \sum_{(\mathbf{x},y) \in \mathbb{D}} 
+        (y - f(\mathbf{x};\mathbf{\theta}))^2
+        \label{eq:learn_xor_loss_function_1}
+    \end{equation}
+    This is not an ideal choice for binary data,
+    but it is a simple choice which is sufficient for our purposes.\\
+    \vspace{0.2cm}
+
+    What remains, is to specify the form of the model 
+    $f(\mathbf{x};\mathbf{\theta})$.
+
+\end{frame}

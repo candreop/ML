@@ -1,6 +1,8 @@
 
 \usepackage{tikz}
+
 \usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
 \usetikzlibrary{arrows.meta,arrows}
 
 %
@@ -15,6 +17,8 @@
 
 \newcommand{\drawgraphdashedlinebigarrow}{
     \draw [-{Stealth[length=2mm,width=2mm]},dashed]}
+
+% styles used for drawing computation graphs
 
 \tikzstyle{general_graph_node}=[
     circle,
@@ -31,5 +35,34 @@
     draw=black,
     thick,
     fill=lightgray,
+    text=black
+]
+
+% styles used for drawing neural nets
+
+\tikzstyle{ann_input_node}=[
+    circle,
+    minimum size = 0.9cm,
+    draw=black,
+    thick,
+    fill=white,
+    text=black
+]
+
+\tikzstyle{ann_bias_node}=[
+    rectangle,
+    minimum size = 0.7cm,
+    draw=black,
+    thick,
+    fill=white,
+    text=black
+]
+
+\tikzstyle{ann_processing_node}=[
+    circle,
+    minimum size = 1.2cm,
+    draw=black,
+    thick,
+    fill=white,
     text=black
 ]

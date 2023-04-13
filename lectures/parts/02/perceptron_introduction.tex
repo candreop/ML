@@ -69,7 +69,7 @@
     \end{itemize}
     The binary variable $y$ \underline{depends on} the feature variables $\vect{x}$.\\
     \vspace{0.4cm}
-    We may have a \index{training set}{\bf training set} $\mathcal{D}$ that 
+    We may have a \index{training set}{\bf training set} $\mathbb{D}$ that 
     consists of several ($\vect{x}$,$y$) examples.\\
     \begin{blockexample}{}
         \small
@@ -361,7 +361,7 @@
     uses the following gradient: 
     \begin{equation}
         \nabla_{\vect{w}} L = 
-          \sum_{(\vect{x},y) \in \mathcal{D}} 
+          \sum_{(\vect{x},y) \in \mathbb{D}} 
           (y - \hat{y}) \vect{x}
     \label{eq:percepton_smooth_gradient_1}  
     \end{equation}
@@ -396,9 +396,9 @@
     \index{regression}\gls{regression}:\\
     \begin{equation}
         L(\vect{w}) = 
-        \sum_{(\vect{x},y) \in \mathcal{D}} 
+        \sum_{(\vect{x},y) \in \mathbb{D}} 
         \Big(y - \hat{y}(\vect{x};\vect{w})\Big)^2 =
-        \sum_{(\vect{x},y) \in \mathcal{D}} 
+        \sum_{(\vect{x},y) \in \mathbb{D}} 
         \Bigg(y - sign\Big\{ \vect{w}^T \cdot \vect{x} \Big\}\Bigg)^2
         \label{eq:percepton_leastsquares_loss_1}  
     \end{equation}
@@ -485,7 +485,7 @@
     Weight updated can happen a small batch of examples:
     \begin{equation}
         \vect{w} \rightarrow \vect{w^\prime} = 
-          \vect{w} + \alpha \sum_{(\vect{x},y) \in \mathcal{S}} E(\vect{x}) \vect{x}
+          \vect{w} + \alpha \sum_{(\vect{x},y) \in \mathbb{S}} E(\vect{x}) \vect{x}
         \label{eq:percepton_weight_update_minibatch_1}
       \end{equation}
 
