@@ -18,6 +18,7 @@ part_07   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_07
 part_08   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_08
 part_09   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_09
 part_10   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_10
+part_11   : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}-part_11
 all       : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}
 dev       : NAME = ${MODULE}_${ACYEAR}-slides-${VERSION}
 
@@ -31,8 +32,9 @@ part_07   : tex_start add_part07 tex_end pdf
 part_08   : tex_start add_part08 tex_end pdf 
 part_09   : tex_start add_part09 tex_end pdf 
 part_10   : tex_start add_part10 tex_end pdf 
+part_11   : tex_start add_part11 tex_end pdf 
 
-all       : 	tex_start \
+all: 	tex_start \
 		add_front_matter \
 		add_module_info \
 		add_part01 \
@@ -45,11 +47,12 @@ all       : 	tex_start \
 		add_part08 \
 		add_part09 \
 		add_part10 \
+		add_part11 \
 		add_back_matter \
   		tex_end \
 		pdf	       
 
-dev      : 	tex_start \
+dev: 	tex_start \
 		add_front_matter \
 		add_part02 \
 		add_back_matter \
@@ -98,6 +101,8 @@ add_part09: FORCE
 	echo '\input{parts/09/main.tex}'  >> tmp.tex
 add_part10: FORCE
 	echo '\input{parts/10/main.tex}'  >> tmp.tex
+add_part11: FORCE
+	echo '\input{parts/11/main.tex}'  >> tmp.tex
 
 pdf: FORCE
 	pdflatex tmp.tex

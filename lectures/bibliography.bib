@@ -405,6 +405,41 @@ cat={C},
   doi = {10.1113/jphysiol.1962.sp006837}
 }
 
+% No CNN pooling
+@misc{Springenberg:2015pl,
+  author={Jost Tobias Springenberg and Alexey Dosovitskiy and Thomas Brox and Martin Riedmiller},
+  title={Striving for Simplicity: The All Convolutional Net}, 
+  year={2015},
+  eprint={1412.6806},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+
+% DCGAN (note: remove pooling)
+@misc{Radford:2016dcgan,
+  author={Alec Radford and Luke Metz and Soumith Chintala},
+  title={Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks}, 
+  year={2016},
+  eprint={1511.06434},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+%
+% Other articles
+%
+
+% reference for schematic showing the increased receptive field in deeper CNN layers
+@article{Lin:2017rf,
+author = {Lin, Haoning and Shi, Zhenwei and Zou, Zhengxia},
+year = {2017},
+month = {05},
+pages = {480},
+title = {Maritime Semantic Labeling of Optical Remote Sensing Images with Multi-Scale Fully Convolutional Network},
+volume = {9},
+journal = {Remote Sensing},
+doi = {10.3390/rs9050480}
+}
+
 %
 % Web pages
 %
@@ -503,11 +538,21 @@ cat={C},
 }
 
 % reference for schematic showing the workings of neocognitron
+% reference for schematic showing the LeNet-5 architecture
 @online{Medium:LeNet5andAlexNet,
   author = {},
   title = {The Convolutional Neural Network — Theory and Implementation of LeNet-5 and AlexNet},
   year = {},
   url = {https://medium.com/@zahraelhamraoui1997/the-convolutional-neural-network-theory-and-implementation-of-lenet-5-and-alexnet-5266e4577e96},  
+  urldate = {2023-04-05}
+}
+
+% reference for schematic showing low/mid/high level features for an image
+@online{Medium:FeatureMaps,
+  author = {Chris Kevin},
+  title = {Feature Maps},
+  year = {2018},
+  url = {https://medium.com/@chriskevin_80184/feature-maps-ee8e11a71f9e},  
   urldate = {2023-04-05}
 }
 
@@ -529,21 +574,47 @@ cat={C},
   urldate = {2023-04-04}
 }
 
-% reference for schematic showing calculation of a feature in a CNN
-@online{Kaggle:3DConvolutions,
-  author = {Shivam Bansal},
-  title = {3D Convolutions: Understanding and Use Case},
-  year = {2019},
-  url = {https://www.kaggle.com/code/shivamb/3d-convolutions-understanding-use-case/notebook},  
+% reference for CNN illustrations
+@online{TowardsDataScience:AppliedDL4,
+  author = {Arden Dertat},
+  title = {Applied Deep Learning - Part 4: Convolutional Neural Networks},
+  year = {2017},
+  url = {https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2},  
   urldate = {2023-04-06}
+}
+
+% reference for schematic showing the shrinking spatial extend and 
+% increasing depth of CNN layers
+@online{HuiBlog:CNNTutorial,
+  author = {Jonathan Hui},
+  title = {Convolutional neural networks (CNN) tutorial},
+  year = {2017},
+  url = {https://jhui.github.io/2017/03/16/CNN-Convolutional-neural-network/},  
+  urldate = {2023-04-12}
+}
+
+% reference for CNN pooling illustrations
+@online{PyImageSearch:CNNLayerTypes,
+  author = {Adrian Rosebrock},
+  title = {Convolutional Neural Networks (CNN) and Layer Types},
+  year = {2021},
+  url = {https://pyimagesearch.com/2021/05/14/convolutional-neural-networks-cnns-and-layer-types/},  
+  urldate = {2023-04-12}
 }
 
 % reference for photo showing the only surviving SNARC neuron
 @online{CyberneticZoo:1951MazeSolver,
-  author = {Shivam Bansal},
+  author = {},
   title = {1951 - SNARC maze solver},
   year = {2009},
   url = {https://cyberneticzoo.com/mazesolvers/1951-maze-solver-minsky-edmonds-american/},  
   urldate = {2023-04-12}
 }
 
+@online{Demo:ConvNetJSCIFAR10,
+  author = {Andrej Karpathy},
+  title = {ConvNetJS CIFAR-10 demo},
+  year = {2009},
+  url = {https://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html},  
+  urldate = {2023-04-12}
+}
