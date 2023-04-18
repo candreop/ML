@@ -10,7 +10,7 @@
 
     \begin{columns}[t]
         \begin{column}{0.32\textwidth}
-            \vspace{-1.1cm}
+            \vspace{-1.2cm}
             \begin{center}
                 \begin{tabular}{ c c | c }
                  $x_1$ & $x_2$ & $y = x_1 \oplus x_2$ \\ 
@@ -33,12 +33,12 @@
         \end{column}
     \end{columns}
 
-    \vspace{0.3cm}
-
+    \vspace{0.4cm}
     We would like to construct a model 
     $f(\mathbf{x};\mathbf{\theta}):\{0,1\}^2\rightarrow\{0,1\}$ 
     that {\bf learns the XOR function} 
-    by adjusting the parameters in $\mathbf{\theta}$.
+    by adjusting the parameters in $\mathbf{\theta}$.\\
+
     \begin{itemize}
         \item 
         This function is defined only for 
@@ -57,10 +57,17 @@
 
 \framebreak
 
+    Let $\hat{y}=f(\mathbf{x};\mathbf{\theta})$ be our prediction of $y$ for a 
+    given value of $\mathbf{x}=(x_1,x_2)$.\\
+    \vspace{0.3cm}
     We can treat this as a regression problem, and use a 
-    \gls{mean square error loss function}:
+    \index{mean squared error} \index{loss function}
+    \gls{mean squared error loss function}:
     \begin{equation}
         \mathcal{L}(\mathbf{\theta}) =  
+        \frac{1}{4} 
+        \sum_{(\mathbf{x},y) \in \mathbb{D}} 
+        (y - \hat{y})^2 =
         \frac{1}{4} 
         \sum_{(\mathbf{x},y) \in \mathbb{D}} 
         (y - f(\mathbf{x};\mathbf{\theta}))^2

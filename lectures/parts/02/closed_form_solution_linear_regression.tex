@@ -1,0 +1,294 @@
+%
+% Give a closed form solution for the problem of linear regression.
+%
+% We are going to use the final result later to demonstrate that a linear 
+% model can not learn the XOR function.
+%
+
+\begin{frame}[t,allowframebreaks]{Closed form solution for linear regression -} 
+
+    Consider a linear function 
+    $f: \mathbb{R}^{n} \rightarrow \mathbb{R}$,
+    which is mapping a vector $\mathbf{x}$ of 
+    $n$ real-valued components, $\mathbf{x}=(x_1,...x_{n})^T$,
+    to a real-valued output, $\hat{y}$:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        \hat{y} = f(\mathbf{x};\mathbf{w},b) = 
+        \mathbf{x}^{T} \mathbf{w} + b =
+        \sum_{j=1}^{n} x_j w_j + b 
+        \label{eq:linear_regression_closed_form_solution_model_1}
+    \end{equation}\\
+    \vspace{-0.1cm}
+    The weights $\mathbf{w}=(w_1,...w_{n})^T$ and bias $b$ are the 
+    parameters of the model.\\
+    \vspace{0.2cm}
+    As usual, we can write Eq.~\ref{eq:linear_regression_closed_form_solution_model_1}
+    in a more compact form, by
+    introducing a new fixed input variable $x_0$ and
+    considering the bias $b$ as the weight $w_0$ associated with $x_0$.
+    Thus, the linear model can be rewritten as:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        \hat{y} = f(\mathbf{x};\mathbf{w}) = 
+        \mathbf{x}^{T} \mathbf{w} =
+        \sum_{j=0}^{n} x_j w_j 
+        \label{eq:linear_regression_closed_form_solution_model_2}
+    \end{equation}\\
+    \vspace{-0.1cm}
+    where $\mathbf{x}=(x_0=+1, x_1,...x_{n})^T$ and $\mathbf{w}=(w_0=b, w_1,...w_{n})^T$.\\
+
+    \framebreak
+
+    The model shown in Eq.~\ref{eq:linear_regression_closed_form_solution_model_2}
+    will need to learn its parameters $\mathbf{w}$ using a training set $\mathbb{D}$
+    that includes several examples of $(\mathbf{x},y)$.\\
+    \vspace{0.2cm}
+
+    To quantify the model performance, we can use the
+    \index{mean squared error} \index{loss function}
+    \gls{mean squared error loss function}:
+    \begin{equation}
+        \mathcal{L}(\mathbf{w}) =  
+        \frac{1}{N} 
+        \sum_{(\mathbf{x},y) \in \mathbb{D}} 
+        (y - \hat{y})^2 
+        \label{eq:linear_regression_closed_form_solution_loss_1}
+    \end{equation}
+
+    If the training set $\mathbb{D}$ contains $N$ examples 
+    $(\mathbf{x}^{(i)},y^{(i)})$, $i \in [1,N]$,
+    Eq.~\ref{eq:linear_regression_closed_form_solution_loss_1}
+    can be written as:
+    \begin{equation}
+        \mathcal{L}(\mathbf{w}) =  
+        \frac{1}{N} 
+        \sum_{i=1}^{N} 
+        (y^{(i)} - \hat{y}^{(i)})^2 =
+        \frac{1}{N} 
+        \sum_{i=1}^{N} 
+        \Big(y^{(i)} - \sum_{j=0}^{n} x_j^{(i)} w_j\Big)^2
+        \label{eq:linear_regression_closed_form_solution_loss_2}
+    \end{equation}
+
+    \framebreak
+
+    If a set of parameters $\mathbf{w}=\mathbf{w}^\star$ 
+    is minimizing the \index{loss function}\gls{loss function} 
+    of Eq.~\ref{eq:linear_regression_closed_form_solution_loss_2}, 
+    then:
+    \begin{equation}
+        \frac{\partial \mathcal{L}(\mathbf{w})}{\partial w_k^\star} = 0
+        \label{eq:linear_regression_closed_form_solution_zero_derivative}
+    \end{equation}
+    for each $k \in [0,n]$.
+    Note that the converse is not true: 
+    If $\partial \mathcal{L}(\mathbf{w})/\partial w_k^\star$ is zero, then
+    $\mathbf{w}^\star$ could be either a minimum, a maximum or a saddle point.\\
+    \vspace{0.2cm}
+    The partial derivatives of $\mathcal{L}(\mathbf{w})$ are given by:
+    \begin{equation*}
+        \frac{\partial \mathcal{L}(\mathbf{w})}{\partial w_k} =
+        \frac{2}{N} 
+        \sum_{i=1}^{N} 
+        \Big(y^{(i)} - \sum_{j=0}^{n} x_j^{(i)} w_j\Big)\Big(-x_k^{(i)}\Big) \Rightarrow
+    \end{equation*}
+    \begin{equation}
+        \frac{\partial \mathcal{L}(\mathbf{w})}{\partial w_k} =
+        \frac{2}{N} 
+        \Big\{             
+        \sum_{i=1}^{N} \sum_{j=0}^{n} x_k^{(i)} x_j^{(i)} w_j -
+        \sum_{i=1}^{N} x_k^{(i)} y^{(i)}  
+        \Big\}
+        \label{eq:linear_regression_closed_form_solution_derivative_calculation}
+    \end{equation}
+
+    \framebreak
+
+    From Eqs.~\ref{eq:linear_regression_closed_form_solution_zero_derivative} and
+    \ref{eq:linear_regression_closed_form_solution_derivative_calculation}, 
+    we obtain:
+    \begin{equation}
+        \sum_{i=1}^{N} \sum_{j=0}^{n} x_k^{(i)} x_j^{(i)} w_j -
+        \sum_{i=1}^{N} x_k^{(i)} y^{(i)} = 0
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_1}
+    \end{equation}
+    which can be re-arranged as:
+    \begin{equation}
+        \sum_{j=0}^{n} \Big(\sum_{i=1}^{N} x_k^{(i)} x_j^{(i)} \Big) w_j = 
+        \sum_{i=1}^{N} x_k^{(i)} y^{(i)}  
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_2}
+    \end{equation}
+
+    Eq.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_2} 
+    describes a system of $n$+1 linear equations, one for each $k \in [0,n]$,
+    coupling $n$+1 real-valued variables $\mathbf{w}=(w_0=b, w_1,...w_{n})^T$.
+
+    \framebreak
+
+    This becomes more apparent, if we rewrite 
+    Eq.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_2} as:
+    \begin{equation}
+        \sum_{j=0}^{n} A_{kj} w_j = c_k
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_3}
+    \end{equation}\\
+    \vspace{-0.1cm}
+    where:\\
+    \vspace{-0.5cm}
+    \begin{equation}
+        A_{kj} = \sum_{i=1}^{N}  x_k^{(i)} x_j^{(i)}
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_A}
+    \end{equation}\\
+    \vspace{-0.3cm}
+    and:\\
+    \vspace{-0.3cm}
+    \begin{equation}
+        c_{k} = \sum_{i=1}^{N} y^{(i)} x_k^{(i)}
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_c}
+    \end{equation}
+
+    It is straightforward to solve that coupled system of linear equations.\\
+    \vspace{0.3cm}
+    There are several linear algebra libraries to allow you to solve that 
+    system in a computer (e.g. {\tt GSL} or {\tt NumPy}).\\
+
+    \framebreak
+
+    We are going to reformulate the previous expressions
+    (Eqs.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_3},
+    \ref{eq:linear_regression_closed_form_solution_coupled_equations_A},
+    \ref{eq:linear_regression_closed_form_solution_coupled_equations_c}) 
+    in terms of {\bf operations of matrices and vectors}.\\
+    \vspace{0.2cm}
+    In CS, \index{vectorization}\gls{vectorization}
+    (or \index{array programming}\gls{array programming}) 
+    refers to programming solutions that 
+    {\bf allow operations to an entire set of values at once}.\\
+
+    \begin{blockexample}{}
+        \small \tt
+        import numpy as np\\
+        \vspace{0.4cm}
+        A = np.random.rand(10,10)\\
+        B = A*A + 5.3*A + np.log10(A) + A*np.tanh(A)\\
+    \end{blockexample}  
+
+    Notice the absence of a {\em `for loop'} over the matrix elements.
+    Not only this produces more readable code, 
+    but it can be {\bf very efficient computationally}.
+    \begin{itemize}
+        \item Fundamentally, matrix multiplication is {\bf highly parallelizable}. 
+        \item \gls{ml} frameworks such as {\tt PyTorch} and {\tt TensorFlow} 
+              code can run vectorized code very efficiently on \glspl{gpu}.
+    \end{itemize}
+
+    \framebreak
+
+    The training set $\mathbb{D}$ contains $N$ examples 
+    $(\mathbf{x}^{(i)},y^{(i)})$, with $i \in [1,N]$,
+    where, for the $i^{th}$ example, 
+    $\mathbf{x}^{(i)}=(x_0^{(i)}=+1, x_1^{(i)},...x_{n}^{(i)})^T$.\\
+    \vspace{0.2cm}
+        
+    All the inputs $\mathbf{x}^{(i)}$ can be packed into a 2-D array $\vect{X}$,
+    where each example is a new row and, therefore, $X_{ij} = x_{j-1}^{(i)}$.
+    Similarly, all target values $y^{(i)}$ can be packed into a column vector 
+    with a new example in each row:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        \vect{X} =
+        \begin{pmatrix}
+            x_0^{(1)} &  x_1^{(1)} & ... & x_n^{(1)} \\
+            x_0^{(2)} &  x_1^{(2)} & ... & x_n^{(2)} \\
+            ...       &  ...       & ... & ...       \\
+            x_0^{(N)} &  x_1^{(N)} & ... & x_n^{(N)} \\
+        \end{pmatrix} 
+        \;\;\; \textrm{and} \;\;\;
+        \vect{y} =
+        \begin{pmatrix}
+            y^{(1)} \\
+            y^{(2)} \\
+            ...     \\
+            y^{(N)} \\
+        \end{pmatrix} 
+        \label{eq:linear_regression_closed_form_solution_matrix_inputs}
+    \end{equation}
+
+    Correspondingly, our linear model can produce the predictions $\hat{y}^{(i)}$ 
+    for all training instances $i \in [1,N]$, with a single matrix operation:\\
+    \vspace{-0.3cm}
+    \begin{equation}
+        \vect{\hat{y}} = \vect{X}{\vect{w}}
+        \label{eq:linear_regression_closed_form_solution_matrix_output}
+    \end{equation}
+    \vspace{-0.2cm}
+    where $\mathbf{w}=(w_0=b, w_1,...w_{n})^T$.\\
+
+    \framebreak
+
+    Using the matrices $\vect{X}$ and $\vect{y}$ defined in 
+    Eq.~\ref{eq:linear_regression_closed_form_solution_matrix_inputs},
+    we can define matrices that contain all the elements 
+    $A_{kj}$ (Eq.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_A}) and
+    $c_{k}$ (Eq.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_c}).
+
+    \begin{equation}
+        \vect{A} =         
+        \begin{pmatrix}
+            x_0^{(1)} &  x_0^{(2)} & ... & x_0^{(N)} \\
+            x_1^{(1)} &  x_1^{(2)} & ... & x_1^{(N)} \\
+            ...       &  ...       & ... & ...       \\
+            x_n^{(1)} &  x_n^{(2)} & ... & x_n^{(N)} \\
+        \end{pmatrix} 
+        \begin{pmatrix}
+            x_0^{(1)} &  x_1^{(1)} & ... & x_n^{(1)} \\
+            x_0^{(2)} &  x_1^{(2)} & ... & x_n^{(2)} \\
+            ...       &  ...       & ... & ...       \\
+            x_0^{(N)} &  x_1^{(N)} & ... & x_n^{(N)} \\
+        \end{pmatrix} =
+        \vect{X}^{T} \vect{X}
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_A_matrix}
+    \end{equation}
+
+    \begin{equation}
+        \vect{c} =  
+        \begin{pmatrix}
+            x_0^{(1)} &  x_0^{(2)} & ... & x_0^{(N)} \\
+            x_1^{(1)} &  x_1^{(2)} & ... & x_1^{(N)} \\
+            ...       &  ...       & ... & ...       \\
+            x_n^{(1)} &  x_n^{(2)} & ... & x_n^{(N)} \\
+        \end{pmatrix} 
+        \begin{pmatrix}
+            y^{(1)} \\
+            y^{(2)} \\
+            ...      \\
+            y^{(N)} \\
+        \end{pmatrix} = 
+        \vect{X}^{T} \vect{y}
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_c_matrix}
+    \end{equation}
+
+    \framebreak
+
+    Using Eqs.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_A_matrix} and
+    \ref{eq:linear_regression_closed_form_solution_coupled_equations_c_matrix},
+    Eq.~\ref{eq:linear_regression_closed_form_solution_coupled_equations_3}
+    can be written in a matrix form as:
+    \begin{equation}
+        \vect{A}\vect{w} = \vect{c} \Rightarrow
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_matrix_1}
+    \end{equation}        
+    \begin{equation}
+        \vect{X}^{T} \vect{X} \vect{w} = \vect{X}^{T} \vect{y}
+        \label{eq:linear_regression_closed_form_solution_coupled_equations_matrix_2}
+    \end{equation}        
+
+    The above matrix equation can be easily solved for $\vect{w}$,
+    if $\vect{X}^{T} \vect{X}$ can be inverted:\\
+    \begin{equation}
+        \vect{w} = (\vect{X}^T \vect{X})^{-1} \vect{X}^T \vect{y}
+        \label{eq:linear_regression_closed_form_solution_matrix}
+    \end{equation}        
+
+\end{frame}
+

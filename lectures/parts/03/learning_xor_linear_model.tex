@@ -6,7 +6,7 @@
 
     We can choose a linear form for the model $f(\mathbf{x};\mathbf{\theta})$,
     where the parameter set $\mathbf{\theta}$ consists 
-    of a set of weights $\mathbf{w}$ and a bias $b$.        
+    of a set of weights $\mathbf{w}$ = $(w_1,w_2)$ and a bias $b$.        
 
     \begin{columns}[t]
         \begin{column}{0.50\textwidth}
@@ -42,6 +42,14 @@
                 f(\mathbf{x};\mathbf{w},b) = \mathbf{x}^{T} \mathbf{w} + b
                 \label{eq:learn_xor_model_1}
             \end{equation}
+
+            As discussed previously, we can rewrite Eq.~\label{eq:learn_xor_model_1}
+            in a more compact form by adding an additional input $x_0$ that always takes the value of +1 
+            and considering the bias $b$ to be the weight $w_0$
+            \begin{equation}
+                f(\mathbf{x};\mathbf{w}) = \mathbf{x}^{T} \mathbf{w}
+                \label{eq:learn_xor_model_2}
+            \end{equation}
         \end{column}
     \end{columns}
       
@@ -54,6 +62,130 @@
 
     \framebreak
 
-    {\color{red}Show solution}
+    \begin{columns}[t]
+        \begin{column}{0.40\textwidth}
+            \vspace{-1.2cm}
+            \begin{center}
+                \begin{tabular}{ c c c | c }
+                 $x_0$ & $x_1$ & $x_2$ & $y = x_1 \oplus x_2$ \\ 
+                 \hline
+                 1 & 0 & 0 & 0 \\  
+                 1 & 0 & 1 & 1 \\   
+                 1 & 1 & 0 & 1 \\  
+                 1 & 1 & 1 & 0 \\   
+                \end{tabular}
+            \end{center}
+        \end{column}
+        \begin{column}{0.60\textwidth}
+            \begin{equation*}
+                \vect{X} = 
+                \begin{pmatrix}
+                    1 & 0 & 0 \\
+                    1 & 0 & 1 \\
+                    1 & 1 & 0 \\
+                    1 & 1 & 1 \\
+                \end{pmatrix} 
+            \end{equation*}        
+            \begin{equation*}
+                \vect{y} = 
+                \begin{pmatrix}
+                    0 \\
+                    1 \\
+                    1 \\
+                    0 \\
+                \end{pmatrix} 
+            \end{equation*}        
+        
+        \end{column}
+    \end{columns}
+
+    \begin{equation}
+        \vect{w} = (\vect{X}^T \vect{X})^{-1} \vect{X}^T \vect{y}
+    \end{equation}        
+
+    \framebreak
+
+    The matrix product $\vect{X}^T \vect{X}$ is:
+    \begin{equation}
+        \vect{X}^T \vect{X} = 
+        \begin{pmatrix}
+            1 & 1 & 1 & 1 \\
+            0 & 0 & 1 & 1 \\
+            0 & 1 & 0 & 1 \\
+        \end{pmatrix} 
+        \begin{pmatrix}
+            1 & 0 & 0 \\
+            1 & 0 & 1 \\
+            1 & 1 & 0 \\
+            1 & 1 & 1 \\
+        \end{pmatrix} =
+        \begin{pmatrix}
+            4 & 2 & 3 \\
+            2 & 2 & 2 \\
+            2 & 1 & 2 \\
+        \end{pmatrix} 
+    \end{equation}        
+
+    while its inverse, as it can be easily verified, is:
+    \begin{equation}
+        (\vect{X}^T \vect{X})^{-1} = 
+        \begin{pmatrix}
+            0 & -0.5 & -1 \\
+            0 &  1   & -1 \\
+           -1 &  0   &  2 \\
+        \end{pmatrix} 
+    \end{equation}        
+
+    Therefore:
+    \begin{equation*}
+        \vect{w} = 
+        \begin{pmatrix}
+            0 & -0.5 & -1 \\
+            0 &  1   & -1 \\
+           -1 &  0   &  2 \\
+        \end{pmatrix} 
+        \begin{pmatrix}
+            1 & 1 & 1 & 1 \\
+            0 & 0 & 1 & 1 \\
+            0 & 1 & 0 & 1 \\
+        \end{pmatrix} 
+        \begin{pmatrix}
+            0 \\
+            1 \\
+            1 \\
+            0 \\
+        \end{pmatrix} \Rightarrow 
+    \end{equation*}        
+
+    \framebreak
+
+    \begin{equation*}
+        \vect{w} = 
+        \begin{pmatrix}
+            0 &  -1 &  -0.5 &  -1.5 \\
+            0 &  -1 &   1   &   0   \\
+           -1 &   1 &  -1   &   1   \\
+        \end{pmatrix} 
+        \begin{pmatrix}
+            0 \\
+            1 \\
+            1 \\
+            0 \\
+        \end{pmatrix} \Rightarrow 
+    \end{equation*}        
+
+    \begin{equation}
+        \vect{w} = 
+        \begin{pmatrix}
+            b   \\
+            w_1 \\
+            w_2 \\
+        \end{pmatrix} =
+        \begin{pmatrix}
+            0.5 \\
+            0 \\
+            0 \\
+        \end{pmatrix} 
+    \end{equation}        
 
 \end{frame}
