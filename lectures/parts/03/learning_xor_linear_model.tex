@@ -2,7 +2,7 @@
 %
 %
 
-\begin{frame}[t,allowframebreaks]{Linear models cannot learn XOR -} 
+\begin{frame}[t,allowframebreaks]{Applying a linear model to the XOR regression task -} 
 
     We can choose a linear form for the model $f(\mathbf{x};\mathbf{\theta})$,
     where the parameter set $\mathbf{\theta}$ consists 
@@ -40,44 +40,62 @@
         \begin{column}{0.50\textwidth}
             \begin{equation}
                 f(\mathbf{x};\mathbf{w},b) = \mathbf{x}^{T} \mathbf{w} + b
-                \label{eq:learn_xor_model_1}
+                \label{eq:learn_xor_linear_model_1}
             \end{equation}
 
-            As discussed previously, we can rewrite Eq.~\label{eq:learn_xor_model_1}
+            As discussed previously, we can rewrite Eq.~\label{eq:learn_xor_linear_model_1}
             in a more compact form by adding an additional input $x_0$ that always takes the value of +1 
             and considering the bias $b$ to be the weight $w_0$
             \begin{equation}
                 f(\mathbf{x};\mathbf{w}) = \mathbf{x}^{T} \mathbf{w}
-                \label{eq:learn_xor_model_2}
+                \label{eq:learn_xor_linear_model_2}
             \end{equation}
         \end{column}
     \end{columns}
       
-    In principle, the loss function of Eq.~\ref{eq:learn_xor_loss_function_1} 
-    could be minimised using some of the techniques we started 
-    to develop in Part \prevpart.\\
-    
-    Owing to the simplicity of the problem, 
-    it is possible to obtain a solution in closed form.
-
     \framebreak
 
+    %
+    %
+
+    The \index{loss function}\gls{loss function} 
+    of Eq.~\ref{eq:learn_xor_loss_function_1} 
+    could be minimised using the 
+    \index{gradient descent}\gls{gradient descent} 
+    method we saw in Part \prevpart, 
+    and which will be further discussed in Part \nextpart.\\
+    \vspace{0.1cm}
+    Owing to the simplicity of the given 
+    \index{regression}\index{linear regression}\gls{regression} problem, 
+    it is possible to obtain a solution in closed form 
+    (see derivation of Eq.~\ref{eq:linear_regression_closed_form_solution_matrix}).\\
+    \vspace{-0.2cm}
+    \begin{equation*}
+        \vect{w} = (\vect{X}^T \vect{X})^{-1} \vect{X}^T \vect{y}
+    \end{equation*}\\
+    \vspace{0.1cm}
+    The training set $\mathbb{D}$ contains 4 examples 
+    $(\mathbf{x}^{(i)},y^{(i)})$, with $i \in [1,4]$, given in the table below.\\
+    \vspace{0.1cm}
     \begin{columns}[t]
-        \begin{column}{0.40\textwidth}
-            \vspace{-1.2cm}
+        \begin{column}{0.44\textwidth}
+            \vspace{-0.6cm}
             \begin{center}
-                \begin{tabular}{ c c c | c }
-                 $x_0$ & $x_1$ & $x_2$ & $y = x_1 \oplus x_2$ \\ 
+                \begin{tabular}{ c | c c c | c }
+                 $i$ & $x_0$ & $x_1$ & $x_2$ & $y = x_1 \oplus x_2$ \\ 
                  \hline
-                 1 & 0 & 0 & 0 \\  
-                 1 & 0 & 1 & 1 \\   
-                 1 & 1 & 0 & 1 \\  
-                 1 & 1 & 1 & 0 \\   
+                 1 & 1 & 0 & 0 & 0 \\  
+                 2 & 1 & 0 & 1 & 1 \\   
+                 3 & 1 & 1 & 0 & 1 \\  
+                 4 & 1 & 1 & 1 & 0 \\   
                 \end{tabular}
             \end{center}
         \end{column}
-        \begin{column}{0.60\textwidth}
-            \begin{equation*}
+        \begin{column}{0.56\textwidth}
+            The inputs $\mathbf{x}^{(i)}$ and target values
+            $y^{(i)}$ spanning $\mathbb{D}$ can be packed into matrices
+            as shown in Eq.~\ref{eq:linear_regression_closed_form_solution_matrix_inputs}.
+            \begin{equation}
                 \vect{X} = 
                 \begin{pmatrix}
                     1 & 0 & 0 \\
@@ -85,8 +103,7 @@
                     1 & 1 & 0 \\
                     1 & 1 & 1 \\
                 \end{pmatrix} 
-            \end{equation*}        
-            \begin{equation*}
+                \; \textrm{and} \;
                 \vect{y} = 
                 \begin{pmatrix}
                     0 \\
@@ -94,18 +111,17 @@
                     1 \\
                     0 \\
                 \end{pmatrix} 
-            \end{equation*}        
-        
+            \end{equation}        
         \end{column}
     \end{columns}
 
-    \begin{equation}
-        \vect{w} = (\vect{X}^T \vect{X})^{-1} \vect{X}^T \vect{y}
-    \end{equation}        
-
     \framebreak
 
-    The matrix product $\vect{X}^T \vect{X}$ is:
+    %
+    %
+
+    The matrix product $\vect{X}^T \vect{X}$ is:\\
+    \vspace{-0.3cm}
     \begin{equation}
         \vect{X}^T \vect{X} = 
         \begin{pmatrix}
@@ -126,7 +142,8 @@
         \end{pmatrix} 
     \end{equation}        
 
-    while its inverse, as it can be easily verified, is:
+    while its inverse, as it can be easily verified, is:\\
+    \vspace{-0.3cm}
     \begin{equation}
         (\vect{X}^T \vect{X})^{-1} = 
         \begin{pmatrix}
@@ -135,10 +152,18 @@
            -1 &  0   &  2 \\
         \end{pmatrix} 
     \end{equation}        
-
-    Therefore:
-    \begin{equation*}
-        \vect{w} = 
+    \vspace{-0.5cm}
+    Substituting the above matrices 
+    in Eq.~\ref{eq:linear_regression_closed_form_solution_matrix}, we find:\\
+    \begin{equation}
+        \vect{w} 
+        = 
+        \begin{pmatrix}
+            b   \\
+            w_1 \\
+            w_2 \\
+        \end{pmatrix} 
+        =
         \begin{pmatrix}
             0 & -0.5 & -1 \\
             0 &  1   & -1 \\
@@ -154,38 +179,73 @@
             1 \\
             1 \\
             0 \\
-        \end{pmatrix} \Rightarrow 
-    \end{equation*}        
+        \end{pmatrix} 
+        =
+        \begin{pmatrix}
+            0.5 \\
+            0 \\
+            0 \\
+        \end{pmatrix} 
+        \label{eq:learn_xor_linear_model_weights}
+    \end{equation}        
 
     \framebreak
 
-    \begin{equation*}
-        \vect{w} = 
-        \begin{pmatrix}
-            0 &  -1 &  -0.5 &  -1.5 \\
-            0 &  -1 &   1   &   0   \\
-           -1 &   1 &  -1   &   1   \\
-        \end{pmatrix} 
-        \begin{pmatrix}
-            0 \\
-            1 \\
-            1 \\
-            0 \\
-        \end{pmatrix} \Rightarrow 
-    \end{equation*}        
+    %
+    %
 
+    The estimated model parameters $\mathbf{w}^T=(0.5, 0, 0)$,
+    substituted in Eq.~\ref{eq:learn_xor_linear_model_2}, 
+    yield the following predictions:\\
+    \vspace{0.4cm}
     \begin{equation}
-        \vect{w} = 
+        \hat{y}(\mathbf{x}) = 
+        \begin{pmatrix}
+            1 & x_1 & x_2 \\
+        \end{pmatrix} 
         \begin{pmatrix}
             b   \\
             w_1 \\
             w_2 \\
         \end{pmatrix} =
         \begin{pmatrix}
-            0.5 \\
-            0 \\
-            0 \\
+            1 & x_1 & x_2 \\
         \end{pmatrix} 
-    \end{equation}        
+        \begin{pmatrix}
+            0.5 \\
+            0   \\
+            0   \\
+        \end{pmatrix} = 0.5
+        \label{eq:learn_xor_linear_model_predictions}
+    \end{equation}
+
+    Therefore, irrespective of the input $\mathbf{x}$, the {\bf model always returns 0.5}, 
+    halfway between the two possible target values of 0 and 1.\\
+    \vspace{0.2cm}
+    This is a rather {\bf spectacular failure} for our trained linear model.
+
+\end{frame}
+
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{Linear models cannot learn the XOR function -} 
+
+    \begin{columns}[t]
+        \begin{column}{0.50\textwidth}
+            \begin{center}
+                \includegraphics[width=0.90\textwidth]
+                    {./images/people/minsky_1.png}\\
+                {\scriptsize 
+                Marvin Misky. 
+                \color{col:attribution} 
+                Photograph by Robert Kaiser (Associated Press).\\}        
+            \end{center}
+        \end{column}
+        \begin{column}{0.50\textwidth}
+        \end{column}
+    \end{columns}
+
 
 \end{frame}
