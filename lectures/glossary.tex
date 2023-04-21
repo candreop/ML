@@ -1,3 +1,4 @@
+
 %
 % Glossary entries with associated acronym entry
 %
@@ -32,6 +33,50 @@
   description={Artificial Intelligence},
   first={Artificial Intelligence (AI)\glsadd{aig}},
   see=[Glossary:]{aig}
+}
+
+% ANI
+\newglossaryentry{anig}{
+  name={artificial narrow intelligence},
+  description={
+   A type of \gls{ai} with a narrow range of capabilities.
+   Also referred to as \gls{weak ai} or \gls{narrow ai}
+  }
+}
+\newglossaryentry{ani}{
+  type=\acronymtype,
+  name={ANI},
+  description={Artificial Narrow Intelligence},
+  first={Artificial Narrow Intelligence (ANI)\glsadd{anig}}
+}
+
+% AGI
+\newglossaryentry{agig}{
+  name={artificial general intelligence},
+  description={
+   A type of \gls{ai} with human-level capabilities.
+   Also referred to as \glsadd{strong ai} or \glsadd{deep ai}
+  }
+}
+\newglossaryentry{agi}{
+  type=\acronymtype,
+  name={AGI},
+  description={Artificial General Intelligence},
+  first={Artificial General Intelligence (AGI)\glsadd{agig}}
+}
+
+% ASI
+\newglossaryentry{asig}{
+  name={artificial superintelligence},
+  description={
+   A type of \gls{ai} that greatly exceeds human capabilities
+  }
+}
+\newglossaryentry{asi}{
+  type=\acronymtype,
+  name={ASI},
+  description={Artificial Superintelligence},
+  first={Artificial Superintelligence (ASI)\glsadd{asig}}
 }
 
 % CIFAR
@@ -81,7 +126,7 @@
 }
 \newglossaryentry{cpu}{
   type=\acronymtype,
-  name={cPU},
+  name={CPU},
   description={Central Processing Unit},
   first={Central Processing Unit (CPU)\glsadd{cpug}},
   plural={CPUs},
@@ -249,9 +294,12 @@
   see=[Glossary:]{svmg}
 }
 
+% ----------------------------------------------------------------------------------
+
 %
 % Acronyms without associated glossary entry
 %
+
 
 % MSE
 \newglossaryentry{mse}{
@@ -260,6 +308,8 @@
   description={Mean Squared Error},
   first={Mean Squared Error (MSE)}
 }
+
+% ----------------------------------------------------------------------------------
 
 %
 % Glossary entries without associated acronym entry
@@ -399,6 +449,13 @@
   }
 }
 
+\newglossaryentry{deep ai}{
+  name={deep AI},
+  description={
+  Another term for artificial general intelligence (\gls{agi})
+  }
+}
+
 \newglossaryentry{epoch}{
   name={epoch},
   description={
@@ -501,9 +558,25 @@
   }
 }
 
+\newglossaryentry{lateral geniculate nucleus}{
+  name={lateral geniculate nucleus},
+  description={
+   A structure in the thalamus of the mammalian brain and a key element 
+   of the visual pathway. It connects the thalamus with the optic nerve
+  }
+}
+
 \newglossaryentry{least squares}{
   name={least squares},
   description={
+  }
+}
+
+\newglossaryentry{limited memory ai}{
+  name={limited memory AI},
+  description={
+    Task-specific \gls{ai} system that 
+    can store memories for a limited time and learn from experience
   }
 }
 
@@ -550,6 +623,13 @@
   name=Mark 1 perceptron,
   description={
     The original, custom-built hardware implementation of perceptron
+  }
+}
+
+\newglossaryentry{narrow ai}{
+  name={narrow AI},
+  description={
+  Another term for artificial narrow intelligence (\gls{ani})
   }
 }
 
@@ -629,6 +709,14 @@
 }
 % ----
 
+\newglossaryentry{reactive ai}{
+  name={reactive AI},
+  description={
+    Task-specific \gls{ai} system that reacts to inputs in predictable manner,
+    but does not store memories and does not learn from experience
+  }
+}
+
 \newglossaryentry{regression}{
   name={regression},
   description={
@@ -641,6 +729,13 @@
   description={
     A \glspl{cnn} architecture.
     Winner of \gls{ilsvrc} for 2015.
+  }
+}
+
+\newglossaryentry{self-awareness ai}{
+  name={self-awareness AI},
+  description={
+    Hypothetical \gls{ai} system with human-level artificial consciousness
   }
 }
 
@@ -669,6 +764,13 @@
   }
 }
 
+\newglossaryentry{strong ai}{
+  name={strong AI},
+  description={
+  Another term for artificial general intelligence (\gls{agi})
+  }
+}
+
 \newglossaryentry{sub-sampling}{
   name={subsampling},
   description={
@@ -684,6 +786,13 @@
 \newglossaryentry{supervised learning}{
   name={supervised learning},
   description={
+  }
+}
+
+\newglossaryentry{theory of mind ai}{
+  name={theory of mind AI},
+  description={
+    Emotionally intelligent, next-level \gls{ai} system able to learn any task
   }
 }
 
@@ -713,11 +822,10 @@
   }
 }
 
-\newglossaryentry{lateral geniculate nucleus}{
-  name={lateral geniculate nucleus},
+\newglossaryentry{weak ai}{
+  name={weak AI},
   description={
-   A structure in the thalamus of the mammalian brain and a key element 
-   of the visual pathway. It connects the thalamus with the optic nerve
+  Another term for artificial narrow intelligence (\gls{ani})
   }
 }
 
@@ -728,6 +836,8 @@
     Winner of \gls{ilsvrc} for 2013.
   }
 }
+
+% ----------------------------------------------------------------------------------
 
 %
 % Notable people
