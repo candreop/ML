@@ -1,39 +1,60 @@
 \renewcommand{\prevpart}{1 }
 \renewcommand{\thispart}{2 }
 \renewcommand{\nextpart}{3 }
+\renewcommand{\thispartname}{Shallow Neural Networks}
 
-\section{Shallow Neural Networks}
+\part{\thispartname}
 
 % Cover page
 \input{common/cover_part.tex}
 
 % Outline
+\section{Outline}
 \input{common/toc_part.tex}
 
+% Introduction
+\section{Introduction}
+\input{parts/02/introduction.tex}
+
+% Binary classification problem
+
 % Perceptron
-\subsection{Single-layer networks: The perceptron}
+\section{Single-layer networks: The perceptron}
+\subsection{Supervised learning for binary classification}
+\input{parts/02/binary_classification_supervised.tex}
+\subsection{Perceptron architecture}
 \input{parts/02/perceptron_introduction.tex}
+\subsection{Biological inspiration: McCulloch-Pitts neuron}
+\input{parts/02/perceptron_mcculloch_pitts.tex}
+\subsection{Mark 1 perceptron}
+\input{parts/02/perceptron_mark1.tex}
+\subsection{The perceptron as a computational unit}
+\input{parts/02/perceptron_as_computational_unit.tex}
 
-\subsection{Loss functions}
+% Perceptron learning
+\section{Perceptron training}
+\input{parts/02/perceptron_training.tex}
 
-\subsection{Heuristic optimization of the original Mark I perceptron}
+\section{Loss functions}
 
-\subsection{Stochastic gradient-descent method}
+\section{Heuristic optimization of the original Mark I perceptron}
 
-\subsection{Percepton criterion}
+\section{Stochastic gradient-descent method}
 
-\subsection{Activation functions and their properties}
+\section{Percepton criterion}
 
-\subsection{Variants of the perceptron and 
+\section{Activation functions and their properties}
+
+\section{Variants of the perceptron and 
     connection with other regression and classification models}
 
-\subsubsection{Least-squares regression and classification. Widrow-Hoff learning rule}
+\subsection{Least-squares regression and classification. Widrow-Hoff learning rule}
 
-\subsubsection{Closed form solutions of least-squares regression}
+\subsection{Closed form solutions of least-squares regression}
 
-\subsubsection{Logistic regregression}
+\subsection{Logistic regregression}
 
-\subsubsection{Support vector machines}
+\subsection{Support vector machines}
 
 \subsection{The multiclass perceptron}
 

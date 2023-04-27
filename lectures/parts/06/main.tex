@@ -1,99 +1,67 @@
 \renewcommand{\prevpart}{5 }
 \renewcommand{\thispart}{6 }
 \renewcommand{\nextpart}{7 }
+\renewcommand{\thispartname}{Convolutional Neural Networks}
 
-\section{Convolutional Neural Networks}
+\part{\thispartname}
 
 % Cover page
 \input{common/cover_part.tex}
 
 % Outline
+\section{Outline}
 \input{common/toc_part.tex}
 
-%
-%
-%
-
-\begin{frame}[t,allowframebreaks]{Convolutional Neural Networks}
-
-    A \index{CNN}\index{convolutional neural network}\gls{cnn} 
-    is a specialised type of deep neural network designed for use 
-    with {\bf grid-structured inputs}.\\
-    Examples include:
-    \begin{itemize}
-      \item {\bf time series} (1-D grid-structured data), or 
-      \item {\bf images} (2-D grid-structured data).
-    \end{itemize}
-
-    The vast majority of \gls{cnn} applications focusses on image data.
-    In this type of data exhibits:
-    \begin{itemize}
-        \item Some degree of {\bf similarity in adjacent grid locations}.\\
-          {\it For example, neighbouring pixels often have a similar colour.}
-        \item A degree of {\bf translation invariance}.\\
-          {\it For example, our interpretation of an object as a "cat"
-          does not depend on where it appears on the image.}
-    \end{itemize}
-
-    \framebreak
-
-    \glspl{cnn} use \index{convolution} \gls{convolution}
-    operations in at least one of their layers.
-    Convolution:
-    \begin{itemize}
-     \item is used in place of general matrix multiplication,
-     \item enables parameter sharing 
-    \end{itemize}
-
-\end{frame}
+\section{Introduction}
+\input{parts/06/introduction.tex}
 
 % Discuss studies of the primary visual cortex (V1) by Hubel, Wiesel and others,
 % and describe the workings of V1
-\subsection{Biological inspirations}
+\section{Biological inspirations}
 \input{parts/06/biological_inspirations.tex}
 
 % Discuss the Neocognitron
-\subsection{Convolutional Network precursors: Neocognitron}
+\section{Convolutional Network precursors: Neocognitron}
 \input{parts/06/neocognitron.tex}
 
 % Give a list of modern architectures, but defer detailed description 
 % till after the basics of convolutional networks are described
-\subsection{From the Neocognitron to modern convolutional architectures}
+\section{From the Neocognitron to modern convolutional architectures}
 \input{parts/06/from_neocognitron_to_modern_architectures.tex}
 
 % Discuss the mathematical operations of convolution and cross-correlation
-\subsection{The convolution and cross-correlation operations}
+\section{The convolution and cross-correlation operations}
 \input{parts/06/convolution.tex}
 
 % Discuss the main motivations for the use of convolutional architectures:
 % sparse connectivity, parameter sharing, equivariant representations
-\subsection{Motivation}
+\section{Motivation}
 \input{parts/06/motivations_for_convolutional_architectures.tex}
-\subsubsection{Sparse connectivity}
+\subsection{Sparse connectivity}
 \input{parts/06/sparse_connectivity.tex}
-\subsubsection{Parameter sharing}
+\subsection{Parameter sharing}
 \input{parts/06/parameter_sharing.tex}
-\subsubsection{Equivariant representations}
+\subsection{Equivariant representations}
 \input{parts/06/equivariant_representations.tex}
 
 % Basic CNN structure, and details on different layer types
-\subsection{Basic structure of a Convolutional Neural Network}
+\section{Basic structure of a Convolutional Neural Network}
 \input{parts/06/cnn_basic_structure.tex}
-\subsection{Convolution layer}
+\section{Convolution layer}
 \input{parts/06/cnn_layers_convolution.tex}
-\subsection{Pooling layer}
+\section{Pooling layer}
 \input{parts/06/cnn_layers_pooling.tex}
 \input{parts/06/example_feature_maps.tex}
 
 
-\subsection{Case studies}
-\subsubsection{LeNet-5}
+\section{Case studies}
+\subsection{LeNet-5}
 \input{parts/06/LeNet5.tex}
-\subsubsection{AlexNet}
+\subsection{AlexNet}
 \input{parts/06/AlexNet.tex}
-\subsubsection{GoogLeNet}
+\subsection{GoogLeNet}
 \input{parts/06/GoogLeNet.tex}
-\subsubsection{ResNet}
+\subsection{ResNet}
 \input{parts/06/ResNet.tex}
 
 % Main points to remember
@@ -104,5 +72,5 @@
 %\input{parts/06/next.tex}
 
 % Suggested reading for this part
-\subsection{Suggested reading}
+\section{Suggested reading}
 \input{parts/06/reading.tex}

@@ -1,0 +1,38 @@
+
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{Convolutional Neural Networks}
+
+    A \index{CNN}\index{convolutional neural network}\gls{cnn} 
+    is a specialised type of deep neural network designed for use 
+    with {\bf grid-structured inputs}.\\
+    Examples include:
+    \begin{itemize}
+      \item {\bf time series} (1-D grid-structured data), or 
+      \item {\bf images} (2-D grid-structured data).
+    \end{itemize}
+
+    The vast majority of \gls{cnn} applications focusses on image data.
+    In this type of data exhibits:
+    \begin{itemize}
+        \item Some degree of {\bf similarity in adjacent grid locations}.\\
+          {\it For example, neighbouring pixels often have a similar colour.}
+        \item A degree of {\bf translation invariance}.\\
+          {\it For example, our interpretation of an object as a "cat"
+          does not depend on where it appears on the image.}
+    \end{itemize}
+
+    \framebreak
+
+    \glspl{cnn} use \index{convolution} \gls{convolution}
+    operations in at least one of their layers.
+    Convolution:
+    \begin{itemize}
+     \item is used in place of general matrix multiplication,
+     \item enables parameter sharing 
+    \end{itemize}
+
+\end{frame}
+

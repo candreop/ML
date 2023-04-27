@@ -36,6 +36,7 @@ part_11   : tex_start add_part11 tex_end pdf
 
 all: 	tex_start \
 		add_front_matter \
+		add_catalogues \
 		add_module_info \
 		add_part01 \
 		add_part02 \
@@ -54,6 +55,7 @@ all: 	tex_start \
 
 dev: 	tex_start \
 		add_front_matter \
+		add_catalogues \
 		add_part02 \
 		add_back_matter \
   		tex_end \
@@ -68,15 +70,13 @@ tex_end:
 	echo '\end{document}' >> tmp.tex
 
 add_front_matter: FORCE
-	echo '\input{front/cover.tex}'      >> tmp.tex
-	echo '\input{front/about.tex}'      >> tmp.tex
-	echo '\input{front/toc.tex}'        >> tmp.tex
-	echo '\input{front/notation.tex}'   >> tmp.tex
+	echo '\input{front/main.tex}'       >> tmp.tex
+
+add_catalogues: FORCE
+	echo '\input{catalogues/main.tex}'  >> tmp.tex
 
 add_back_matter: FORCE
-	echo '\input{back/bibliography.tex}' >> tmp.tex
-	echo '\input{back/glossary.tex}'     >> tmp.tex
-	echo '\input{back/index.tex}'        >> tmp.tex
+	echo '\input{back/main.tex}'        >> tmp.tex
 
 add_module_info: FORCE
 	echo '\input{parts/00/main.tex}'  >> tmp.tex

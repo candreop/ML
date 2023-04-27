@@ -1,0 +1,59 @@
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{Supervised learning for binary classification -}
+
+    Consider the following problem. You have:
+    \begin{itemize}
+        \item a {\bf vector of $d$ feature variables}, $\vect{x}$ = $(x_1, x_2, ..., x_d)^T$, and
+        \item a {\bf single binary variable} $y$ ($\in$ \{-1, +1\}).   
+    \end{itemize}
+    The binary variable $y$ \underline{depends on} the feature variables $\vect{x}$.\\
+    \vspace{0.2cm}
+
+    \begin{blockexample}{}
+        \small
+        For example:
+        \begin{itemize}
+            \small
+            \item 
+                $\vect{x}$: properties of a tumor imaged using computed tomography\\ 
+                $y$: is the tumor is benign or malignant?
+            \item 
+                $\vect{x}$: features of an event observed in a particle physics detector\\ 
+                $y$: is the event a new physics candidate 
+                  or Standard Model background?
+            \item 
+                $\vect{x}$: details about a credit card transaction, such
+                   as time, amount, location, and frequency of past transactions\\
+                $y$: is the transaction fraudulent?
+        \end{itemize}
+    \end{blockexample}
+
+    \framebreak
+
+    Consider the following problem. You have:
+    \begin{itemize}
+        \item a {\bf vector of $d$ feature variables}, $\vect{x}$ = $(x_1, x_2, ..., x_d)^T$, and
+        \item a {\bf single binary variable} $y$ ($\in$ \{-1, +1\}).   
+    \end{itemize}
+    The binary variable $y$ \underline{depends on} the feature variables $\vect{x}$.\\
+    \vspace{0.4cm}
+    We may have a \index{training set}{\bf training set} $\mathbb{D}$ that 
+    consists of several ($\vect{x}$,$y$) examples.\\
+    \begin{blockexample}{}
+        \small
+        For instance, we may have accumulated ($\vect{x}$,$y$) examples:
+        \begin{itemize}
+            \small
+            \item from historical observations, or
+            \item from simulations
+        \end{itemize}
+    \end{blockexample}  
+    \vspace{0.2cm}
+    Can we use the training set to {\bf learn the mapping} from $\vect{x}$ to $y$?\\
+    \vspace{0.2cm}
+    If we knew that mapping, we could apply it to new instances of $\vect{x}$
+    for which $y$ is not known and needs to be predicted.
+\end{frame}

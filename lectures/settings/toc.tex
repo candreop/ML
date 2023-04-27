@@ -3,6 +3,13 @@
 %
 
 \makeatletter
+
+% reset section numbering at each part
+\AtBeginPart{%
+  \beamer@tocsectionnumber=0\relax
+  \setcounter{section}{0}
+}
+
 \long\def\beamer@section[#1]#2{%
   \beamer@savemode%
   \mode<all>%
