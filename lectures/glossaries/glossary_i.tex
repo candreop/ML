@@ -1,0 +1,42 @@
+%
+% Glossary / Entries starting from I
+%
+% Prof. Costas Andreopoulos <c.andreopoulos@cern.ch>
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%
+
+
+% ILSVRC
+\newglossaryentry{ilsvrcg}{
+  name={ILSVRC},
+  description={
+    An annual competition in the field of computer vision.
+    See also \gls{ImageNet}
+  }
+}
+\newglossaryentry{ilsvrc}{
+  type=\acronymtype,
+  name={ILSVRC},
+  description={ImageNet Large Scale Visual Recognition Challenge},
+  first={ImageNet Large Scale Visual Recognition Challenge (ILSVRC)\glsadd{ilsvrcg}},
+  see=[Glossary:]{ilsvrcg}
+}
+
+% Inception
+\newglossaryentry{Inception}{
+  name={Inception},
+  description={
+    A \glspl{cnn} architecture.
+    Its v1 was the winner of \gls{ilsvrc} for 2014.
+    Also known as \gls{GoogLeNet}
+  }
+}
+
+% ImageNet
+\newglossaryentry{ImageNet}{
+  name={ImageNet},
+  description={
+    A database with more than 14 million hand-annotated images
+    containing more than 20,000 distinct object categories
+  }
+}

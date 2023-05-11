@@ -1,0 +1,50 @@
+%
+% Glossary / Entries starting from R
+%
+% Prof. Costas Andreopoulos <c.andreopoulos@cern.ch>
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%
+
+
+% ReLU
+\newglossaryentry{relug}{
+  name={rectified linear unit},
+  plural={rectified linear units},
+  description={
+    A type of simple and piecewise linear \gls{activation function} 
+    (0 for negative values of its argument, x, and equal to x otherwise) that,
+    nevertheless, introduces the property of non-linearity to a \gls{dlg} model.
+  }
+}
+\newglossaryentry{relu}{
+  type=\acronymtype,
+  name={ReLU},
+  description={Rectified Linear Unit},
+  first={Rectified Linear Unit (ReLU)\glsadd{relug}},
+  plural={ReLUs},
+  see=[Glossary:]{relug}
+}
+
+\newglossaryentry{reactive ai}{
+  name={reactive AI},
+  description={
+    Task-specific \gls{ai} system that reacts to inputs in predictable manner,
+    but does not store memories and does not learn from experience
+  }
+}
+
+\newglossaryentry{regression}{
+  name={regression},
+  description={
+    A technique that relates a dependent variable to one or more independent variables
+  }
+}
+
+\newglossaryentry{ResNet}{
+  name={ResNet},
+  description={
+    A \glspl{cnn} architecture.
+    Winner of \gls{ilsvrc} for 2015.
+  }
+}
+

@@ -36,7 +36,7 @@ part_11   : tex_start add_part11 tex_end pdf
 
 all: 	tex_start \
 		add_front_matter \
-		add_catalogues \
+		add_glossaries \
 		add_module_info \
 		add_part01 \
 		add_part02 \
@@ -72,8 +72,8 @@ tex_end:
 add_front_matter: FORCE
 	echo '\input{front/main.tex}'       >> tmp.tex
 
-add_catalogues: FORCE
-	echo '\input{catalogues/main.tex}'  >> tmp.tex
+add_glossaries: FORCE
+	echo '\input{glossaries/main.tex}'  >> tmp.tex
 
 add_back_matter: FORCE
 	echo '\input{back/main.tex}'        >> tmp.tex
