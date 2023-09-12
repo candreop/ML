@@ -1,0 +1,94 @@
+\begin{frame}[t,allowframebreaks]{Generalization -}
+
+    Training a \gls{ml} model {\em looks like} an optimization task.\\
+    \vspace{0.1cm}
+    \begin{blockexample}{}
+      Typically, to train a \gls{ml} model: 
+      \begin{itemize}
+        \item 
+        We use a \index{training set}\gls{training set} 
+        that contains a number of examples, and
+        \item
+        define a \index{loss function}\gls{loss function},
+        a measure of training error over that set.
+      \end{itemize}
+      The training process adjusts the model parameters
+      to optimize the model performance (minimize the training error).\\
+    \end{blockexample}
+    \vspace{0.2cm}
+    However, {\bf training a \gls{ml} model is not a pure optimization problem}.\\
+    \vspace{0.2cm}
+    Our \gls{ml} model should {\bf maintain a satisfactory performance 
+    with new, previously unseen inputs} - 
+    not just for the inputs in the training set.\\
+    \vspace{0.2cm}
+    Performing well for previously unseen inputs is called 
+    \index{generalization}\gls{generalization}.\\
+    \vspace{0.2cm}
+    How to build model that generalize is one of the central problems in \gls{ml}.
+
+
+    \framebreak
+
+    %
+    %
+
+    In the linear regression example, our model
+    \begin{equation}
+        \hat{y} = {\mathbf x}^T \cdot {\mathbf w}
+        %\label{eq:}
+    \end{equation}        
+
+    was trained using a set $\mathbb{D}$ of $N_{(train)}$
+    training examples $({\mathbf x_{(train)}},y_{(train)})$, 
+    by minimizing the loss function
+    \begin{equation}
+        L_{(train)} = \frac{1}{N_{(train)}} 
+        \sum_{({\mathbf x_{(train)}},y_{(train)})  \in \mathbb{D}}
+        \Big( y_{(train)} - {\mathbf x_{(train)}}^T \cdot {\mathbf w} \Big)^2
+        %\label{eq:}
+    \end{equation}        
+
+    However, we care for the test error
+    \begin{equation}
+        L_{(test)} = \frac{1}{N_{(test)}} 
+        \sum_{({\mathbf x_{(test)}},y_{(test)})  \in \mathbb{T}}
+        \Big( y_{(test)} - {\mathbf x_{(test)}}^T \cdot {\mathbf w} \Big)^2
+        %\label{eq:}
+    \end{equation}        
+    for the $N_{(test)}$ test examples $({\mathbf x_{(test)}},y_{(test)})$ 
+    of the set $\mathbb{T}$.
+
+    \framebreak
+
+    %
+    %
+
+    What can we say about the \gls{ml} model performance on the test set,
+    if we only ever see the training set?
+    \begin{itemize}
+        \item
+        Not much, unless the test and training data sets come from the 
+        {\bf same data-generating process}.    
+    \end{itemize}
+    \vspace{0.2cm}   
+    Typically, we make assumptions known as the {\bf i.i.d. assumptions}.\\
+    \vspace{0.2cm}
+    The examples in the test and training sets are assumed to be:
+    \begin{itemize}
+        \item {\bf independent}, and
+        \item {\bf identically distributed}, 
+        i.e. they are drawn from the same probability distribution 
+        (the data-generating distribution)
+    \end{itemize}
+    \vspace{0.2cm}
+    With the i.i.d assumptions:
+    \begin{itemize}
+        \item
+        we can describe the data-generating process
+        with a probability distribution over a single data example, and
+        \item
+        study the relationship between the training and test error.
+    \end{itemize}
+
+\end{frame}
