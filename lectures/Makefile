@@ -35,31 +35,31 @@ part_10   : tex_start add_part10 tex_end pdf
 part_11   : tex_start add_part11 tex_end pdf 
 
 all: 	tex_start \
-		add_front_matter \
-		add_glossaries \
-		add_module_info \
-		add_part01 \
-		add_part02 \
-		add_part03 \
-		add_part04 \
-		add_part05 \
-		add_part06 \
-		add_part07 \
-		add_part08 \
-		add_part09 \
-		add_part10 \
-		add_part11 \
-		add_back_matter \
-  		tex_end \
-		pdf	       
+	add_front_matter \
+	add_glossaries \
+	add_module_info \
+	add_part01 \
+	add_part02 \
+	add_part03 \
+	add_part04 \
+	add_part05 \
+	add_part06 \
+	add_part07 \
+	add_part08 \
+	add_part09 \
+	add_part10 \
+	add_part11 \
+	add_back_matter \
+  	tex_end \
+	pdf	       
 
 dev: 	tex_start \
-		add_front_matter \
-		add_catalogues \
-		add_part02 \
-		add_back_matter \
-  		tex_end \
-		pdf	       
+	add_front_matter \
+	add_glossaries \
+	add_part05 \
+	add_back_matter \
+  	tex_end \
+	pdf	       
 
 tex_start:
 	echo '\documentclass{beamer}'         > tmp.tex
