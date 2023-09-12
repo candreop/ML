@@ -2,7 +2,8 @@
 %
 %
 
-\begin{frame}[t,allowframebreaks]{Applying a linear model to the XOR regression task -} 
+\begin{frame}[t,allowframebreaks]{
+    Applying a linear model to the XOR regression task -} 
 
     We can choose a linear form for the model $f(\mathbf{x};\mathbf{\theta})$,
     where the parameter set $\mathbf{\theta}$ consists 
@@ -43,8 +44,10 @@
                 \label{eq:learn_xor_linear_model_1}
             \end{equation}
 
-            As discussed previously, we can rewrite Eq.~\label{eq:learn_xor_linear_model_1}
-            in a more compact form by adding an additional input $x_0$ that always takes the value of +1 
+            As discussed previously, we can rewrite 
+            Eq.~\label{eq:learn_xor_linear_model_1}
+            in a more compact form by adding an additional 
+            input $x_0$ that always takes the value of +1 
             and considering the bias $b$ to be the weight $w_0$
             \begin{equation}
                 f(\mathbf{x};\mathbf{w}) = \mathbf{x}^{T} \mathbf{w}
@@ -68,7 +71,8 @@
     Owing to the simplicity of the given 
     \index{regression}\index{linear regression}\gls{regression} problem, 
     it is possible to obtain a solution in closed form 
-    (see derivation of Eq.~\ref{eq:linear_regression_closed_form_solution_matrix}).\\
+    (see derivation of 
+    Eq.~\ref{eq:linear_regression_closed_form_solution_matrix}).\\
     \vspace{-0.2cm}
     \begin{equation*}
         \vect{w} = (\vect{X}^T \vect{X})^{-1} \vect{X}^T \vect{y}
