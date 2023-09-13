@@ -1,0 +1,38 @@
+
+\begin{frame}[t]{The `no free lunch' theorem}
+
+Can we really infer general rules from a finite set of training examples?
+\begin{itemize}
+  \item Inductive reasoning is {\bf intrinsically uncertain}.
+  \item \gls{ml} does not offer any rule with certainty - 
+  only rules that are {\bf {\em probably} correct for {\em most} input data examples}.
+\end{itemize}
+
+\vspace{0.1cm}
+
+\begin{blockexample}{}
+\underline{The `{\bf no free lunch theorem}' of  \gls{ml}} 
+by D.Wolpert and W.Macready \cite{NoFreeLunch}.\\
+{\small
+Averaged over all data-generating distributions,
+every classification algorithm has the same generalization performance
+against previously unseen examples.\\
+}
+\end{blockexample}
+
+\vspace{0.1cm}
+
+The `no free lunch theorem' paints a bleak picture.
+\begin{itemize}
+    \item
+    But only if our goal was to find a {\bf universal learning algorithm}
+   for all possible data-generating distributions.
+\end{itemize}
+
+\vspace{0.2cm}
+
+With assumptions on the properties of the data-generating distributions we encounter
+in specific real-world situations, {\bf we can design algorithms that work well 
+in these situations}.
+
+\end{frame}

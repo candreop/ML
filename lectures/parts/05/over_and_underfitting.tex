@@ -48,6 +48,46 @@
              Schematic reproduced from \cite{MathWorks:Overfitting}.\\
          }
      \end{center}
+
+     \framebreak
+ 
+     Generally, \index{overfitting}\gls{overfitting} results, 
+     amongst other reasons, from:
+     \vspace{0.2cm}
+     \begin{itemize}
+        \item {\bf Insufficient training data set}.
+        \begin{itemize}
+            \item With limited data, one may find spurious patterns. 
+        \end{itemize}    
+        \item {\bf Various pathologies of the training set}.
+        \begin{itemize}
+            \item {\bf Selection bias} in the data collection process,
+            or use of {\bf imbalanced training data} in classification tasks
+            \item The presence of {\bf outliers in the training data},
+            forcing the learning process to fit extremes rather than overall features.
+        \end{itemize}    
+        \item {\bf Too complex model architecture}.
+        \begin{itemize}
+            \item A model with too many parameters may simply memorize the
+            data, instead of learning underlying features of the data.
+            \item Models with over-engineered or noisy features.
+        \end{itemize}    
+        \item {\bf Lack of regularization} (see later in this lecture).
+        \item {\bf Poorly tuned hyperparameters}, such as learning rate or batch size,
+        or use of too many training epochs.
+
+     \end{itemize}
+
+     \framebreak
+ 
+     On the other hand, \index{underfitting}\gls{underfitting} can be caused by:
+     \vspace{0.2cm}
+     \begin{itemize}
+        \item a
+     \end{itemize}
+  
+     %
+     %
  
  \end{frame}
  
