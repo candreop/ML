@@ -93,8 +93,8 @@ tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 - Difficulties in convergence
 - Local optima
 - Bias-variance trade-off
-- Regularization methods for deep learning
-  - Norm penalties: L2 and L1 regularization
+- Regularisation methods for deep learning
+  - Norm penalties: L2 and L1 regularisation
   - Dataset augmentation
   - Noise robustness
   - Multitask learning
