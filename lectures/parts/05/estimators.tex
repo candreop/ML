@@ -1,0 +1,42 @@
+
+\begin{frame}[t]{Point estimation}
+
+    In statistic, 
+    \index{point estimation}\gls{point estimation}
+    is the {\bf derivation of a best estimate
+    for a quantity of interest}, using a sample of data.
+    \begin{itemize}
+        \item
+        Typically, the quantity of interest is a 
+        single parameter, or a vector of parameters, 
+        controlling a parametric model.
+        \item
+        To distinguish the estimates of parameters of
+        interest from their true or other values,
+        we will use $\vect{\hat{\theta}}$ to denote the 
+        point estimate of $\vect{\theta}$.
+    \end{itemize}
+
+    \vspace{0.1cm}
+
+    If $\mathbb{X}_{m}$ is a set $\{\vect{x}_{1}, ..., \vect{x}_{m}\}$
+    of $m$ independent and identically distributed (i.i.d.) points,
+    a \index{point estimator}\gls{point estimator}\footnote{
+        also known as a {\em statistic}} 
+    is any function of the data:
+
+    \begin{equation}
+        \vect{\hat{\theta}}_{\mathbb{X}_{m}} = g(\vect{x}_{1}, ..., \vect{x}_{m})
+        \label{eq:point_estimator}
+    \end{equation}\\
+
+    \vspace{0.2cm}
+    While any function qualifies as a \gls{point estimator}, 
+    a good estimator gets close to the true value of $\vect{\theta}$
+    that generated the sample of data.\\
+
+    \vspace{0.2cm}
+    Since the data are drawn randomly, 
+    $\vect{\hat{\theta}}_{\mathbb{X}_{m}}$ itself is a random variable.\\
+
+\end{frame}

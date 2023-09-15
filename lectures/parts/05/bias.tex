@@ -1,0 +1,33 @@
+
+\begin{frame}[t]{Bias}
+
+The \index{bias}\gls{bias} of an estimator is defined as:
+
+\begin{equation}
+    bias(\vect{\hat{\theta}}_{\mathbb{X}_{m}}) = 
+      \mathbb{E}(\vect{\hat{\theta}}_{\mathbb{X}_{m}}) - \vect{\theta}
+    \label{eq:bias}
+\end{equation}\\
+
+An estimator is said to be {\bf unbiased} if:
+\begin{equation}
+    bias(\vect{\hat{\theta}}_{\mathbb{X}_{m}}) = 0
+    \label{eq:unbiased_estimator_1}
+\end{equation}\\
+which implies that:
+\begin{equation}
+    \mathbb{E}(\vect{\hat{\theta}}_{\mathbb{X}_{m}}) = \vect{\theta}
+    \label{eq:unbiased_estimator_2}
+\end{equation}\\
+
+An estimator is said to be {\bf asymptotically unbiased} if:
+\begin{equation}
+    \lim_{m\rightarrow \infty} bias(\vect{\hat{\theta}}_{\mathbb{X}_{m}}) = 0
+    \label{eq:asymptotically_unbiased_estimator_1}
+\end{equation}\\
+
+While it is desirable to avoid biases, 
+unbiased estimators are not always the best estimators to use 
+(see later in this lecture).
+
+\end{frame}
