@@ -2,4 +2,73 @@
 \begin{frame}[t,allowframebreaks]{
     Maximum Likelihood Estimation -}
 
+    Is there a systematic procedure for deriving good estimators?\\
+    \vspace{0.2cm}
+
+    The most common procedure is the 
+    \index{maximum likelihood estimation}
+    {\bf \gls{maximum likelihood estimation}}.\\
+    \vspace{0.2cm}
+
+    Let $\mathbb{X}_{m}$ = $\{\vect{x}_{1}, ..., \vect{x}_{m}\}$ be a set
+    of $m$ data points drawn independently from 
+    an unknown data-generating distribution $p_{data}(\vect{x})$,
+    and $p_{model}(\vect{x};\vect{\theta})$ \\a parametric family of 
+    probability distributions over the same space.\\
+    \vspace{0.2cm}
+
+    The \index{maximum likelihood estimator}\gls{maximum likelihood estimator}
+    for $\vect{\theta}$ is given by:
+    \begin{equation}
+        \vect{\hat{\theta}}_{\mathbb{X}_{m}}^{(ML)} = 
+        \argmax_{\vect{\theta}} p_{model}(\mathbb{X}_{m};\vect{\theta})
+        \label{eq:mle_estimator_1}
+    \end{equation}\\
+
+    or, equivalently, by:
+    \begin{equation}
+        \vect{\hat{\theta}}_{\mathbb{X}_{m}}^{(ML)} = 
+        \argmax_{\vect{\theta}} \prod_{i=1}^{m} 
+          p_{model}(\vect{x}_{i};\vect{\theta})
+        \label{eq:mle_estimator_2}
+    \end{equation}\\
+
+    \framebreak
+
+    %
+    %
+
+    The product over probabilities in Eq.~\ref{eq:mle_estimator_2} 
+    is prone to numerical underflow.
+    An equivalent problem is to maximise the logarithm of the likelihood:\\
+    \begin{equation}
+        \vect{\hat{\theta}}_{\mathbb{X}_{m}}^{(ML)} = 
+        \argmax_{\vect{\theta}} \sum_{i=1}^{m} 
+          \uplog p_{model}(\vect{x}_{i};\vect{\theta})
+        \label{eq:mle_estimator_3}
+    \end{equation}\\
+    where, conveniently, the product is mapped to a sum.\\
+
+    \vspace{0.2cm}
+
+    Dividing the sum with $m$, which doesn't impact argmax, 
+    we can express the 
+    \index{maximum likelihood estimator}\gls{maximum likelihood estimator}
+    as an expectation value
+    \begin{equation}
+        \vect{\hat{\theta}}_{\mathbb{X}_{m}}^{(ML)} = 
+        \argmax_{\vect{\theta}} \mathbb{E}_{\vect{x} \sim \hat{p}_{data}}
+        \Big(
+            \uplog p_{model}(\vect{x};\vect{\theta})
+        \Big)
+        \label{eq:mle_estimator_4}
+    \end{equation}\\
+    where $\hat{p}_{data}$ is the empirical data-generating distribution
+    defined by the drawn sample $\mathbb{X}_{m}$.
+
+    \framebreak
+
+    %
+    %
+
 \end{frame}
