@@ -1,0 +1,84 @@
+
+\begin{frame}[t,allowframebreaks]{
+    Beyond the gradient: The Jacobian matrix -}
+
+    Suppose $f$ is a function 
+    whose input \underline{and} output are vectors.\\
+    \vspace{0.2cm}
+
+    If $f$: $\mathbb{R}^m \rightarrow \mathbb{R}^n$,
+    all the first-order partial derivatives of $f$ can be written 
+    as a matrix $\vect{J}$ $\in \mathbb{R}^{m \times n}$
+    defined such that:
+
+    \begin{equation}
+        J_{ij} = 
+        \frac{\partial f_{i}(\vect{x})}{\partial x_j}
+        \label{eq:jacobian_1}
+    \end{equation}\\
+
+    Therefore: 
+    \begin{equation}
+        \vect{J} = 
+        \left(
+            \begin{array}{ccc}
+            \frac{\partial \vect{f}(\vect{x})}{\partial x_1} & 
+            \cdots & 
+            \frac{\partial \vect{f}(\vect{x})}{\partial x_n} \\ 
+            \end{array}
+        \right) =
+        \left(
+            \begin{array}{c}
+            \nabla_{\vect{x}}^T f_{1}(\vect{x}) \\
+            \vdots \\
+            \nabla_{\vect{x}}^T f_{m}(\vect{x}) \\
+            \end{array}
+        \right) =
+        \left(
+            \begin{array}{ccc}
+            \frac{\partial f_{1}(\vect{x})}{\partial x_1} & 
+            \cdots & 
+            \frac{\partial f_{1}(\vect{x})}{\partial x_n} \\ 
+            \vdots &
+            \ddots & 
+            \vdots \\
+            \frac{\partial f_{m}(\vect{x})}{\partial x_1} & 
+            \cdots & 
+            \frac{\partial f_{m}(\vect{x})}{\partial x_n} \\ 
+            \end{array}
+        \right)
+        \label{eq:jacobian_2}
+    \end{equation}\\
+
+    \vspace{0.2cm}
+
+    This matrix of derivatives is known as a
+    \index{Jacobian matrix}\Gls{Jacobian matrix}.
+    It has {\bf a range of applications} in several fields.\\
+
+    \framebreak
+
+    %
+    %
+
+    The Jacobian can be used to approximate a nonlinear 
+    function with a linear one:
+    \begin{equation}
+        f(\vect{x}^\prime) \approx 
+        f(\vect{x}) + \vect{J}(\vect{x}) \cdot (\vect{x}^\prime - \vect{x})   
+        \label{eq:jacobian_linearization_1}
+    \end{equation}\\
+    is the generalization of Eq.~\ref{eq:deriv_1}
+    for a function $f$: $\mathbb{R}^m \rightarrow \mathbb{R}^n$.
+
+    %  \begin{center}
+    %     \includegraphics[width=0.75\textwidth]
+    %         {./images/grad_descent/jacobian.png}\\
+    %     {\tiny 
+    %         Simple illustration of the gradient descent technique.
+    %         \color{col:attribution} 
+    %         Schematic reproduced from p. 80 of \cite{Goodfellow:2017MITDL}.\\
+    %     }
+    %  \end{center}        
+
+\end{frame}
