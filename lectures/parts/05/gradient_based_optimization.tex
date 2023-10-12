@@ -2,8 +2,46 @@
 \begin{frame}[t,allowframebreaks]{Gradient-based optimization -}
 
 
-    \gls{ml}
+    Training a \gls{ml} model requires 
+    some kind of \index{optimisation}\gls{optimisation}.
+    \begin{itemize}
+        \item however, training is not a {\bf pure} \gls{optimisation} problem, 
+        as we will discuss later. (See section on `\Gls{generalisation}'. 
+        \hyperlink{sec:Generalisation}{\beamerbutton{link}})
+    \end{itemize}
+    \vspace{0.2cm}
 
+    Often, we try to achieve the \index{extremisation}\gls{extremisation} 
+    (minimisation or maximisation) of an 
+    \index{objective function}\gls{objective function} or 
+    \index{criterion}\gls{criterion}.
+    \begin{itemize}
+        \item 
+            When the \gls{objective function} is minimised, 
+            it is often called the
+            \index{cost function}\gls{cost function},
+            \index{loss function}\gls{loss function}, or
+            \index{error function}\gls{error function}$^(1)$.
+    \end{itemize}
+    \vspace{0.2cm}
+    The values extremising a function, 
+    are often denoted with a $^\star$ superscript.
+    So, if $f(\vect{x}): \mathbb{R}^n \rightarrow \mathbb{R}$ 
+    is an \gls{objective function}
+    we may write:
+    \begin{equation*}
+        \vect{x}^{\star} = \mathrm{argmin} \; f(\vect{x})
+        \;\;\;\;\; \textrm{or} \;\;\;\;\;
+        \vect{x}^{\star} = \mathrm{argmax} \; f(\vect{x})
+    \end{equation*}
+
+    \vspace{0.1cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {\tiny
+    (1) Note that some authors assign subtle differences in these terms,
+    while others use them interchangeably.\\
+    }
+    
     \framebreak
 
     %
@@ -14,7 +52,7 @@
 
     The \index{derivative}\gls{derivative} of $f(x)$, is another function 
     denoted as $f^\prime(x)$ or $df(x)/dx$.\\
-    \vspace{0.2cm}
+    \vspace{0.3cm}
     
     The function $f^\prime(x)$:
     \begin{itemize}
@@ -29,37 +67,82 @@
           \label{eq:deriv_1}
        \end{equation}\\
     \end{itemize}
-
-    The \gls{derivative} $f^\prime(x)$ is useful for the 
-    \index{extremization}\gls{extremization} of a function $f(x)$:\\
-    It specifies how to make a small step in the space of $x$, 
-    in order to make a small improvement in $f(x)$ in the desired direction.\\
-    \vspace{0.2cm}
-
-    The technique is known as \index{gradient descent}\gls{gradient descent},
-    (often attributed to L.A. Cauchy 
-    \cite{Cauchy:GradientDescent}).
-
-    Starting from a point $\vect{x}$, 
-    the \index{gradient descent}\gls{gradient descent} method 
-    proposes a new point $\vect{x}^\prime$ 
-    on the path towards the function minimum:
+    If $f(\vect{x})$
+    is a scalar function of $n$ parameters,  
+    the \index{gradient}\gls{gradient} $\nabla_{\vect{x}} f(\vect{x})$:
     \begin{equation}
-        \vect{x} \rightarrow \vect{x}^\prime = 
-          \vect{x} - \alpha \nabla_{\vect{x}} f(\vect{x})
-        \label{eq:grad_descent_1}
+        \nabla_{\vect{x}} f(\vect{x}) = 
+        \Big( 
+            \frac{\partial f(\vect{x})}{\partial x_1},
+            \frac{\partial f(\vect{x})}{\partial x_2},
+            \cdots ,
+            \frac{\partial f(\vect{x})}{\partial x_n}
+        \Big)
+        \label{eq:gradient_1}
      \end{equation}\\
+     generalises the concept of the \gls{derivative} in $n$-dimensional spaces.
 
     \framebreak
 
     %
     %
 
+    {\bf The \index{gradient}\gls{gradient} $\nabla_{\vect{x}} f(\vect{x})$ 
+    is useful for the 
+    \index{extremisation}\gls{extremisation} of $f(\vect{x})$.}\\
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item
+            It specifies how to make a small step in the space of $\vect{x}$, 
+            in order to make a small improvement in $f(\vect{x})$ 
+            in the desired direction.\\
+            \vspace{0.1cm}
+        \item
+            Starting from a point $\vect{x}$, a calculation of 
+            the \index{gradient}\gls{gradient} allows one to
+            propose a new point $\vect{x}^\prime$ 
+            on the path towards the function minimum$^{(1)}$:
+            \begin{equation}
+                \vect{x} \rightarrow \vect{x}^\prime = 
+                    \vect{x} - \alpha \nabla_{\vect{x}} f(\vect{x})
+                \label{eq:grad_descent_1}
+            \end{equation}\\
+            where $\alpha$ is a \index{hyperparameter}\gls{hyperparameter}
+            controlling the \index{learning rate}\gls{learning rate}.
+    \end{itemize}
+
+    \vspace{0.1cm}
+
+    This \index{optimisation}\gls{optimisation} 
+    technique is known as 
+    \index{gradient descent}{\bf \gls{gradient descent}}.
+    \begin{itemize}
+      \item The method is attributed to Louis Augustin Cauchy (1847)
+       \cite{Cauchy:GradientDescent}.\\
+    \end{itemize}
+
+    \vspace{0.1cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {\tiny
+    (1) Similarly, if we seek to maximise $f(\vect{x})$ 
+    we move up the slope
+    $\displaystyle \vect{x} \rightarrow \vect{x}^\prime =
+      \vect{x} {\color{cadmiumred}+} \alpha \nabla_{\vect{x}} f(\vect{x})$.\\
+    }
+
+    \framebreak
+
+    %
+    %
+
+    \vspace{-1.0cm}
+
     \begin{center}
-        \includegraphics[width=0.75\textwidth]
+        \includegraphics[width=0.80\textwidth]
             {./images/grad_descent/goodfellow17_grad_descent_1d.png}\\
         {\tiny 
-            Simple illustration of the gradient descent technique.
+            Simple illustration of the method of
+            \index{gradient}\index{gradient descent}{\bf \gls{gradient descent}}.
             \color{col:attribution} 
             Schematic reproduced from p. 80 of \cite{Goodfellow:2017MITDL}.\\
         }
@@ -80,7 +163,8 @@
                 \includegraphics[width=0.99\textwidth]
                     {./images/grad_descent/guliyev20_grad_descent_2d.png}\\
                 {\tiny 
-                    Simple illustration of the gradient descent technique.
+                    Simple illustration of the method of
+                    \index{gradient}\index{gradient descent}{\bf \gls{gradient descent}}.
                     \color{col:attribution} 
                     Schematic reproduced from \cite{Medium:GradDescentOptLinReg}.\\
                 }
@@ -98,6 +182,90 @@
         }    
         \end{column}
     \end{columns}
+
+    \framebreak
+
+    %
+    %
+
+    There are various types of 
+    \index{gradient}\index{gradient descent}{\bf \gls{gradient descent}}
+    algorithms:\\
+    \begin{itemize}
+        \item   
+            \index{batch gradient descent}
+            \Gls{batch gradient descent}\\
+            \begin{itemize}
+                \item
+                    Updates the model parameters 
+                    after an iteration over all examples in the training set
+                    (defining a training \index{epoch}\gls{epoch}).
+            \end{itemize}
+        \item 
+            \index{mini batch gradient descent}
+            \Gls{mini batch gradient descent}\\
+            \begin{itemize}
+                \item   
+                    Separates the training set into small batches,
+                    and updates the model parameters after an iteration
+                    over all examples of each batch.
+            \end{itemize}
+        \item 
+            \index{stochastic gradient descent}
+            \Gls{stochastic gradient descent}\\
+            \begin{itemize}
+                \item   
+                    Updates the model parameters after evaluating each
+                    single example in the training set.
+            \end{itemize}
+    \end{itemize}
+
+    \framebreak
+
+    %
+    %
+
+    As we have seen, 
+    \index{gradient}\index{gradient descent}\gls{gradient descent} 
+    proposes a step (Eq.~\ref{eq:grad_descent_1}) from $\vect{x}$ to $\vect{x}^\prime$:
+    \begin{equation*}
+        \vect{x} \rightarrow \vect{x}^\prime = 
+            \vect{x} - \alpha \nabla_{\vect{x}} f(\vect{x})
+    \end{equation*}\\
+    \vspace{-0.1cm}
+    There are {\bf many ways to choose the 
+    value of  \index{learning rate}\gls{learning rate}, $\alpha$}.\\
+    \vspace{0.2cm}
+    For example, we can:
+    \begin{itemize}
+        \item 
+          set $\alpha$ to a small constant value,
+        \item 
+          solve for the value of $\alpha$ that makes the 
+          directional derivative $\frac{\partial f(\vect{x})}{\partial \vect{n}}^{(1)}$ 
+          vanish, i.e. move along $-\nabla_{\vect{x}} f(\vect{x})$
+          till $f$ no longer descents, or
+        \item 
+          evaluate $f\big(\vect{x} - \alpha \nabla_{\vect{x}} f(\vect{x})\big)$
+          for a range of $\alpha$ values, and  pick the one that leads to the smallest
+          value of $f$ ({\bf line search} strategy).
+    \end{itemize}
+    \vspace{0.2cm}
+    The choice impacts the {\bf efficient convergence} of the optimization.\\
+    %\vspace{0.1cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    \vspace{0.1cm}
+    {\tiny
+    (1) The directional derivative, 
+    $\frac{\partial f(\vect{x})}{\partial \vect{n}}$,
+    is the derivative of $f(\vect{x})$ in the direction of $\vect{\hat{n}}$. 
+    It should not be confused with the gradient 
+    $\nabla_{\vect{x}} f(\vect{x})$ though,
+    clearly, they are connected: 
+    $\frac{\partial f(\vect{x})}{\partial \vect{n}} = 
+     \vect{n} \cdot \nabla_{\vect{x}} f(\vect{x})$.\\
+    }
+
 
     \framebreak
 
