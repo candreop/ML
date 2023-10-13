@@ -48,7 +48,7 @@
     is denoted by $\displaystyle \partial^2 f(\vect{x}) / \partial x_i \partial x_j$.\\        
     \vspace{0.1cm}
 
-    These partial derivatives form the \gls{Hessian matrix} 
+    These partial derivatives form the matrix 
     $\vect{H}^{(f)}(\vect{x})$ with elements:
     \begin{equation}
         H^{(f)}_{ij}(\vect{x}) = 
@@ -57,7 +57,7 @@
     \end{equation}\\
     
     Therefore:\\
-    \vspace{-0.2cm}
+    \vspace{-0.6cm}
     \begin{equation}
         \vect{H}^{(f)}(\vect{x}) = 
         % \left(
@@ -97,10 +97,13 @@
         \label{eq:hessian_2}
     \end{equation}\\
     
-    \vspace{0.25cm}
-
+    \vspace{0.250cm}
     \index{Hessian matrix}\index{Jacobian matrix}
-    Note that {\bf the \gls{Hessian} is the \gls{Jacobian} of the gradient}.
+
+    $\vect{H}^{(f)}(\vect{x})$ in known as a {\bf \gls{Hessian matrix}}, 
+    named after Ludwig Otto Hesse.\\
+
+    Note that the \gls{Hessian} is {\bf the \gls{Jacobian} of the gradient}.
 
     \framebreak
 
@@ -278,7 +281,7 @@
         \end{equation}
         \item 
         If $\delta_{curv}$ is too large, 
-        the \index{gradient descent}\gls{gradient descent} 
+        the \index{gradient}\index{gradient descent}\gls{gradient descent} 
         step can move uphill!
     \end{itemize}
 

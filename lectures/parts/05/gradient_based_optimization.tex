@@ -113,12 +113,14 @@
 
     \vspace{0.1cm}
 
-    This \index{optimisation}\gls{optimisation} 
+    This iterative \index{optimisation}\gls{optimisation} 
     technique is known as 
-    \index{gradient descent}{\bf \gls{gradient descent}}.
+    \index{gradient}\index{gradient descent}{\bf \gls{gradient descent}}.
     \begin{itemize}
-      \item The method is attributed to Louis Augustin Cauchy (1847)
-       \cite{Cauchy:GradientDescent}.\\
+      \small
+      \item The method is attributed to L.A. Cauchy (1847)
+       \cite{Cauchy:GradientDescent}, who used it to solve systems of
+       simultaneous equations that determine the orbits of stars.
     \end{itemize}
 
     \vspace{0.1cm}
@@ -153,7 +155,7 @@
     %
     %
 
-    The \index{gradient descent}\gls{gradient descent} method
+    The \index{gradient}\index{gradient descent}\gls{gradient descent} method
     readily generalizes in multiple dimensions.\\
 
 
@@ -216,7 +218,7 @@
             \begin{itemize}
                 \item   
                     Updates the model parameters after evaluating each
-                    single example in the training set.
+                    single example in the training set.\\
             \end{itemize}
     \end{itemize}
 
@@ -225,16 +227,44 @@
     %
     %
 
+    \vspace{-0.5cm}
     As we have seen, 
     \index{gradient}\index{gradient descent}\gls{gradient descent} 
-    proposes a step (Eq.~\ref{eq:grad_descent_1}) from $\vect{x}$ to $\vect{x}^\prime$:
+    proposes a step (Eq.~\ref{eq:grad_descent_1}) 
+    from $\vect{x}$ to $\vect{x}^\prime$:\\
+    \vspace{-0.2cm}
     \begin{equation*}
         \vect{x} \rightarrow \vect{x}^\prime = 
             \vect{x} - \alpha \nabla_{\vect{x}} f(\vect{x})
     \end{equation*}\\
     \vspace{-0.1cm}
-    There are {\bf many ways to choose the 
-    value of  \index{learning rate}\gls{learning rate}, $\alpha$}.\\
+    The method is {\bf sensitive to the value of the 
+    \index{learning rate}\gls{learning rate}, $\alpha$}.\\
+    \begin{itemize}
+        \small
+        \item 
+        If too large, the algorithm can 
+        overshoot and step past the minimum.
+        \item 
+        If too small, the algorithm can become 
+        too inefficient.
+    \end{itemize}
+    \begin{center}
+        \includegraphics[width=0.88\textwidth]
+            {./images/grad_descent/atu22_learning_rate_1.png}\\
+        {\tiny 
+            \color{col:attribution} 
+            Schematic reproduced from \cite{Medium:GradDescent}.\\
+        }
+    \end{center}                    
+
+    \framebreak
+
+    %
+    %
+
+    There are several ways to choose the value of 
+    the \index{learning rate}\gls{learning rate}, $\alpha$.\\
     \vspace{0.2cm}
     For example, we can:
     \begin{itemize}
