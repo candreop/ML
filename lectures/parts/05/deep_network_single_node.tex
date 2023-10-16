@@ -1,0 +1,71 @@
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+   
+       %\draw[help lines] (0,0) grid (15,3);
+       
+       \node[ann_input_node] (x)    
+         at ( 1.0, 1.5) {\Large $x$};
+       \node[ann_processing_node] (h1)   
+         at ( 3.5, 1.5) {\Large $\sigma$};
+       \node[ann_processing_node] (h2)   
+         at ( 6.0, 1.5) {\Large $\sigma$};
+       \node[ann_processing_node_rep] (hi)   
+         at ( 8.5, 1.5) {\Large $...$};
+       \node[ann_processing_node] (hm_1) 
+         at (11.5, 1.5) {\Large $\sigma$};
+       \node[ann_processing_node] (o)    
+         at (14.5, 1.5) {\Large $\sigma$};       
+
+       \drawgraphlinebigarrow (x.east)       
+         to[left =0] 
+           node[above,midway,xshift=0.4cm,yshift=0.3cm]
+             {$z_1$}
+           node[below,midway,xshift=0.0cm,yshift=-0.2cm]
+             {$w_1,b_1$}
+         (h1.west) ;
+
+       \drawgraphlinebigarrow (h1.east)       
+         to[left =0] 
+           node[above,midway,xshift=-0.4cm,yshift=0.3cm]
+             {$y_1$}
+           node[above,midway,xshift=0.4cm,yshift=0.3cm]
+             {$z_2$}
+           node[below,midway,xshift=0.0cm,yshift=-0.2cm]
+             {$w_2,b_2$}
+         (h2.west) ;
+
+       \drawgraphlinebigarrow (h2.east)       
+         to[left =0] 
+           node[above,midway,xshift=-0.4cm,yshift=0.3cm]
+             {$y_2$}
+           node[below,midway,xshift=0.0cm,yshift=-0.2cm]
+             {$w_3,b_3$}
+         (hi.west) ;
+
+       \drawgraphlinebigarrow (hi.east)       
+         to[left =0] 
+           node[above,midway,xshift=0.3cm,yshift=0.3cm]
+             {$z_{m-1}$}
+           node[below,midway,xshift=-0.1cm,yshift=-0.2cm]
+             {$w_{m-1},b_{m-1}$}
+         (hm_1.west) ;
+
+       \drawgraphlinebigarrow (hm_1.east)       
+         to[left =0] 
+           node[above,midway,xshift=-0.4cm,yshift=0.3cm]
+             {$y_{m-1}$}
+           node[above,midway,xshift=0.5cm,yshift=0.3cm]
+             {$z_{m}$}
+           node[below,midway,xshift=0.0cm,yshift=-0.2cm]
+             {$w_{m},b_{m}$}
+         (o.west) ;
+
+       \drawgraphlinebigarrow (o.east)       
+         to[left =0] 
+           node[above,midway,xshift=-0.1cm,yshift=0.3cm]
+             {$o$}
+         (15.8,1.5) ;
+         
+    \end{tikzpicture}
+\end{center}
