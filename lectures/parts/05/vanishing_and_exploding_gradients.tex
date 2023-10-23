@@ -330,13 +330,19 @@
     \vspace{0.2cm}
 
     \begin{center}
-        \includegraphics[width=0.99\textwidth]
+        \includegraphics[width=0.80\textwidth]
             {./images/training_issues/aggarwal18_shape_loss_function_grad_descent.png}\\
         {\tiny 
-            \color{col:attribution} 
+           \color{col:attribution} 
             Fig. 3.9 in \cite{Aggarwal:2018SpringerDL}.\\
         }
     \end{center}        
+    
+    {\scriptsize
+    Note that, on the right, \index{gradient descent}\gls{gradient descent}
+    steps in the y direction are large, but their effect is undone in subsequent steps.
+    Progress in the x direction is consistent but small.\\
+    }
 
     \framebreak
 
@@ -351,11 +357,18 @@
         \item calculate a course correction.
     \end{itemize}    
 
+    \vspace{0.1cm}
+
+    In this case, our \index{optimisation}\gls{optimisation} procedure 
+    is forced to make a {\bf large number of iterations},
+    which can become very {\bf inefficient}.\\
+
     \vspace{0.2cm}
 
-    With \index{vanishing gradient}\glspl{vanishing gradient},
-    our \index{optimisation}\gls{optimisation} procedure 
-    is forced to make an {\bf extremely large number of iterations},
-    which is {\bf inefficient}.
+    The \index{vanishing gradient}\glspl{vanishing gradient} 
+    is an {\bf extreme manifestation}
+    of a behaviour that characterises most
+    \index{optimisation}\gls{optimisation} tasks using
+    \index{gradient descent}\gls{gradient descent}.\\
 
 \end{frame}
