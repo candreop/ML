@@ -1,5 +1,7 @@
-\renewcommand{\thispart}{5 }
-\renewcommand{\thispartname}{Practical Issues in Neural Network Training}
+\renewcommand{\thispart}{4 }
+\renewcommand{\thispartname}{
+    Learning Algorithms, Automatic Differentiation (Backpropagation) and 
+    Practical Issues in Neural Network Training}
 
 \part{\thispartname}
 
@@ -63,6 +65,22 @@
 \subsection{Ensemble methods: Bagging, subsampling and dropout}
 \subsection{Adversarial Training}
 
+% Computation graph introduction and examples
+\section{Computation Graph}
+\input{parts/training/computation_graph.tex}
+\input{parts/training/computation_graph_examples.tex}
+
+% Automatic differentiation examples
+\section{Automatic Differentiation}
+\input{parts/training/automatic_differentiation.tex}
+\input{parts/training/automatic_differentiation_forward.tex}
+\input{parts/training/automatic_differentiation_reverse.tex}
+\input{parts/training/automatic_differentiation_forward_examples.tex}
+\input{parts/training/automatic_differentiation_forward_examples_inefficient.tex}
+\input{parts/training/automatic_differentiation_reverse_examples.tex}
+
+% Backpropagation
+\section{Backpropagation}
 
 % Suggested reading for this part
 \section{Suggested reading}
