@@ -29,6 +29,16 @@
 }
 
 %
+% Other general resources
+%
+
+@online{CS231n,
+  title={Stanford CS class CS231n: Convolutional Neural Networks for Visual Recognition.}, 
+  url = {https://cs231n.github.io/},  
+  urldate = {Accessed: 2023-04-20}
+}
+
+%
 % AI and intelligence 
 %
 
@@ -199,8 +209,11 @@
     note = {\url{https://www.researchgate.net/publication/233820788_AI_The_Tumultuous_History_of_the_Search_for_Artificial_Intelligence}}
 }
 
-% Gradient descent
+%
+% Gradient descent (GD) and practical recommendations
+%
 
+% Primary GD reference
 @article{Cauchy:GradientDescent,
   author="CAUCHY, A.",
   title="Methode generale pour la resolution des systemes d'equations simultanees",
@@ -209,6 +222,92 @@
   volume="25",
   pages="536-538",
   URL="https://cir.nii.ac.jp/crid/1573387450834953216"
+}
+
+% Practical recommendations
+@Inbook{Bengio:2012gbt,
+  author="Bengio, Yoshua",
+  editor="Montavon, Gr{\'e}goire and Orr, Genevi{\`e}ve B. and M{\"u}ller, Klaus-Robert",
+  title="Practical Recommendations for Gradient-Based Training of Deep Architectures",
+  bookTitle="Neural Networks: Tricks of the Trade: Second Edition",
+  year="2012",
+  publisher="Springer Berlin Heidelberg",
+  address="Berlin, Heidelberg",
+  pages="437--478",
+  isbn="978-3-642-35289-8",
+  doi="10.1007/978-3-642-35289-8_26",
+  url="https://doi.org/10.1007/978-3-642-35289-8_26"
+}
+
+% Learning rate decay
+@misc{You:2019lrd,
+  author={Kaichao You and Mingsheng Long and Jianmin Wang and Michael I. Jordan},
+  title={How Does Learning Rate Decay Help Modern Neural Networks?}, 
+  year={2019},
+  eprint={1908.01878},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+
+% Escaping local minima
+@misc{Kleinberg:2018gdlm,
+  author={Robert Kleinberg and Yuanzhi Li and Yang Yuan},
+  title={An Alternative View: When Does SGD Escape Local Minima?}, 
+  year={2018},
+  eprint={1802.06175},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+
+% Momentum based methods, primary reference
+@article{Polyak:1964a,
+  author = {B.T. Polyak},
+  title = {Some methods of speeding up the convergence of iteration methods},
+  journal = {USSR Computational Mathematics and Mathematical Physics},
+  volume = {4},
+  number = {5},
+  pages = {1-17},
+  year = {1964},
+  issn = {0041-5553},
+  doi = {https://doi.org/10.1016/0041-5553(64)90137-5},
+  url = {https://www.sciencedirect.com/science/article/pii/0041555364901375}
+}
+
+% Nesterov momentum
+@article{Nesterov:1983a,
+  title={A method for solving the convex programming problem with convergence rate O(1/k$^2$)},
+  author={Yurii Nesterov},
+  journal={Proceedings of the USSR Academy of Sciences},
+  year={1983},
+  volume={269},
+  pages={543-547},
+  url={https://api.semanticscholar.org/CorpusID:145918791}
+}
+
+% Delta-bar-delta
+@article{Jacobs:1988dbd,
+  author = {Robert A. Jacobs},
+  title = {Increased rates of convergence through learning rate adaptation},
+  journal = {Neural Networks},
+  volume = {1},
+  number = {4},
+  pages = {295-307},
+  year = {1988},
+  issn = {0893-6080},
+  doi = {https://doi.org/10.1016/0893-6080(88)90003-2},
+  url = {https://www.sciencedirect.com/science/article/pii/0893608088900032}
+}
+
+% AdaGrad sub-gradient method
+@article{Duchi:11a,
+  author  = {John Duchi and Elad Hazan and Yoram Singer},
+  title   = {Adaptive Subgradient Methods for Online Learning and Stochastic Optimization},
+  journal = {Journal of Machine Learning Research},
+  year    = {2011},
+  volume  = {12},
+  number  = {61},
+  pages   = {2121--2159},
+  url     = {http://jmlr.org/papers/v12/duchi11a.html}
 }
 
 % Automatic differentiation
@@ -587,6 +686,7 @@ doi = {10.3390/rs9050480}
   urldate = {Accessed: 2023-10-03}
 }
 
+% no free luch theorems
 @online{NoFreeLunch,
   author = {},
   title = {No Free Lunch Theorems},
@@ -718,6 +818,24 @@ doi = {10.3390/rs9050480}
   urldate = {2023-09-29}
 }
 
+% reference for schematic illustrating the momentum method, usin a ball rolling down a bowl
+@online{Medium:GradDescentMomRMSPropAdam,
+  author = {Harsh Khandewal},
+  title = {Gradient Descent with Momentum, RMSprop And Adam Optimizer},
+  year = {2020},
+  url = {https://medium.com/analytics-vidhya/momentum-rmsprop-and-adam-optimizer-5769721b4b19},  
+  urldate = {2023-10-26}
+}
+
+% reference for schematic illustrating the momentum method, usin a ball rolling down a bowl
+@online{TowardsDataScience:LP2MomentumBasedGS,
+  author = {Akshay L Chandra},
+  title = {Learning Parameters, Part 2: Momentum-Based and Nesterov Accelerated Gradient Descent},
+  year = {2019},
+  url = {https://towardsdatascience.com/learning-parameters-part-2-a190bef2d12},  
+  urldate = {2023-10-26}
+}
+
 % reference for schematic showing the workings of neocognitron
 % reference for schematic showing the LeNet-5 architecture
 @online{Medium:LeNet5andAlexNet,
@@ -744,6 +862,15 @@ doi = {10.3390/rs9050480}
   year = {2022},
   url = {https://medium.com/codex/gradient-descent-cb0f02dc6eab},  
   urldate = {2023-10-13}
+}
+
+% reference for schematic showing loss function for various learning rates
+@online{Medium:LRateDecay,
+  author = {Parth Lathiya},
+  title = {Loss explosion while training a custom model},
+  year = {2020},
+  url = {https://parthlathiya.medium.com/loss-explosion-while-training-a-custom-model-ad15fbc00d1},  
+  urldate = {2023-10-24}
 }
 
 % reference for cat image showing input to CNN and explaining RGB colour channels

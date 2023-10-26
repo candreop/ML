@@ -1,0 +1,52 @@
+
+
+\begin{frame}[t,allowframebreaks]{
+    Adaptive subgradient algorithms -}
+
+    The \index{learning rate}\gls{learning rate}
+    is {\em `the single most important 
+    \index{hyperparameter}\gls{hyperparameter}'} \cite{Bengio:2012gbt},
+    but it is also {\bf one of the most difficult ones to adjust}.\\
+    \begin{itemize}
+        \small
+        \item
+        A key issue is this that
+        the \index{loss function}\gls{loss function} has 
+        {\bf greatly-varying levels of sensitivity} to changes 
+        in different directions in its parameter space.\\
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    The \index{momentum}\gls{momentum}-based methods
+    alleviates the problem, 
+    but at the expense of adding another \gls{hyperparameter}
+    (the \index{momentum parameter}\gls{momentum parameter}).
+
+    \vspace{0.2cm}
+
+    An obvious alternative approach is to {\bf choose a different 
+    \gls{learning rate} for each direction} in the parameter space.\\
+    \begin{itemize}
+        \small
+        \item This is challenging, since networks 
+        can have {\bf millions or parameters}.
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    There exist several such 
+    \index{adaptive subgradient}\gls{adaptive subgradient} algorithms.\\
+    \begin{itemize}
+        \small
+        \item 
+        We will study a few well-known variants of this 
+        class of algorithms, such as 
+        {\bf delta-bar-delta} \cite{Jacobs:1988dbd},
+        {\bf AdaGrad} \cite{Duchi:11a},
+        {\bf RMSprop}, and
+        {\bf Adam}.
+    \end{itemize}
+
+\end{frame}
+

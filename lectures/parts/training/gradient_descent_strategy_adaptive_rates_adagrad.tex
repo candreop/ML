@@ -1,0 +1,26 @@
+
+
+
+\begin{frame}[t,allowframebreaks]{
+    Adaptive subgradient algorithms: AdaGrad -}
+
+    \index{AdaGrad}\gls{AdaGrad} \cite{Duchi:11a} adapts the 
+    \index{learning rate}\glspl{learning rate} 
+    for each individual model parameter.\\
+    \vspace{0.2cm}
+
+    The \glspl{learning rate} are scaled inversely proportional to 
+    the square root of the running sum of 
+    the squared \index{gradient}\gls{gradient} 
+    of the \index{loss function}\gls{loss function}.
+
+    \begin{equation}
+          \displaystyle
+          \alpha_k \leftarrow 
+          \frac{\alpha}
+          {\sqrt{\sum_{\ell=0}^{k-1} 
+            \Big(\frac{\partial L}{\partial w}\Big)^2}}
+        \label{eq:adagrad_rate_update_rule}
+    \end{equation}
+
+\end{frame}

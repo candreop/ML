@@ -31,9 +31,28 @@
 \section{Gradient descent strategies}
 
 \subsection{Learning rate decay}
-\subsection{Momentum-based strategies}
+\input{parts/training/gradient_descent_strategy_rate_decay}
 
+\subsection{Momentum-based strategies}
+\input{parts/training/gradient_descent_strategy_momentum}
 \subsubsection{Nesterov momentum}
+\input{parts/training/gradient_descent_strategy_momentum_nesterov}
+
+\subsection{Adaptive sub-gradient methods}
+\input{parts/training/gradient_descent_strategy_adaptive_rates}
+\subsubsection{Delta-bar-delta algorithm}
+\input{parts/training/gradient_descent_strategy_adaptive_rates_deltabardelta}
+\subsubsection{AdaGrad algorithm}
+\input{parts/training/gradient_descent_strategy_adaptive_rates_adagrad}
+\subsubsection{RMSprop algorithm}
+\input{parts/training/gradient_descent_strategy_adaptive_rates_rmsprop}
+\subsubsection{Adam algorithm}
+\input{parts/training/gradient_descent_strategy_adaptive_rates_adam}
+
+\subsection{Using second-order derivatives}
+
+\subsection{Gradient clipping methods}
+
 
 \section{Generalisation}
 \input{parts/training/generalisation.tex}
