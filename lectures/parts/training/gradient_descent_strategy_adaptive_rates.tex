@@ -42,11 +42,48 @@
         \item 
         We will study a few well-known variants of this 
         class of algorithms, such as 
-        {\bf delta-bar-delta} \cite{Jacobs:1988dbd},
-        {\bf AdaGrad} \cite{Duchi:11a},
-        {\bf RMSprop}, and
-        {\bf Adam}.
+        \index{delta-bar-delta}\gls{delta-bar-delta} \cite{Jacobs:1988dbd},
+        \index{AdaGrad}\gls{AdaGrad} \cite{Duchi:11a},
+        \index{RMSProp}\gls{RMSProp} \cite{Hinton:2012rmsp}, and
+        \index{Adam}\gls{Adam} \cite{Kingma:2017adam}.
     \end{itemize}
+
+    \framebreak
+ 
+    %
+    %
+    \index{adaptive subgradient}\Gls{adaptive subgradient} algorithms
+    extends the learning rule used in 
+    the plain gradient descent method
+    \begin{equation}
+        \vect{w}_{k} \rightarrow \vect{w}_{k+1} = 
+        \vect{w}_{k} + \delta \vect{w}_{k} =
+        \vect{w}_{k} - \alpha \nabla_{\vect{w}} L(\vect{w}_{k})
+    \end{equation}\\
+    to
+    \begin{equation}
+        \vect{w}_{k} \rightarrow \vect{w}_{k+1} = 
+        \vect{w}_{k} + \delta \vect{w}_{k} =
+        \vect{w}_{k} - \vect{\alpha}_{k} \odot \nabla_{\vect{w}} L(\vect{w}_{k})
+        \label{eq:subgradient_method_learning_rule}
+    \end{equation}\\
+    where
+    the constant scalar \index{learning rate}\gls{learning rate} $\alpha$ 
+    is expanded to a vector $\vect{\alpha}_{k}$ 
+    with values that depend on the epoch $k$$^1$.\\
+
+    \vspace{0.2cm}
+
+    Each element of the vector $\vect{\alpha}_{k}$ is the 
+    {\bf individual and constantly updated \gls{learning rate} 
+    corresponding to a distinct weight}.\\
+     
+    \vspace{0.2cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {\small
+        $^1$ In Eq.~\ref{eq:subgradient_method_learning_rule}, $\odot$ denotes
+        an element-wise multiplication of the two vectors.\\
+    }
 
 \end{frame}
 

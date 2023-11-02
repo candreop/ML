@@ -1,5 +1,35 @@
 
 \begin{frame}[t,allowframebreaks]{
-    Beyond the gradient: Using 2$^{nd}$ order derivatives -}
+    Beyond the gradient: Second-order methods -}
+
+    The methods outlined previously, improve upon the plain
+    \index{gradient descent}\gls{gradient descent} method,
+    using only the \index{gradient}\gls{gradient}.\\
+    \vspace{0.2cm}
+    \index{second-order method}\Glspl{second-order method}
+    is a class of \index{optimisation}\gls{optimisation} methods
+    {\bf making use of the second derivatives of the 
+    \index{loss function}\gls{loss function}}.\\
+    \vspace{0.2cm}
+    A simple and widely-used \gls{second-order method} is
+    \index{Newton's method}{\bf \gls{Newton's method}}.\\
+    \begin{itemize}
+        \small
+        \item \gls{Newton's method} is {\bf inefficient} except 
+        for networks with few parameters.\\ 
+        \item At each training \index{epoch}\gls{epoch}, 
+        it requires the inversion of a
+        \index{Hessian}\gls{Hessian} matrix with
+        dimensions $N \times N$, where $N$ is the 
+        number of parameters. 
+    \end{itemize}
+    \vspace{0.2cm}
+    There exist several {\bf approximate \glspl{second-order method}} 
+    avoiding computing the inverse \gls{Hessian} matrix:
+    \begin{itemize}
+        \item \index{conjugate gradients}\Gls{conjugate gradients}
+        \item \index{BFGS}\gls{bfgs} 
+        \item \index{L-BFGS}\gls{lbfgs} 
+    \end{itemize}
 
 \end{frame}

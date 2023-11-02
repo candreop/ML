@@ -83,7 +83,8 @@
 
 % activation function
 \newglossaryentry{activation function}{
-  name=activation function,
+  name={activation function},
+  plural={activation functions},
   description={
   }
 }
@@ -106,11 +107,33 @@
 }
 
 % AdaGrad
-\newglossaryentry{AdaGrad}{
-  name={AdaGrad},
+\newglossaryentry{AdaGradg}{
+  name={Adaptive Gradient},
   description={
     An \gls{adaptive subgradient} algorithm
   }
+}
+\newglossaryentry{AdaGrad}{
+  type=\acronymtype,
+  name={AdaGrad},
+  description={Adaptive Gradient Algorithm},
+  first={Adaptive Gradient Algorithm (AdaGrad)\glsadd{AdaGradg}},
+  see=[Glossary:]{AdaGradg}
+}
+
+% Adam
+\newglossaryentry{Adamg}{
+  name={Adaptive Moments},
+  description={
+    An \gls{adaptive subgradient} algorithm
+  }
+}
+\newglossaryentry{Adam}{
+  type=\acronymtype,
+  name={Adam},
+  description={Adaptive Moments Algorithm},
+  first={Adaptive Moments Algorithm (Adam)\glsadd{Adamg}},
+  see=[Glossary:]{Adamg}
 }
 
 % AlexNet

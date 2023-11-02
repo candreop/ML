@@ -1,0 +1,290 @@
+
+
+\begin{frame}[t,allowframebreaks]{
+    Second-order methods: Netwon's method -}
+
+    \index{Newton's method}\gls{Newton's method} uses a second-order
+    \index{Taylor series}\gls{Taylor series} 
+    (see Eq.~\ref{eq:hessian_taylor_1})
+    of the \index{loss function}\gls{loss function}, $L(\vect{w})$
+    around a point $\vect{w}_0$:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        L(\vect{w}) \approx 
+          L_0 + 
+          (\vect{w}- \vect{w}_0)^T \cdot \vect{g} +
+          \frac{1}{2} (\vect{w} - \vect{w}_0)^T \cdot 
+            \vect{H} \cdot (\vect{w} - \vect{w}_0)
+        \label{eq:newton_quadratic_loss_approximation}    
+    \end{equation}
+
+    where $L_0$ is the \gls{loss function}, $L(\vect{w})$,
+    evaluated at $\vect{w}_0$:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        L_0 = L(\vect{w}) \Big\rvert_{\vect{w}=\vect{w}_0},
+    \end{equation}
+    
+    $\vect{g}$ is the \index{gradient}\gls{gradient} 
+    of $L(\vect{w})$ evaluated at $\vect{w}_0$:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        \vect{g} = \nabla_{\vect{w}}L(\vect{w}) \Big\rvert_{\vect{w}=\vect{w}_0},
+    \end{equation}\\
+
+    and $\vect{H}$ is the \index{Hessian matrix}\gls{Hessian matrix} 
+    (see Eq.~\ref{eq:hessian_1}) of $L(\vect{w})$, 
+    with elements $H_{ij}$ that are also evaluated at $\vect{w}_0$:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        H_{ij} = 
+        \frac{\partial^2 L(\vect{w})}{\partial w_i \partial w_j}
+        \Big\rvert_{\vect{w}=\vect{w}_0}.
+    \end{equation}\\
+
+    \framebreak
+ 
+    %
+    %
+
+    Finding the \index{critical point}\gls{critical point}, 
+    of the function $L(\vect{w})$ requires solving:
+    \begin{equation}
+        \nabla_{\vect{w}} L(\vect{w}) = 0. 
+        \label{eq:newton_citical_point_condition_1}    
+    \end{equation}
+    Substituting Eq.~\ref{eq:newton_quadratic_loss_approximation}
+    in Eq.~\ref{eq:newton_citical_point_condition_1}, we can write:
+    \begin{equation}
+        \nabla_{\vect{w}} \Big( 
+            L_0 + 
+            \sum_{i} (w_{i} - w_{i0}) g_{i} +
+            \frac{1}{2} \sum_{i,j} (w_{i} - w_{i0}) H_{ij} (w_j - w_{j0})
+        \Big) = 0 
+        \label{eq:newton_citical_point_condition_2}    
+    \end{equation}
+    In the above expression, all vector and matrix multiplications
+    are shown explicitly for clarity.\\
+    \vspace{0.2cm}
+    Calculating the \index{gradient}\gls{gradient} 
+    in Eq.~\ref{eq:newton_citical_point_condition_2} yields:
+    \begin{equation}
+        \vect{g} + \vect{H} (\vect{w} - \vect{w}_{0}) = 0.
+        \label{eq:newton_gradient_of_quadratic_loss}    
+    \end{equation}
+    \vspace{0.2cm}
+    A detailed derivation is given in the following page.\\
+
+
+    \framebreak
+ 
+    %
+    %
+
+    \begin{equation*}
+        \scriptsize
+        \nabla_{\vect{w}} \Big( 
+            L_0 + 
+            \sum_{i} (w_{i} - w_{i0}) g_{i} +
+            \frac{1}{2} \sum_{i,j} (w_{i} - w_{i0}) H_{ij} (w_j - w_{j0})
+        \Big) = 
+    \end{equation*}
+    \begin{equation*}
+        \scriptsize
+        \sum_{k} \vect{\hat{k}} \frac{\partial}{\partial w_k}
+        \Big( 
+            L_0 + 
+            \sum_{i} (w_{i} - w_{i0}) g_{i} +
+            \frac{1}{2} \sum_{i,j} (w_{i} - w_{i0}) H_{ij} (w_j - w_{j0})
+        \Big) = 
+    \end{equation*}
+    \begin{equation*}
+        \scriptsize
+        \sum_{k} \vect{\hat{k}} 
+        \Bigg( 
+            \cancelto{0}{\frac{\partial L_0}{\partial w_k}}
+            + 
+            \sum_{i} 
+            \frac{\partial (w_{i} - w_{i0})}{\partial w_k}
+             g_{i} +
+            \frac{1}{2} 
+            \sum_{i,j} 
+            \Big\{
+                \frac{\partial (w_{i} - w_{i0})}{\partial w_k} H_{ij} (w_j - w_{j0}) +
+                (w_{i} - w_{i0}) H_{ij} \frac{\partial (w_j - w_{j0})}{\partial w_k}
+            \Big\}            
+        \Bigg) = 
+    \end{equation*}
+    \begin{equation*}
+        \scriptsize
+        \sum_{k} \vect{\hat{k}} 
+        \Bigg( 
+            \sum_{i} 
+            \delta_{ki}
+             g_{i} +
+            \frac{1}{2} 
+            \sum_{i,j} 
+            \Big\{
+                \delta_{ki} H_{ij} (w_j - w_{j0}) +
+                (w_{i} - w_{i0}) H_{ij} \delta_{kj}
+            \Big\}            
+        \Bigg) = 
+    \end{equation*}
+    \begin{equation*}
+        \scriptsize
+        \sum_{k} \vect{\hat{k}} 
+        \Big( 
+            \sum_{i} 
+                \delta_{ki}
+                g_{i} +
+            \cancel{\frac{1}{2}}
+                \sum_{i,j}
+                \cancel{2} \delta_{ki} H_{ij} (w_j - w_{j0}) 
+        \Big) = 
+    \end{equation*}
+    \begin{equation*}
+        \scriptsize
+        \sum_{i} 
+            \vect{\hat{i}}
+            g_{i} +
+        \sum_{i,j}
+            \vect{\hat{i}}
+            H_{ij} (w_j - w_{j0}) 
+            = 0 \Rightarrow
+    \end{equation*}
+
+    \begin{equation*}
+        \scriptsize
+        \vect{g} + \vect{H} (\vect{w} - \vect{w}_{0}) = 0
+    \end{equation*}
+
+    \framebreak
+ 
+    %
+    %
+
+    From Eq.~\ref{eq:newton_gradient_of_quadratic_loss},    
+    we can find$^1$
+    the \gls{critical point}, $\vect{w}^{\star}$,
+    of the function $L(\vect{w})$:
+    \begin{equation}
+        \vect{w}^{\star} = \vect{w}_{0} - \vect{H}^{-1} \vect{g}
+        \label{eq:newton_critical_point}    
+    \end{equation}
+    
+    This expression suggests that, 
+    we can leap directly to the minimum of $L(\vect{w})$ by 
+    scaling the \index{gradient}\gls{gradient}, $\vect{g}$, 
+    with the inverse of the \index{Hessian matrix}\gls{Hessian}, 
+    $\vect{H}^{-1}$.\\
+
+    \vspace{0.2cm}
+
+    Note that we {\em assumed} a {\bf locally quadratic} function
+    with a \gls{Hessian} that is 
+    \index{positive definite}{\bf \gls{positive definite}}.\\
+
+    \vspace{0.2cm}
+
+    For a function that are is not locally quadratic, we can apply 
+    \index{Newton's method}\gls{Newton's method} {\bf iteratively},
+    as long as the \gls{Hessian} is \gls{positive definite}.\\
+
+    \vspace{0.2cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {
+        \footnotesize        
+        \begin{equation*}
+            ^{1}\;\;\vect{g} + \vect{H} (\vect{w}^{\star} - \vect{w}_{0}) = 0 \Rightarrow
+            \vect{H}^{-1} \vect{g} + 
+            \cancelto{\vect{I}}{\vect{H}^{-1}\vect{H}} (\vect{w}^{\star} - \vect{w}_{0}) = 0 \Rightarrow
+            \vect{w}^{\star} = \vect{w}_{0} - \vect{H}^{-1} \vect{g}
+        \end{equation*}    
+    }
+
+    \framebreak
+ 
+    %
+    %
+
+    \index{Newton's method}\gls{Newton's method} is {\bf suitable only
+    if the \index{Hessian matrix}\gls{Hessian} is 
+    \index{positive definite}\gls{positive definite}}.\\
+    \vspace{0.2cm}
+
+    However, in deep learning,  
+    the \index{loss function}\gls{loss function} is typically
+    nonconvex.\\
+    \begin{itemize}
+        \small
+        \item For example, near a \index{saddle point}
+        the \gls{Hessian} is not \gls{positive definite}.
+        \item In this case, \gls{Newton's method} can
+        update weights in the wrong direction.
+    \end{itemize}
+    \vspace{0.2cm}
+    If the \gls{Hessian} is not \gls{positive definite}
+    it is often necessary to {\bf regularize} it.\\
+    \vspace{0.1cm}
+    A common strategy is to add a number 
+    $\epsilon$ in the diagonal of the \gls{Hessian}:
+    \begin{equation}
+        \vect{w}^{\star} = \vect{w}_{0} - 
+          \Big(\vect{H} + \epsilon \vect{I}\Big)^{-1} \vect{g}
+        \label{eq:newton_critical_point_w_regularization}  
+    \end{equation}
+    This works well if the negative eigenvalues 
+    of the \gls{Hessian} are small.\\
+    \vspace{0.1cm}
+    However, near points with a strong negative curvature, 
+    $\epsilon$ may need to be so large that the \gls{Hessian}
+    is dominated by its diagonal $\epsilon \vect{I}$!
+    \begin{itemize}
+        \small
+        \item In this case, \gls{Newton's method} can be slower to
+        converge than a first-order \index{gradient descent}\gls{gradient descent}
+        algorithm with an optimised \index{learning rate}\gls{learning rate}.\\
+    \end{itemize}
+
+    \framebreak
+ 
+    %
+    %
+
+    In addition to the challenges posed to the 
+    \index{Newton's method}\gls{Newton's method} 
+    by nonconvex \index{optimisation}\gls{optimisation} problems,
+    examining Eq.~\ref{eq:newton_critical_point} again,
+    \begin{equation*}
+        \vect{w}^{\star} = \vect{w}_{0} - \vect{H}^{-1} \vect{g},
+    \end{equation*}
+    we notice another {\bf undesirable feature} of the method,
+    from the point of view of computational efficiency.\\
+    \vspace{0.2cm}
+
+    For a network with $N$ parameters, 
+    \index{Hessian matrix} $\vect{H}$ has a
+    a dimension of $N \times N$.\\
+    \begin{itemize}
+        \small
+        \item Inverting such a matrix 
+        has a computational complexity of $\mathcal{O}(N^3)$.
+        \item Such a matrix inversion is required at each training iteration!
+    \end{itemize}
+    \vspace{0.2cm}
+    Clearly, this is {\bf impractical except 
+    for networks with few parameters}.\\
+    \vspace{0.2cm}
+    As it was mentioned in the introduction to the
+    \index{second-order method}\glspl{second-order method},
+    a number of {\bf approximate methods} avoid that inversion. 
+    \begin{itemize}
+        \small
+        \item 
+        Commonly used methods are
+        \index{conjugate gradients}\Gls{conjugate gradients},
+        \index{BFGS}\gls{bfgs}, and
+        \index{L-BFGS}\gls{lbfgs}.
+    \end{itemize}
+    
+\end{frame}

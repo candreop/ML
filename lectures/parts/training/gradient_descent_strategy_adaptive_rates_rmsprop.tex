@@ -4,4 +4,42 @@
 \begin{frame}[t,allowframebreaks]{
     Adaptive subgradient algorithms: RMSProp -}
 
+    The \index{RMSProp}\gls{RMSProp} method \cite{Hinton:2012rmsp}
+    modifies \index{AdaGrad}\gls{AdaGrad}, replacing 
+    the summation of \index{gradient}\glspl{gradient} with an 
+    {\bf exponentially weighted moving average}.\\
+    \vspace{0.2cm}
+
+    The method is {\bf better suited 
+    for nonconvex \index{optimisation}\gls{optimisation}} problems.\\
+
+    \begin{itemize}
+        \small
+        \item 
+        With \gls{AdaGrad},
+        steep gradients in structures away from the convex bowl of
+        the global minimum, may cause premature decrease in the 
+        \index{learning rate}\gls{learning rate}.
+        \item
+        The exponentially decaying averaging in \gls{RMSProp}
+        avoid this issue by discarding \glspl{gradient} 
+        from the remote past.
+        \item
+        \gls{RMSProp} converges more rapidly after finding a convex bowl,
+        as if ot was an instance of \gls{AdaGrad} initialised within
+        that bowl.
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    \gls{RMSProp} is {\bf empirically proven to perform well for  
+    deep learning models}.
+    \begin{itemize}
+        \small
+        \item It is one of most commonly used
+        \gls{optimisation} methods.
+        \item The method can be trivially combined with 
+        \index{momentum}\gls{momentum}-based approaches.
+    \end{itemize}
+
 \end{frame}

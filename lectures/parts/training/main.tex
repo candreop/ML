@@ -13,6 +13,9 @@
 % Outline
 \input{common/toc_part.tex}
 
+% Learning objectives
+\input{parts/training/learning_objectives}
+
 \section{Basics of gradient-based optimization}
 \input{parts/training/gradient_based_optimization}
 \section{Beyond the gradient}
@@ -26,7 +29,8 @@
 \subsection{Vanishing and exploding gradient problems}
 \input{parts/training/vanishing_and_exploding_gradients}
 %  - Leaky ReLU and maxout 
-\subsection{Local optima}
+\subsection{Local minima}
+\input{parts/training/local_minima}
 
 \section{Gradient descent strategies}
 
@@ -48,8 +52,13 @@
 \input{parts/training/gradient_descent_strategy_adaptive_rates_rmsprop}
 \subsubsection{Adam algorithm}
 \input{parts/training/gradient_descent_strategy_adaptive_rates_adam}
+\subsection{Second-order methods}
+\input{parts/training/gradient_descent_strategy_2nd_derivatives}
+\subsubsection{Newton's method}
+\input{parts/training/gradient_descent_strategy_2nd_derivatives_newton}
+\subsubsection{Approximate methods}
+\input{parts/training/gradient_descent_strategy_2nd_derivatives_approximate}
 
-\subsection{Using second-order derivatives}
 
 \subsection{Gradient clipping methods}
 

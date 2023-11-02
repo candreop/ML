@@ -5,14 +5,15 @@
     Adaptive subgradient algorithms: AdaGrad -}
 
     \index{AdaGrad}\gls{AdaGrad} \cite{Duchi:11a} adapts the 
-    \index{learning rate}\glspl{learning rate} 
-    for each individual model parameter.\\
+    \index{learning rate}\gls{learning rate} 
+    for each individual model parameter
+    and it is optimised for quick convergence in convex problems.\\
     \vspace{0.2cm}
 
     The \glspl{learning rate} are scaled inversely proportional to 
     the square root of the running sum of 
     the squared \index{gradient}\gls{gradient} 
-    of the \index{loss function}\gls{loss function}.
+    of the \index{loss function}\gls{loss function}:
 
     \begin{equation}
           \displaystyle
@@ -22,5 +23,20 @@
             \Big(\frac{\partial L}{\partial w}\Big)^2}}
         \label{eq:adagrad_rate_update_rule}
     \end{equation}
+
+    Parameters with large \glspl{gradient} 
+    of the \gls{loss function} have a rapid decrease of their
+    corresponding \gls{learning rate}.\\
+
+    \vspace{0.2cm}
+
+    \gls{AdaGrad} {\bf performs well for some, 
+    but not all deep learning models}.
+    \begin{itemize}
+        \item
+        The accumulation of \glspl{gradient} from the start 
+        of the training can result in premature and excessive decrease
+        in the \gls{learning rate} \cite{Goodfellow:2017MITDL}.
+    \end{itemize}
 
 \end{frame}

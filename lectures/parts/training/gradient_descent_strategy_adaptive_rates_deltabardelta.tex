@@ -2,11 +2,76 @@
 
 \begin{frame}[t,allowframebreaks]{
     Adaptive subgradient algorithms: delta-bar-delta -}
-
+ 
     \index{delta-bar-delta}\Gls{delta-bar-delta} \cite{Jacobs:1988dbd}
     is an early, {\bf heuristic}
     \index{adaptive subgradient}\gls{adaptive subgradient} algorithm.\\
+    \vspace{0.2cm}
 
-    
+    It updates the
+    \index{learning rate}\gls{learning rate}, 
+    for a given weight $w$, according to the rule:
+ 
+    \begin{equation}
+        \Delta \alpha_{k} =
+        \begin{cases}
+            \kappa, & 
+                \text{if } \bar{\delta}_{k-1} \delta_{k} > 0\\
+            -\phi \alpha_{k}, & 
+                \text{if } \bar{\delta}_{k-1} \delta_{k} < 0\\
+            0, & 
+                \text{otherwise}
+        \end{cases}
+        \label{eq:dbd_learning_rate_update_rule}
+    \end{equation}
+ 
+    where $\delta_{k}$ is the partial derivative of the 
+    \index{loss function}\gls{loss function} with respect to $w$ 
+    at \index{epoch}\gls{epoch} $k$,
+    and $\bar{\delta}_{k}$ is an exponentially decaying average 
+    of all derivatives:
+    \begin{equation}
+        \delta_{k} = \frac{\partial L(\vect{w}_k)}{\partial w_{k}}
+        \text{   and   }
+        \bar{\delta}_{k} = (1-\theta) \delta_{k} + \theta \bar{\delta}_{k-1}
+        \label{eq:dbd_defs}
+    \end{equation}
+
+    In Eq.~\ref{eq:dbd_learning_rate_update_rule},
+    $\kappa$ is a constant increment to the \gls{learning rate},
+    $\phi$ determines at what fraction of its current value
+    to decrement the \gls{learning rate}, and $\theta$ is a parameter
+    controlling the exponentially decaying averaging of derivatives.
+
+    \framebreak
+ 
+    %
+    %
+
+    \Gls{delta-bar-delta} is a simple algorithm
+    {\bf driven by the sign of the partial derivative 
+    of the \index{loss function}\gls{loss function}} 
+    with respect to a given weight:
+    \begin{itemize} 
+        \item 
+        If the derivative keeps the same sign, 
+        the learning rate should increase.
+        \item 
+        If the derivative changes sign, 
+        the learning rate should decrease.\\
+    \end{itemize}
+    \vspace{0.2cm}
+
+    The method:
+    \begin{itemize} 
+        \item {\bf increments \glspl{learning rate} linearly}, 
+        preventing them from becoming too large too fast, and
+        \item {\bf decrements them exponentially},
+        ensuring that they remain positive and can be decreased rapidly.\\
+    \end{itemize}
+    \vspace{0.2cm}
+
+    This rule {\bf can only be applied to full batch optimization}.
+    A number of more recent mini-batch methods are introduced next.\\
 
 \end{frame}
