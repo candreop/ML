@@ -1,7 +1,5 @@
 \renewcommand{\thispart}{4 }
-\renewcommand{\thispartname}{
-    Learning Algorithms and\\ 
-    Practical Issues in Neural Network Training}
+\renewcommand{\thispartname}{Learning Algorithms and Practical Issues in Neural Network Training}
 
 \part{\thispartname}
 
@@ -23,8 +21,11 @@
 \subsection{The Hessian matrix}
 \input{parts/training/beyond_the_gradient_hessian}
 
-\section{Difficulties in convergence}
+\section{Gradient-based optimization in ML}
+\input{parts/training/gradient_based_optimization_in_ml}
 
+\section{Challenges in ML model optimization}
+\input{parts/training/challenges_in_optimisation}
 \subsection{Vanishing and exploding gradient problems}
 \input{parts/training/vanishing_and_exploding_gradients}
 %  - Leaky ReLU and maxout 
@@ -57,7 +58,6 @@
 \input{parts/training/gradient_descent_strategy_2nd_derivatives_newton}
 \subsubsection{Approximate methods}
 \input{parts/training/gradient_descent_strategy_2nd_derivatives_approximate}
-
 
 \subsection{Gradient clipping methods}
 
@@ -92,23 +92,6 @@
 \subsection{Parameter sharing}
 \subsection{Ensemble methods: Bagging, subsampling and dropout}
 \subsection{Adversarial Training}
-
-% Computation graph introduction and examples
-\section{Computation Graph}
-\input{parts/training/computation_graph.tex}
-\input{parts/training/computation_graph_examples.tex}
-
-% Automatic differentiation examples
-\section{Automatic Differentiation}
-\input{parts/training/automatic_differentiation.tex}
-\input{parts/training/automatic_differentiation_forward.tex}
-\input{parts/training/automatic_differentiation_reverse.tex}
-\input{parts/training/automatic_differentiation_forward_examples.tex}
-\input{parts/training/automatic_differentiation_forward_examples_inefficient.tex}
-\input{parts/training/automatic_differentiation_reverse_examples.tex}
-
-% Backpropagation
-\section{Backpropagation}
 
 % Suggested reading for this part
 \section{Suggested reading}

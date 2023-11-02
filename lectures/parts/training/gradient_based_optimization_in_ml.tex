@@ -1,0 +1,73 @@
+
+
+\begin{frame}[t,allowframebreaks]{
+    Gradient-based optimization in ML -}
+
+    Training a \gls{ml} model requires 
+    some kind of \index{optimisation}\gls{optimisation}.
+    \begin{itemize}
+        \item Training is not a {\bf pure} \gls{optimisation} problem, 
+        as we will discuss later. (See section on `\Gls{generalisation}'. 
+        \hyperlink{sec:Generalisation}{\beamerbutton{link}})
+    \end{itemize}
+    \vspace{0.2cm}
+
+    Often, we try to achieve the \index{extremisation}\gls{extremisation} 
+    (minimisation or maximisation) of an 
+    \index{objective function}\gls{objective function} or 
+    \index{criterion}\gls{criterion}.
+    \begin{itemize}
+        \item 
+            When the \gls{objective function} is minimised, 
+            it is often called the
+            \index{cost function}\gls{cost function},
+            \index{loss function}\gls{loss function}, or
+            \index{error function}\gls{error function}$^{(1)}$.
+    \end{itemize}
+    \vspace{0.2cm}
+
+    \vspace{0.1cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {\tiny
+    (1) Note that some authors assign subtle differences in these terms,
+    while others use them interchangeably.\\
+    }
+
+    \framebreak
+
+    %
+    %
+
+    There are various types of 
+    \index{gradient}\index{gradient descent}{\bf \gls{gradient descent}}
+    algorithms:\\
+    \begin{itemize}
+        \item   
+            \index{batch gradient descent}
+            \Gls{batch gradient descent}\\
+            \begin{itemize}
+                \item
+                    Updates the model parameters 
+                    after an iteration over all examples in the training set
+                    (defining a training \index{epoch}\gls{epoch}).
+            \end{itemize}
+        \item 
+            \index{mini batch gradient descent}
+            \Gls{mini batch gradient descent}\\
+            \begin{itemize}
+                \item   
+                    Separates the training set into small batches,
+                    and updates the model parameters after an iteration
+                    over all examples of each batch.
+            \end{itemize}
+        \item 
+            \index{stochastic gradient descent}
+            \Gls{stochastic gradient descent}\\
+            \begin{itemize}
+                \item   
+                    Updates the model parameters after evaluating each
+                    single example in the training set.\\
+            \end{itemize}
+    \end{itemize}
+
+\end{frame}
