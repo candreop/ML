@@ -1,5 +1,8 @@
 \renewcommand{\thispart}{3}
-\renewcommand{\thispartname}{Introduction to Deep Networks}
+\renewcommand{\thispartname}{
+  Introduction to Deep Networks and\\
+  Automatic Differentiation (Backpropagation)
+}
 
 \part{\thispartname}
 
@@ -19,6 +22,23 @@
 \input{parts/deep_nets/learning_xor_linear_model.tex}
 \subsection{Applying a nonlinear model to the XOR regression task}
 \input{parts/deep_nets/learning_xor_nonlinear_model.tex}
+
+% Computation graph introduction and examples
+\section{Computation Graph}
+\input{parts/deep_nets/computation_graph.tex}
+\input{parts/deep_nets/computation_graph_examples.tex}
+
+% Automatic differentiation examples
+\section{Automatic Differentiation}
+\input{parts/deep_nets/automatic_differentiation.tex}
+\input{parts/deep_nets/automatic_differentiation_forward.tex}
+\input{parts/deep_nets/automatic_differentiation_reverse.tex}
+\input{parts/deep_nets/automatic_differentiation_forward_examples.tex}
+\input{parts/deep_nets/automatic_differentiation_forward_examples_inefficient.tex}
+\input{parts/deep_nets/automatic_differentiation_reverse_examples.tex}
+
+% Backpropagation
+\section{Backpropagation}
 
 % Suggested reading for this part
 \section{Suggested reading}
