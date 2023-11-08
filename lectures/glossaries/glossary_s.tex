@@ -65,6 +65,29 @@
   see=[Glossary:]{snarcg}
 }
 
+% standard error of the mean
+\newglossaryentry{semg}{
+  name={standard error of the mean},
+  plural={standard errors of the mean},
+  description={
+  }
+}
+\newglossaryentry{sem}{
+  type=\acronymtype,
+  name={SEM},
+  description={Standard Error of the Mean},
+  first={standard error of the mean (SEM)\glsadd{semg}},
+  see=[Glossary:]{semg}
+}
+
+% standard deviation
+\newglossaryentry{standard deviation}{
+  name={standard deviation},
+  description={
+   Another term for \gls{standard error}
+  }
+}
+
 % standard error
 \newglossaryentry{standard error}{
   name={standard error},
@@ -128,22 +151,6 @@
   }
 }
 
-% SVM
-\newglossaryentry{svmg}{
-  name={support vector machine},
-  plural={support vector machines},
-  description={
-  }
-}
-\newglossaryentry{svm}{
-  type=\acronymtype,
-  name={SVM},
-  description={Support Vector Machine},
-  first={Support Vector Machine (SVM)\glsadd{svmg}},
-  plural={SVMs},
-  see=[Glossary:]{svmg}
-}
-
 % sub-sampling
 \newglossaryentry{sub-sampling}{
   name={subsampling},
@@ -164,3 +171,30 @@
   description={
   }
 }
+
+% surrogate loss function
+\newglossaryentry{surrogate loss function}{
+  name={surrogate loss function},
+  description={
+    A proxy for another loss function. 
+    Typically, the surrogate function has the advantage 
+    that it can be optimised more efficiently 
+  }
+}
+
+% SVM
+\newglossaryentry{svmg}{
+  name={support vector machine},
+  plural={support vector machines},
+  description={
+  }
+}
+\newglossaryentry{svm}{
+  type=\acronymtype,
+  name={SVM},
+  description={Support Vector Machine},
+  first={Support Vector Machine (SVM)\glsadd{svmg}},
+  plural={SVMs},
+  see=[Glossary:]{svmg}
+}
+

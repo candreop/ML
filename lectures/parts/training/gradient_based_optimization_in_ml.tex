@@ -38,9 +38,23 @@
     %
     %
 
-    There are various types of 
-    \index{gradient}\index{gradient descent}{\bf \gls{gradient descent}}
-    algorithms:\\
+    In \index{ML}\gls{ml} model  
+    \index{optimisation}\gls{optimisation},
+    the \index{objective function}\gls{objective function}
+    {\bf decomposes as a sum over training examples}.\\
+    \vspace{0.2cm}
+    Therefore, \gls{ml} \gls{optimisation} algorithms {\bf can compute updates
+    to model parameters using only a subset of the
+    \index{training set}\gls{training set}}, \\
+    \begin{itemize}
+        \small
+        \item i.e. by estimating the averaged \index{loss}\gls{loss} 
+        (Eq.~\ref{eq:average_loss_over_examples}) using only
+        a subset of terms.
+    \end{itemize}
+    \vspace{0.2cm}
+
+    There are various types of algorithms:\\
     \begin{itemize}
         \item   
             \index{batch gradient descent}
@@ -69,5 +83,104 @@
                     single example in the training set.\\
             \end{itemize}
     \end{itemize}
+
+    \framebreak
+
+    %
+    %
+
+    For example,
+    \index{maximum likelihood estimation}\gls{maximum likelihood estimation}
+    problems decompose into:
+    \begin{equation}
+        \vect{w}^{\star}_{ML} = \mathrm{argmax} 
+            \sum_{i=1}^{m} \text{log}p_{model}(\vect{x}_{i},y_{i};\vect{w})
+    \end{equation}
+
+    Finding the maximum of the above sum over examples, 
+    is equivalent to finding the maximum
+    of the \index{empirical risk}\gls{empirical risk}
+    defined by the \index{training set}\gls{training set}:
+    \begin{equation}
+        J(\vect{w}) = 
+          \mathbb{E}_{(\vect{x},y){\sim}\hat{p}_{data}}
+          \text{log}p_{model}(\vect{x},y;\vect{w})
+    \end{equation}
+
+    Properties of the \gls{empirical risk} used by 
+    \index{optimisation}\gls{optimisation} algorithms are also 
+    expectation values over the \gls{training set},
+    e.g. $\nabla_{\vect{w}} J(\vect{w})$
+    is given by:
+    \begin{equation}
+        \nabla_{\vect{w}} J(\vect{w}) = 
+          \mathbb{E}_{(\vect{x},y){\sim}\hat{p}_{data}}
+          \nabla_{\vect{w}} \text{log}p_{model}(\vect{x},y;\vect{w})
+    \end{equation}
+    Computing the \gls{gradient} can be {\bf very expensive}.\\
+
+    \framebreak
+
+    %
+    %
+
+    Recall that the \gls{sem}, $\sigma_{x}$, 
+    determined from $N$ samples of a
+    distribution of a random variable $x$, is
+    \begin{equation}
+        \sigma_{x} = \frac{\sigma}{\sqrt{N}}
+        \label{eq:sem}
+    \end{equation}    
+    where $\sigma$ is the 
+    \index{standard error}\index{standard deviation}
+    \gls{standard deviation} of the population.\\
+    \vspace{0.2cm}
+    There are {\bf diminishing returns} in the estimate of 
+    $\sigma_{x}$ with larger samples.
+    \begin{itemize}
+        \small
+        \item
+        E.g. increasing computation time by a factor of 10$^2$,
+        by increasing $N$ from 10$^2$ to 10$^4$,
+        improves the estimate of $\sigma_{x}$ by only a factor of 10.
+    \end{itemize}
+    \vspace{0.2cm}
+
+    \index{ML}\gls{ml} \index{optimisation}\gls{optimisation} 
+    algorithms {\bf can converge faster} if they are allowed to 
+    {\bf rapidly approximate the exact \index{gradient}\gls{gradient}}.\\
+    \vspace{0.2cm}
+
+    Computing expectation values using a subset the examples in the 
+    \index{training set}\gls{training set}, is {\bf further motivated by 
+    redundancies in the \gls{training set}}.\\
+    \begin{itemize}
+        \small
+        \item
+        Several examples make similar contributions to the \gls{gradient}.
+    \end{itemize}
+
+    \framebreak
+
+    %
+    %
+
+    \begin{equation}
+        J^{\star}(\vect{w}) =
+          \sum_{(\vect{x},y) \in \mathbb{D}} 
+          p_{data}(\vect{x},y) L\big(f(\vect{x};\vect{w}),y\big)
+    \end{equation}
+
+    \begin{equation}
+        \vect{g} = \nabla_{\vect{w}} J^{\star}(\vect{w}) =
+          \sum_{(\vect{x},y) \in \mathbb{D}} 
+          p_{data}(\vect{x},y) \nabla_{\vect{w}}L\big(f(\vect{x};\vect{w}),y\big)
+    \end{equation}
+
+    \begin{equation}
+        \vect{g} = \frac{1}{m} \nabla_{\vect{w}}
+        \sum_{(\vect{x},y) \in \mathbb{D}} 
+        L\big(f(\vect{x};\vect{w}),y\big)
+    \end{equation}
 
 \end{frame}

@@ -348,6 +348,82 @@
 
     %
     %
+    At the training \index{epoch}\gls{epoch} $k$, 
+    \index{gradient descent} \gls{gradient descent}
+    produces the following update:
+    \begin{equation}
+        \vect{w}_{k} \rightarrow 
+          \vect{w}_{k+1} =  
+          \vect{w}_{k} - \alpha_{k} \nabla_{w}{L(\vect{w})}
+            \Big\rvert_{\vect{w} = \vect{w}_{k}}
+        \label{eq:zz_grad_descent_update_k_long}    
+    \end{equation}
+    
+    Let $\vect{g}_k$ be the 
+    direction of search for the minimum of $L(\vect{w})$: 
+    \begin{equation}
+       \vect{g}_k = - \nabla_{w}{L(\vect{w})}
+            \Big\rvert_{\vect{w} = \vect{w}_{k}}
+        \label{eq:zz_line_search_direction}    
+    \end{equation}
+    
+    Using the above definition of $\vect{g}_k$, 
+    Eq.~\ref{eq:zz_grad_descent_update_k_long} can be written compactly as:
+    \begin{equation}
+        \vect{w}_{k} \rightarrow 
+          \vect{w}_{k+1} =  
+          \vect{w}_{k} + \alpha_{k} \vect{g}_{k}
+        \label{eq:zz_grad_descent_update_k}    
+    \end{equation}
+    
+    The \gls{gradient descent} update in 
+    Eq.~\ref{eq:zz_grad_descent_update_k} minimises
+    $L(\vect{w}_{k+1})$:
+    \begin{equation}
+        \frac{\partial L(\vect{w}_{k+1})}{\partial \alpha_{k}} = 0
+        \label{eq:zz_condition_to_minimize_L}    
+    \end{equation}
+    
+    Using Eqs.~\ref{eq:zz_line_search_direction} 
+    and \ref{eq:zz_grad_descent_update_k}, 
+    the left-hand side of Eq.~\ref{eq:zz_condition_to_minimize_L}
+    yields:
+    \begin{equation}
+          \frac{\partial L(\vect{w}_{k+1})}{\partial \alpha_{k}} =
+           \Bigg(\nabla_{\vect{w}} L(\vect{w})
+             \Big\rvert_{\vect{w} = \vect{w}_{k+1}} \Bigg)^T \cdot
+           \frac{\partial \vect{w}_{k+1}}{\partial \alpha_{k}} =
+           - \vect{g}_{k+1}^T \cdot \vect{g}_{k}
+        \label{eq:zz_grad_L_wrt_a_k}    
+    \end{equation}
+    
+    From Eqs.~\ref{eq:zz_condition_to_minimize_L}
+    and \ref{eq:zz_grad_L_wrt_a_k}, we see that:
+    \begin{equation}
+        \vect{g}_{k+1}^T \cdot \vect{g}_{k} = 0
+        \label{eq:zz_orthogonal_updates_1}    
+    \end{equation}
+    
+    Therefore, {\bf the directions of search at the training 
+    \index{epoch}\glspl{epoch} 
+    $k$ and $k+1$ are guaranteed to be orthogonal}!\\
+    \vspace{0.2cm}
+    
+    Indeed, as a result of Eq.~\ref{eq:zz_orthogonal_updates_1},
+    we find that:
+    \begin{equation}
+      \Big(\vect{w}_{k+2}-\vect{w}_{k+1}\Big)^T \cdot
+      \Big(\vect{w}_{k+1}-\vect{w}_{k}\Big) = 
+      % \Big(\alpha_{k+1} \vect{g}_{k+1}\Big)^T \cdot
+      % \Big(\alpha_{k} \vect{g}_{k}\Big) = 
+      \alpha_{k+1} \alpha_{k} \vect{g}_{k+1}^T \cdot \vect{g}_{k} = 0
+      \label{eq:zz_orthogonal_updates_2}    
+    \end{equation}
+        
+    \framebreak
+
+    %
+    %
 
     If the instantaneous direction of best movement 
     not the correct direction of 

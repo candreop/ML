@@ -1,0 +1,276 @@
+
+\begin{frame}[t,allowframebreaks]{
+    Optimization in ML -}
+
+    \index{optimisation}\Gls{optimisation} in \index{ML}\gls{ml}
+    differs from general \gls{optimisation} in several ways.\\
+
+    Often, in \gls{ml} one
+    \begin{itemize}
+        \item optimises approximate proxies of the function of interest, 
+        \item stops optimisation early, while gradients are still large
+    \end{itemize}
+
+    \framebreak
+
+    %
+    %
+
+    Let $f(\vect{x};\vect{w}): \mathbb{R}^n \rightarrow \mathbb{R}$
+    be a function describing the output of a \gls{ml} model,
+    with parameters $\vect{w}$, when presented with an input 
+    example $\vect{x}$.\\
+    \vspace{0.3cm}
+    The \index{cost function}\gls{cost function}, $J(\vect{w})$,
+    defined as:
+    \begin{equation}
+        J(\vect{w}) = 
+          \mathbb{E}_{(\vect{x},y){\sim}\hat{p}_{data}}
+          L\big(f(\vect{x};\vect{w}),y\big)
+        \label{eq:optml_cost_function}    
+    \end{equation}
+    is the per-example \index{loss function}\gls{loss function},
+    $L$, averaged over all the examples $(\vect{x},y)$ in the 
+    \index{training set}\gls{training set},
+    where $y$ is the target (desired) output of $f(\vect{x};\vect{w})$.\\
+    \vspace{0.3cm}
+    Since $\hat{p}_{data}$ is the 
+    \index{empirical data-generating distribution}
+    \gls{empirical data-generating distribution},
+    Eq.~\ref{eq:optml_cost_function} defines an 
+    {\bf \index{objective function}\gls{objective function}
+    with respect to the \gls{training set}}.\\
+    \vspace{0.3cm}
+    The quantity defined in Eq.~\ref{eq:optml_cost_function} is also 
+    {\bf known as the \index{empirical risk}\gls{empirical risk}}. 
+
+    \framebreak
+
+    %
+    %
+
+    We would prefer to minimise an \gls{objective function} where the
+    average is calculated over the true
+    \index{data-generating distribution} 
+    \gls{data-generating distribution} $p_{data}$$^1$:
+    \begin{equation}
+        J^{\star}(\vect{w}) = 
+          \mathbb{E}_{(\vect{x},y){\sim}p_{data}}
+          L\big(f(\vect{x};\vect{w}),y\big)
+        \label{eq:optml_risk}    
+    \end{equation}
+
+    The quantity $ J^{\star}(\vect{w})$ defined in Eq.~\ref{eq:optml_risk} 
+    is known as the {\bf \index{risk}\gls{risk}}.\\
+    \vspace{0.2cm}
+
+    {\bf The goal of \index{ML}\gls{ml} 
+    is to minimize the \index{risk}\gls{risk}}.\\
+    \vspace{0.2cm}
+
+    \begin{itemize}
+        \item
+            If the true \index{data-generating distribution} 
+            \gls{data-generating distribution} $p_{data}$ was known, 
+            our task would be a general, 
+            pure \index{optimisation}\gls{optimisation} problem.\\
+        \item
+            {\bf When $p_{data}$ is not known}, 
+            and we only have a set of examples,
+            {\bf we have a \gls{ml} problem!}\\
+    \end{itemize}
+    \vspace{0.2cm}
+
+    \noindent\rule{4cm}{0.4pt}\\
+    {\small
+      $^1$ rather than just the average over the training examples.\\
+    }
+
+    \framebreak
+
+    %
+    %
+
+    The standard way to frame a \index{ML}\gls{ml} problem
+    as an \index{optimisation}\gls{optimisation} problem, is by
+    {\bf minimising the \index{empirical risk}\gls{empirical risk}}
+    given by Eq.~\ref{eq:optml_cost_function}.\\
+    \vspace{0.2cm}
+
+    We replace $p_{data}(\vect{x},y)$
+    with $\hat{p}_{data}(\vect{x},y)$. Therefore,
+    the averaging over the examples in the 
+    \index{training set}\gls{training set} can be written as:
+    \begin{equation}
+          \mathbb{E}_{(\vect{x},y){\sim}\hat{p}_{data}}
+          L\big(f(\vect{x};\vect{w}),y\big) =
+          \frac{1}{m} \sum_{i=1}^{m}
+          L\big(f(\vect{x}_{i};\vect{w}),y_{i}\big)
+          \label{eq:average_loss_over_examples}    
+    \end{equation}
+    where $(\vect{x}_{i},y_{i})$ is the $i^{th}$ example
+    amongst the set of $m$ examples.\\
+    \vspace{0.2cm}
+
+    We {\em hope} that {\bf direct
+    minimisation of the \gls{empirical risk},
+    brings about a significant reduction in the \index{risk}\gls{risk}}.\\
+    \vspace{0.2cm}
+
+    \index{empirical risk minimisation}\Gls{empirical risk minimisation}
+    {\bf can lead to poor \index{generalisation}\gls{generalisation}}.\\
+    \begin{itemize}
+     \item 
+        We will revisit this important discussion 
+        later in Part {\thispart}. 
+        \hyperlink{sec:Generalisation}{\beamerbutton{link}}
+    \end{itemize}
+ 
+
+    \framebreak
+
+    %
+    %
+
+    \begin{center}
+        \begin{tikzpicture}[scale=1.0]
+    
+            %\draw[help lines] (0,-1) grid (9,9);
+    
+            \node[rectangle,draw,thick,rounded corners,
+                  minimum height=5em,
+                  text width=6em, align=center] 
+                    (ML) at (4,2) 
+                      {\large 
+                       ML model\\ 
+                       \vspace{0.2cm} 
+                       $f(\bf{x};\bf{w})$};
+    
+            \node[rectangle,draw,thick,rounded corners,
+                  minimum height=4em, minimum width=9em,
+                  text width=10em, align=center] 
+                    (J) at (5,5) 
+                      {\large 
+                       Empirical function\\ 
+                       \vspace{0.2cm} 
+                       $J(\bf{w})$};
+                       
+            \draw [-{Stealth[length=2mm,width=2mm]}]
+                (ML.north)
+                to[left =0] 
+                node[below,left,xshift=0.0cm,yshift=0.0cm]
+                 {\large Output}
+                (J.218);
+    
+            \draw [-{Stealth[length=2mm,width=2mm]}]
+                (J.north)
+                to [left =0] 
+                node[above,right,xshift=0.1cm,yshift=0.6cm]
+                 {\large Error}
+                node[above,right,xshift=0.1cm,yshift=0.0cm]
+                 {\large $\{E_1, E_2, ..., E_M\}$}
+                (5,7);
+    
+            \draw [-{Stealth[length=2mm,width=2mm]}]
+                (1,2)
+                to [left =0] 
+                node[above,left,xshift=0.8cm,yshift=0.4cm]
+                 {\large Parameters ${\bf w}$}
+                (ML.west);
+                    
+            \draw [-{Stealth[length=2mm,width=2mm]}]
+                (4,0.0)
+                to [left =0] 
+                node[above,right,xshift=0.1cm,yshift=0.0cm]
+                 {\large Input}
+                node[above,right,xshift=0.1cm,yshift=-0.6cm]
+                 {\large $\{{\bf x}_1, {\bf x}_2, ..., {\bf x}_M\}$}
+                (ML.south);
+    
+            \draw [-{Stealth[length=2mm,width=2mm]}]
+                (6,3)
+                to [left =0] 
+                node[below,right,xshift=-0.3cm,yshift=-1.0cm]
+                 {\large Target output}
+                node[below,right,xshift=-0.3cm,yshift=-1.6cm]
+                 {\large $\{y_1, y_2, ..., y_M\}$}
+                (J.322);
+    
+        \end{tikzpicture}
+    \end{center}
+    
+\end{frame}
+
+%
+%
+%
+
+\begin{frame}[t]{
+    Optimization in ML: Surrogate functions}
+
+    Sometimes, the actual \index{loss function}\gls{loss function} 
+    for a \index{ML}\gls{ml} problem is one that 
+    {\bf cannot be optimised efficiently}.\\
+    \vspace{0.2cm}
+    In theses cases, one tries to optimise a
+    \index{surrogate loss function}\gls{surrogate loss function}
+    serving as an {\bf approximate proxy of the actual \gls{loss function}}.\\
+    \begin{itemize}
+        \small
+        \item    
+            Besides improving {\bf computational efficiency}, 
+            \glspl{surrogate loss function} offer {\bf several other advantages}
+            and they {\bf can result in better learning}.
+        \item 
+            Also, they can be easier to interpret,
+            can be extended to handle noisy data, 
+            support multi-objective optimisation and parallelisation, etc.
+    \end{itemize}
+
+    \begin{block}{}
+        \begin{itemize}
+            \scriptsize
+            \item 
+                An example \gls{loss function} that is difficult to
+                optimise efficiently is the 
+                \index{0/1 loss function}\gls{0/1 loss function}
+                that we have studied already in the context of
+                \index{classification}\gls{classification} problems.
+                \begin{itemize}
+                    \scriptsize
+                    \item 
+                      The \gls{0/1 loss function} is not differentiable.
+                \end{itemize}
+                \item 
+                The  
+                \index{log-likelihood}\gls{log-likelihood} of the
+                correct class is a common surrogate for 
+                the \gls{0/1 loss function}.
+                \item 
+                The \index{log-likelihood}\gls{log-likelihood} improves
+                learning and results in a more robust 
+                \index{classifier}\gls{classifier}.
+                \begin{itemize}
+                    \scriptsize
+                    \item 
+                      Long after the \gls{0/1 loss} has reached 0 in the 
+                      \index{training set}\gls{training set},
+                      the \gls{0/1 loss} on the 
+                      \index{test set}\gls{test set} continues to improve
+                      as the \gls{classifier} pushes the classes further apart.\\
+                \end{itemize}
+        \end{itemize}
+    \end{block}
+
+\end{frame}
+
+%
+%
+%
+
+\begin{frame}[t]{
+    Optimization in ML: Early stopping}
+
+   
+
+\end{frame}

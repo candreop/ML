@@ -1,7 +1,10 @@
 
 \begin{frame}[allowframebreaks,t]{Notation -}
 
-\begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
+    {
+\small    
+
+\begin{longtable}{| p{.14\textwidth} | p{.86\textwidth} |} 
 $x$                       & A scalar \\
 $\vect{x}$                & A column vector \\
 $\vect{x}^T$              & A row vector \\
@@ -15,13 +18,19 @@ $\mathbb{X}$              & A set \\
 $\mathbb{R}$              & The set of real numbers \\
 $\{0,1\}$                 & The set containing 0 and 1 \\
 $\{0,1,...,n\}$           & The set of all integers between 0 and $n$ \\
-$\mathbb{A}\setminus\mathbb{B}$  & Set subtraction: The elements of $\mathbb{A}$ not in $\mathbb{B}$\\
+$\mathbb{A}\setminus\mathbb{B}$  
+                          & Set subtraction: The elements of $\mathbb{A}$ not in $\mathbb{B}$\\
 $[a,b]$                   & The real interval from $a$ to $b$, containing $a$ and $b$\\
 $[a,b)$                   & The real interval from $a$ to $b$, containing $a$ but not $b$\\
 $\in$                     & Belongs to, e.g. $x \in \mathbb{R}$ \\
 $\forall$                 & For all, e.g. $\forall j \in \{0,1,...,n\}$ \\
 $\vect{\hat{\theta}}$     & Point estimate of $\vect{\theta}$ \\
 $\mathbb{E}(x)$           & Expectation value of random variable $x$ \\
+$p_{data}$                & Data generating distribution \\
+$\hat{p}_{data}$          & Empirical data generating distribution defined by the training set\\
+$x{\sim}p$                & A scalar variable $x$ drawn from a probability distribution $p$\\
+$\mathbb{E}_{x{\sim}p}[f(x)]$           
+                          & Expectation value of $f(x)$ with respect to $p(x)$\\
 \end{longtable}
-
+}
 \end{frame}

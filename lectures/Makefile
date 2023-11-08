@@ -54,7 +54,7 @@ all: 	tex_start \
 dev: 	tex_start \
 		add_front_matter \
 		add_glossaries \
-		add_shallow_nets \
+		add_training \
 		add_back_matter \
 	  	tex_end \
 		pdf	       
