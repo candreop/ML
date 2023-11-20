@@ -13,10 +13,45 @@ e-mail: constantinos.andreopoulos \at cern.ch
 
 tel: +44-(0)1517-943201 (office), +44-(0)7540-847333 (mobile)
 
+## Overview
+
+Machine Learning (ML) is the study and development of techniques empowering machines to gain knowledge through experience, deduction, or reasoning, and to make intelligent decisions. Since pioneering developments in 1950’s, the field of ML, and, more broadly, of Artificial Intelligence (AI), has ebbed and flowed. During the last 10 years, increased computational power, availability of very large datasets, architectural and algorithmic innovations and development of transfer learning techniques, and interdisciplinary collaboration have powered a revolution in ML. Modern deep neural architectures are transforming industries by improving efficiency, automation, and ability to enhance insights from very complex datasets. This is a very active field of research, with a host of awe-inspiring and disrupting applications developed at an astonishing rate. The module will develop an understanding of the general principles of ML, as well as an appreciation of practical issues in the training of ML models, and a knowledge of diagnostic tools and improved algorithms available to practitioners. Special emphasis will be given in neural architectures, as a unified framework that can encompass and emulate several other traditional ML approaches. Several shallow and deep neural architectures will be studied in detail, both at a more abstract mathematical level and at a practical level, using Python and one of most popular open-source deep learning frameworks used in industry and research (pyTorch). Ethical considerations in ML will be introduced. Strong emphasis shall be given in case studies from several areas of physical sciences, medical imaging and technology.
 
 ## Aims of the module
-- To introduce the fundamental concepts of machine learning.
-- To develop the ability of students to address common real-world problems using one of the leading open source frameworks for machine learning.
+
+To develop a solid understanding of fundamental concepts in Machine Learning (ML) for supervised, unsupervised and reinforcement learning; to introduce students to a broad range of shallow and deep neural architectures, and to demonstrate connections between neural architectures and more traditional ML models; to teach students how to formulate real-world problems as ML problems; to develop an understanding of general optimization and well as of the crucial differences between general and ML optimization, and to draw attention to a broad range of practical issues in ML model training; to teach students how to assess model performance and diagnose issues, and to introduce several tricks and improved optimisation algorithms available to ML practitioners; to develop practical skills in the implementation of ML models using a programming language like Python and popular open-source ML libraries such as pyTorch;  to develop experience in the use of common modern ML architectures, such as convolution neural networks (CNNs) or recurrent neural networks (RNNs); to illustrate a broad range of practical applications, with special emphasis in the areas of physical sciences, medical imaging and technology; to introduce problem of bias in Machine Learning and demonstrate an understanding of ethical and responsible practices.
+
+## Learning outcomes 
+
+LO1. Demonstrate a solid understanding of fundamental concepts of Machine Learning.
+
+LO2. Demonstrate good knowledge of key Machine Learning algorithms and models.
+
+LO3. Demonstrate an understanding of practical issues in the training of Machine Learning models, and a knowledge of the broad range of tricks and approaches available to Machine Learning practitioners.
+
+LO4. Apply key Machine Learning algorithms to a variety of simple problems and demonstrate an ability to evaluate and optimize model performance.
+
+LO5. Appreciate the problem of bias in Machine Learning and demonstrate an understanding of ethical and responsible practices.
+
+## Skills
+
+S1. Problem solving skills.
+
+S2. Practical implementation skills: Apply Machine Learning techniques on a variety of problems, using a popular open-source deep learning frameworks used both industry and in research environments (eg. pyTorch developed by Meta AI).
+
+S3. Collaboration and teamwork: Collaborate effectively in team projects applying machine learning techniques on a variety of problems.
+
+S4. Research and literature review skills: Performs literature reviews and critical assessment of research papers in Machine Learning.
+
+S5. Effective communication: Communicate complex Machine Learning concepts in discussion sessions and workshops. Communicate technical information and results from Machine Learning projects. 
+
+S6. Adaptability to emerging technologies and lifelong learning: Develop a mindset of continuous learning in the rapidly evolving field of Machine Learning, 
+
+## HECoS subjects
+
+-	100992 - Machine Learning (60%)
+-	100358 - Applied Computing (20%)
+-	101030 - Applied Statistics (20%)
 
 ## Syllabus
 - Training neural networks, backpropagation
