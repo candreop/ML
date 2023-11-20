@@ -57,53 +57,92 @@ S6. Adaptability to emerging technologies and lifelong learning: Develop a minds
 
 Artificial Intelligence (AI) and precursors of AI; Types of AI: Type 1 (Artificial Narrow Intelligence, Artificial General Intelligence, Artificial Superintelligence) and Type 2 (Reactive AI, Limited memory AI, Theory of mind AI, Self-awareness AI). 
 Developments leading to the birth of AI: Theory of computation, information theory, control and communication theory, and biological inspirations from the study of the mammal brain. The Turing Test.
+
 Brief history of AI: From the development of an artificial neuron, the Stochastic Neural Analog Reinforcement Calculator (SNARC), the Logic Theorist and the Birth of AI at the Dartmouth conference (1956) to the AI revolution starting with ImageNet Large Scale Visual Recognition Challenge in 2012. Recent evolution of AI system capabilities and survey of present landscape. 
+
 Human vs computer learning.
+
 Learning paradigms: Supervised, unsupervised and reinforcement learning.
+
 Typical learning tasks: Classification; Regression; Transcription; Machine Translation; Anomaly Detection; Synthesis and Sampling; Denoising; Density Estimation.
 Fundamentals of Machine Learning (ML).
+
 Motivating the development of Deep Learning (DL); Impact of large datasets and network size / depth in network performance; Representation learning; Transfer learning.
+
 Computational considerations; Graphical and Tensor Processing Units.
+
 Relationship between AI, ML and DL. 
+
 Objective function; Cost function; Loss function; Risk and empirical risk; Surrogate cost functions; Activation functions and their properties. 
+
 Loss functions: Mean Squared Error (MSE); Mean Absolute Error (MAE); Binary Cross-Entropy Loss; Categorical Cross-Entropy Loss; 0-1 Loss.
+
 Activation functions: Sigmoid (logistic) activation; hyperbolic tangent activation; Rectified Linear Unit (ReLU); Leaky ReLU; Parametric ReLU; Exponential Linear Unit; Softmax activation.
+
 Estimators; Bias; Variance; Bias-Variance trade-off; Maximum Likelihood Estimation.
+
 Single-layer networks: The perceptron. 
 Historical origins: McCulloch-Pitts neuron and Rosenblat’s Mark 1 perceptron.
 Heuristic optimisation of the original Mark 1 perceptron. 
+
 Formulation of the perceptron as a typical ML problem; Derivation of the perceptron criterion.
+
 Perceptron variants and connections with other ML models: Least-squares regression and classification, Widrow-Hoff learning rule, Logistic regression, Support Vector Machine (SVM).
+
 The multiclass perceptron.
 Multiclass (Weston-Watkins) SVM; Multinominal logistic regression (Softmax classifier).
+
 Closed-form solutions of least-squares regression.
+
 Using a perceptron to learn the XOR function: Limitations of linear models.
+
 Multilayer networks: Deep feedforward networks, or multilayer perceptrons.
+
 Introduction to Automatic Differentiation.
 Forward and Backward Modes of Automatic Differentiation. Backpropagation.
+
 Basics of general gradient-based optimisation. Gradient and Jacobian matrix; Beyond the gradient: The Hessian matrix and its properties. Function extremization; Critical points; Local and global minima and maxima; Saddle points; The second-derivative test in multiple dimensions. Condition number; Ill conditioning; Hyperparameters; Learning rate. 
+
 Optimisation in Machine Learning: Similarities and differences with general optimisation. 
+
 Mini-Batch Gradient Descent; Stochastic Gradient Descent (SGD);
+
 Difficulties in convergence; The vanishing and exploding gradients problem.
 Improved optimisation strategies: Learning rate decay; Momentum-based methods and Nesterov momentum; Adaptive learning rate algorithms (Delta-Bar-Delta, AdaGrad, RMSProp, RMSPrip with momentum, Adam); 2nd order methods (Newton methods and approximate methods: Conjugate gradients algorithm; Broyden–Fletcher–Goldfarb–Shanno (BFGS) algorithm; Limited Memory BFGS algorithm (L-BFGS)).
+
 Generalisation; Neural network capacity; Overfitting and underfitting; No free lunch theorem.
+
 Regularisation techniques: L2 and L1 norm penalties; Dataset augmentation; Noise robustness Multitask learning; Early stopping; Parameter sharing; Ensemble methods (Bagging, subsampling and dropout); Adversarial training.
+
 The Convolutional Neural Network (CNNs) and motivations for convolutional architectures: Sparse connectivity; Parameter sharing, Equivariant representations. 
 Biological inspiration for CNNs: Hubel and Wiesel experiments; the visual cortex; Brodmann areas 17-19; CNN precursors: The Neocognitron.
+
 Convolution and cross-correlation operations. 
 Basic structure of CNNs: Convolution, pooling and ReLU activation layers; Fully connected layers; Feature maps and feature detectors (filters or kernels); Padding and strides; Receptive field of convolutional networks; Types of CNN pooling (or subsampling) layers: Max, average, sum and stochastic pooling. 
+
 Modern convolutional network architectures: LeNet-5, AlexNet, GoogLeNet, ResNet.
-Region-based CNN (R-CNN) and its variations (Fast/Faster R-CNN; Mask R-CNN)
+
+Region-based CNN (R-CNN) and its variations (Fast/Faster R-CNN; Mask R-CNN).
+
 Survey of CNN applications; Detailed examples for object detection and object localization.
+
 Specialised networks for sequential data: The Recurrent Neural Network (RNN). 
+
 Basic architecture of RNNs. Training RNNs: Backpropagation Through Time (BPTT).
+
 Bidirectional RNNs; Multiplayer RNNs.
+
 Echo-State Networks; Long Short-Term Memory (LSTM); Gated Recurrent Units (GRU).
+
 Survey of RNN applications; Detailed examples for Natural Language Modelling. 
+
 Large Language Models; Transformer architectures; Self-attention mechanisms.
 Notable Large Language Models: Generative Pre-trained Transformer 3 and 4.
+
 Advanced topics: Autoencoders; Variational Autoencoders; Deep Reinforcement Learning; Generative Adversarial Networks (GANs).
+
 Ethical Considerations and Bias in Deep Learning: Case studies and discussion.
+
 Advanced case studies from areas of Science and Technology: Particle Physics, Astronomy and Astrophysics, Medical Imaging, Accelerator Physics.
 
 ## Structure
