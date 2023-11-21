@@ -1,0 +1,33 @@
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{
+    Learning paradigm blurring - }
+
+    The previously used terms of
+    \index{supervised learning}\gls{supervised learning},
+    \index{unsupervised learning}\gls{unsupervised learning}, and
+    \index{reinforcement learning}\gls{reinforcement learning}
+    are {\bf not formally defined.}\\
+    \vspace{0.2cm}
+
+    Indeed the {\bf boundaries are blurred}, especially between
+    \gls{supervised learning} and \gls{unsupervised learning},
+    and many technologies can perform both tasks.\\
+    \vspace{0.2cm}
+
+    Recall that in \gls{supervised learning} the algorithm learns
+    the conditional probability $p(\vect{y}|\vect{x})$, whereas in
+    \gls{unsupervised learning} it learns the 
+    probability distribution  $p(\vect{x})$.\\
+
+    \begin{equation}
+        p(\vect{x}) = p(x_1 | x_2, \dots, x_n) p(x_2, \dots, x_n)
+    \end{equation}
+
+    \begin{equation}
+        p(\vect{x}) = \prod_{i=1}^{n} p(x_i | x_2, \dots, x_{i-1})
+    \end{equation}
+
+\end{frame}
