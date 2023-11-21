@@ -9,6 +9,18 @@
 }{}
 %\newcommand\indexspace{} % complains that: \indexspace already defined.
 
+% \renewenvironment{theindex}{%
+%   \columnseprule \z@
+%   \columnsep 35\p@
+%   \idx@heading%
+%   \index@preamble\par\nobreak
+%   \thispagestyle{\indexpagestyle}\parindent\z@
+%   \setlength{\parskip}{\z@ \@plus .3\p@}%
+%   \setlength{\parfillskip}{\z@ \@plus 1fil}%
+%   \begin{multicols}{2}%
+%   \let\item\@idxitem
+% }{\end{multicols}\clearpage}   
+
 % multiple columns 
 % -------------------------------------------------
 % It doesn't seem to work well if \printindex is inserted between
@@ -16,12 +28,13 @@
 % It inserts an empty page, then tries to fit everything in the second index page...
 %
 % But also, as shown below, it tries to fit everything in one page...
-% \newenvironment{theindex}{%
+% \renewenvironment{theindex}{%
 %   \scriptsize
 %   \let\item\par % definitions for subitem etc
 %   \begin{multicols}{2}
 % }{\end{multicols}}
 % %\newcommand\indexspace{} % complains that: \indexspace already defined.
+
 
 \makeindex
 

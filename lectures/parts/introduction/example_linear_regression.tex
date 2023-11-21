@@ -1,0 +1,105 @@
+
+%
+%
+%
+
+\begin{frame}[t]{Example: Linear regression}
+
+    To clarify the previous ideas, 
+    we will study a concrete example
+    of a \index{ML}\gls{ml} algorithm: 
+    \index{linear regression}{\bf \gls{linear regression}}$^{1}$.\\
+    \vspace{0.2cm}
+    Although this is a very simple algorithm with limited capabilities,
+    it is an instructive example.\\
+    \vspace{0.2cm}
+
+    As we discussed previously, 
+    to define our \gls{ml} problem we need to define:\\
+    \vspace{0.1cm}
+
+    \begin{itemize}
+        \item 
+        the {\bf task} - 
+        i.e. what do we want to learn,\\
+        \vspace{0.1cm}
+        \item 
+        the {\bf experience} - 
+        i.e. where are we going to learn from, and\\
+        \vspace{0.1cm}
+        \item 
+        the {\bf performance metric} - 
+        i.e. what learning performance measure are trying to optimise?\\
+    \end{itemize}
+
+    \vspace{0.2cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {\scriptsize
+      $^{1}$ We will revisit \gls{linear regression}
+      in subsequent lectures.\\
+    }
+
+\end{frame}
+
+%
+%
+%
+
+\begin{frame}[t]{Example: Linear regression / Task}
+
+    {\bf \Gls{linear regression} solves a 
+    \index{regression}\gls{regression} problem}.\\
+    \vspace{0.2cm}
+
+    Our goal is to build a system that 
+    accepts as input a vector $\vect{x} \in \mathbb{R}^n$
+    and predicts a scalar variable $y \in \mathbb{R}$ as output.\\
+    \vspace{0.2cm}
+
+    In \gls{linear regression}, the output is a 
+    {\bf linear function}$^{1}$ of the input $\vect{x}$:
+    \begin{equation}
+        \hat{y} = \vect{w}^T \vect{x}
+        \label{eq:intro_linear_regression_model}
+    \end{equation}
+    where $\vect{w} \in \mathbb{R}^n$ is a vector of model parameters 
+    whose values need to be ``learned", and 
+    the output $\hat{y}$ is the model prediction of $y$.\\
+    \vspace{0.2cm}
+
+    One can think of the parameters $\vect{w}$ as {\bf weights}
+    that determine how each {\bf feature} 
+    (element of input $\vect{x}$)
+    affects the prediction.\\
+
+    \vspace{0.2cm}
+    \noindent\rule{4cm}{0.4pt}\\
+    {\scriptsize      
+      $^{1}$ In general, we could have written this as
+      $\hat{y} = \vect{w}^T \vect{x} + b$, introducing a bias $b$.
+      However, the same effect could be achieved with the linear model of 
+      Eq.~\ref{eq:intro_linear_regression_model}, by expanding $\vect{x}$
+      with the addition of a new feature whose value is always 1.\\
+    }
+
+\end{frame}
+
+%
+%
+%
+
+\begin{frame}[t,allowframebreaks]{
+    Example: Linear regression / Performance metric - }
+
+    The performance of the model can be described by the 
+    \index{MSE}\gls{mse} over the 
+    \index{test set}\gls{test set} $\mathbb{D}_{test}$:
+    \begin{equation}
+        MSE_{test} = 
+          \mathbb{E}_{(\vect{x},y) \in \mathbb{D}_{test}}
+           \sum_{(\vect{x},y) \in \mathbb{X}_{test}} 
+                \Big(\vect{w}^T \vect{x} - y\Big)
+        \label{eq:intro_linear_regression_model_mse_test}
+    \end{equation}
+
+\end{frame}

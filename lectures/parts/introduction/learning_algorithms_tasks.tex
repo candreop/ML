@@ -1,0 +1,325 @@
+
+
+\begin{frame}[t]{Machine Learning tasks}
+
+    Several tasks that can be solved by 
+    \index{ML}\gls{ml} are listed below 
+    (\cite{Goodfellow:2017MITDL}, Sec. 5.1.1):\\
+    \vspace{0.2cm}
+    \begin{itemize}
+        \item
+        \index{classification}\Gls{classification}.\\
+        \vspace{0.1cm}
+        \item
+        \index{classification}\Gls{classification} with missing inputs.\\
+        \vspace{0.1cm}
+        \item
+        \index{regression}\Gls{regression}.\\
+        \vspace{0.1cm}
+        \item
+        \index{anomaly detection}\Gls{anomaly detection}
+        (or \index{outlier detection}\gls{outlier detection}).\\
+        \vspace{0.1cm}
+        \item
+        \index{structured output}\Gls{structured output}
+        (or \index{structured prediction}\gls{structured prediction}).\\
+        \vspace{0.1cm}
+        \begin{itemize}
+            \item
+            Includes, as special categories,
+            \index{transcription}\gls{transcription}
+            and
+            machine \index{translation}\gls{translation}.\\
+            \vspace{0.1cm}
+        \end{itemize}
+        \item
+        \index{synthesis and sampling}\Gls{synthesis and sampling}.\\
+        \vspace{0.1cm}
+        \item
+        \index{denoising}\Gls{denoising}.\\
+        \vspace{0.1cm}
+        \item
+        \index{density estimation}\Gls{density estimation}.\\
+        \vspace{0.1cm}
+        \item
+        \index{dimensionality reduction}\Gls{dimensionality reduction}.\\
+    \end{itemize}
+
+    % \framebreak
+
+    % %
+    % %
+
+    % \begin{itemize}
+    %     \item
+    %     {\bf \index{classification}\Gls{classification}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             In this task, the \index{ML}\gls{ml} model 
+    %             is asked to find in {\bf which of $k$ categories 
+    %             some $n$-dimensional input belongs to}.
+    %             \begin{itemize}
+    %                 {\scriptsize
+    %                 \item        
+    %                 The model {\bf discovers a function 
+    %                 $f: \mathbb{R}^n \rightarrow \{1,\dots,k\}$}
+    %                 that assigns the category $y = f(\vect{x})$ 
+    %                 of the input $\vect{x} \in \mathbb{R}^n$.\\
+    %                 }
+    %             \end{itemize}
+    %             \vspace{0.1cm}
+    %             \item
+    %             Simple variants of this task include
+    %             \index{probabilistic classification}\gls{probabilistic classification}.
+    %             \begin{itemize}
+    %                 {\scriptsize
+    %                 \item        
+    %                 The model discovers a 
+    %                 function $f: \mathbb{R}^n \rightarrow [0,1]^k$
+    %                 that outputs a {\bf probability distribution 
+    %                 over the $k$ categories}.\\
+    %                 }
+    %             \end{itemize}
+    %         }
+    %     \end{itemize}
+    %     \vspace{0.1cm}
+    %     \item
+    %     {\bf \index{classification}\Gls{classification} with missing inputs} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item The \gls{ml} model is not guaranteed 
+    %             to have the full input vector $\vect{x} \in \mathbb{R}^n$.\\
+    %             \begin{itemize}
+    %                 {\scriptsize
+    %                 \item        
+    %                 The model discovers {\bf a set of functions} 
+    %                 $f: \mathbb{R}^n \rightarrow \{1,\dots,k\}$, 
+    %                 with $m \le n$, so the $\vect{x}$ can be classified
+    %                 regardless of which subset of its elements missing!\\
+    %                 }
+    %             \end{itemize}
+    %             \vspace{0.1cm}
+    %             This task {\bf arises frequently in many real-world applications}.\\
+    %             \begin{itemize}
+    %                 {\scriptsize
+    %                     \item
+    %                     E.g in medical diagnosis where filling-in the 
+    %                     full vector $\vect{x}$ may be invasive or expensive, 
+    %                     or where failures in hardware or software 
+    %                     lead to partial loss of data.\\
+    %                 }
+    %             \end{itemize}
+    %         }
+    %     \end{itemize}
+    
+    % \end{itemize}
+
+    % \framebreak
+
+    % %
+    % %
+    
+    % \begin{itemize}
+    %     \item
+    %     {\bf \index{regression}\Gls{regression}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             In this type of task, the \index{ML}\gls{ml} model 
+    %             is asked to {\bf predict a numerical value given 
+    %             some $n$-dimensional input}.
+    %             \begin{itemize}
+    %                 {\scriptsize
+    %                 \item        
+    %                 The model {\bf discovers a function 
+    %                 $f: \mathbb{R}^n \rightarrow \mathbb{R}$
+    %                 that calculates the value $y = f(\vect{x})$ 
+    %                 for the input $\vect{x} \in \mathbb{R}^n$}.\\
+    %                 }
+    %             \end{itemize}
+    %             \vspace{0.1cm}
+    %             \item
+    %             The task has similarities with 
+    %             \index{classification}\gls{classification}. 
+    %             \Gls{regression} tasks can be formulated 
+    %             as \gls{classification} ones, and vice versa.\\
+    %             \vspace{0.1cm}
+    %             \item
+    %             Example applications include 
+    %             predicting tomorrow's stock prices, 
+    %             or the average global temperature in the next century.
+    %         }
+    %     \end{itemize}
+    %     \vspace{0.1cm}
+
+    %     \item
+    %     {\bf \index{anomaly detection}\Gls{anomaly detection}} 
+    %     (or \index{outlier detection}\gls{outlier detection})\\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             In this \gls{ml} task, a model processes a set of data examples
+    %             and {\bf flags some of them as being unusual}.
+    %             \vspace{0.1cm}
+    %             \item
+    %             Example applications include, amongst many others,
+    %             video surveillance and the detection of 
+    %             credit card fraud, 
+    %             intrusion, or 
+    %             irregularities in the operation of complex machinery.
+    %         }
+    %     \end{itemize}
+
+    % \end{itemize}
+
+    % \framebreak
+
+    % %
+    % %
+    
+    % \begin{itemize}
+
+    %     \item
+    %     {\bf \index{structured output}\Gls{structured output}} 
+    %     (or \index{structured prediction}\gls{structured prediction})\\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             In this type of task, a model outputs
+    %             a vector of data, with important relationships between 
+    %             the different elements of the vector.\\
+    %             \vspace{0.1cm}
+    %             \item 
+    %             \Gls{structured output} is an umbrella term that includes,
+    %             amongst other tasks, 
+    %             \gls{transcription} 
+    %             and machine \gls{translation} (see below).                 
+    %         }
+    %     \end{itemize}
+
+    %     \item
+    %     {\bf \index{transcription}\Gls{transcription}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             Observing a relatively unstructured 
+    %             representation of some type of data and converting it into
+    %             discrete textual form.\\
+    %             \vspace{0.1cm}
+    %             \item 
+    %             Common \gls{transcription} examples are 
+    %             \index{Speech-to-Text}\Gls{speech-to-text} models
+    %             and \index{OCR}\gls{ocr}.
+    %         }
+    %     \end{itemize}
+
+    %     \item
+    %     {\bf \index{translation}\Gls{translation}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             Automatic conversion of a sequence of textual data in one 
+    %             language is to another language.\\
+    %         }
+    %     \end{itemize}
+
+    % \end{itemize}
+
+    % \framebreak
+
+    % %
+    % %
+
+    % \begin{itemize}
+
+    %     \item
+    %     {\bf \index{synthesis and sampling}\Gls{synthesis and sampling}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             A task involving the automatic generation of examples 
+    %             that are similar to those in the 
+    %             \index{training set}\gls{training set}
+    %             presented to the \index{ML}\gls{ml} model.\\
+    %             \vspace{0.1cm}
+    %             \item
+    %             Examples include \\
+    %         }
+    %     \end{itemize}
+    %     \vspace{0.1cm}
+
+    %     \item
+    %     {\bf \index{denoising}\Gls{denoising}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             Presented with a corrupted data example 
+    %             $\vect{\tilde{x}} \in \mathbb{R}^n$,
+    %             produced by some unknown corrupting process acting 
+    %             $\vect{x} \in \mathbb{R}^n$, 
+    %             the \index{ML}\gls{ml} model is asked to predict
+    %             the original example $\vect{x}$ or the
+    %             conditional probability $p(\vect{x}|\vect{\tilde{x}})$. \\
+    %             \vspace{0.1cm}
+    %             \item
+    %             Examples include \\
+    %         }
+    %     \end{itemize}
+    %     \vspace{0.1cm}
+
+    %     \item
+    %     {\bf \index{density estimation}\Gls{density estimation}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             In this task, a \gls{ml} model is asked to
+    %             learn a function $p_{model}: \mathbb{R}^n \rightarrow \mathbb{R}$,
+    %             where $p_{model}(\vect{x})$ can be interpreted as a 
+    %             \index{probability density function}\gls{probability density function} 
+    %             (\index{probability mass function}\gls{probability mass function}) 
+    %             if $\vect{x}$ is continuous (discrete).\\
+    %             \vspace{0.1cm}
+    %             \item
+    %             Examples include \\
+    %         }
+    %     \end{itemize}
+
+    % \end{itemize}
+
+    % \framebreak
+
+    % %
+    % %
+
+    % \begin{itemize}
+
+    %     \item
+    %     {\bf \index{missing data imputation}\Gls{missing data imputation}} \\
+    %     \vspace{0.1cm}
+    %     \begin{itemize}
+    %         {
+    %             \item
+    %             In this \gls{ml} task, a model is presented with a data example
+    %             $\vect{x} \in \mathbb{R}^n$ missing values for a number of entries,
+    %             and it is asked to predict the missing values.\\
+    %             \vspace{0.1cm}
+    %             \item
+    %             Examples include \\
+    %         }
+    %     \end{itemize}
+
+    % \end{itemize}
+
+\end{frame}
+

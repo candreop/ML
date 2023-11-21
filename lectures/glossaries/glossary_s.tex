@@ -65,6 +65,15 @@
   see=[Glossary:]{snarcg}
 }
 
+% Speech-to-Text
+\newglossaryentry{speech-to-text}{
+  name={speech-to-text},
+  description={
+    A technology that enables \gls{transcription} 
+    of human speech into text
+  }
+}
+
 % standard error of the mean
 \newglossaryentry{semg}{
   name={standard error of the mean},
@@ -151,6 +160,24 @@
   }
 }
 
+% structured output
+\newglossaryentry{structured output}{
+  name={structured output},
+  description={
+    In this task, a \gls{ml} model outputs
+    a vector of data, with important relationships between 
+    the different elements of the vector
+  }
+}
+
+% structured prediction
+\newglossaryentry{structured prediction}{
+  name={structured prediction},
+  description={
+    Another common name for \gls{structured output} tasks
+  }
+}
+
 % sub-sampling
 \newglossaryentry{sub-sampling}{
   name={subsampling},
@@ -196,5 +223,14 @@
   first={Support Vector Machine (SVM)\glsadd{svmg}},
   plural={SVMs},
   see=[Glossary:]{svmg}
+}
+
+% synthesis and sampling
+\newglossaryentry{synthesis and sampling}{
+  name={synthesis and sampling},
+  description={
+    Automatic generation of examples that are similar to those
+    that a \gls{ml} model finds present in its \gls{training set}
+  }
 }
 

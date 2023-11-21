@@ -15,6 +15,20 @@
   }
 }
 
+% OCR
+\newglossaryentry{ocrg}{
+  name={optical character recognition},
+  description={
+  }
+}
+\newglossaryentry{ocr}{
+  type=\acronymtype,
+  name={OCR},
+  description={Optical Character Recognition},
+  first={Optical Character Recognition (OCR)\glsadd{ocrg}},
+  see=[Glossary:]{ocrg}
+}
+
 % optimisation
 \newglossaryentry{optimisation}{
   name={optimisation},
@@ -23,6 +37,14 @@
     functional and effective as possible.
     In \gls{ml}, optimisation often involves the 
     \gls{extremisation} of an \gls{objective function}
+  }
+}
+
+% outlier detection
+\newglossaryentry{outlier detection}{
+  name={outlier detection},
+  description={
+    Another common term for \gls{anomaly detection}
   }
 }
 

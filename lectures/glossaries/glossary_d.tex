@@ -13,6 +13,33 @@
   }
 }
 
+% denoising
+\newglossaryentry{denoising}{
+  name={denoising},
+  description={
+    A \gls{ml} task whereby a model is
+    presented with a corrupted data example 
+    $\vect{\tilde{x}} \in \mathbb{R}^n$,
+    produced by some unknown corrupting process acting 
+    $\vect{x} \in \mathbb{R}^n$, 
+    and it is asked to predict
+    the original example $\vect{x}$ or the
+    conditional probability $p(\vect{x}|\vect{\tilde{x}})$
+  }
+}
+
+% density estimation
+\newglossaryentry{density estimation}{
+  name={density estimation},
+  description={
+    A \gls{ml} task where model is asked to
+    learn a function $p_{model}: \mathbb{R}^n \rightarrow \mathbb{R}$,
+    and where $p_{model}(\vect{x})$ can be interpreted as a 
+    \gls{probability density function} (\gls{probability mass function}) 
+    if $\vect{x}$ is continuous (discrete)
+  }
+}
+
 % derivative
 \newglossaryentry{derivative}{
   name={derivative},
@@ -34,6 +61,14 @@
   name={delta-bar-delta},
   description={
     An \gls{adaptive subgradient} algorithm
+  }
+}
+
+% dimensionality reduction
+\newglossaryentry{dimensionality reduction}{
+  name={dimensionality reduction},
+  description={
+    The task of reducing the number of features in a dataset 
   }
 }
 

@@ -1,0 +1,34 @@
+
+\begin{frame}[t,allowframebreaks]{
+    Machine Learning task: Classification (missing inputs) - }
+
+    \index{classification}\Gls{classification} with missing inputs
+    
+    \begin{itemize}
+        {
+            \item The \gls{ml} model is not guaranteed 
+            to have the full input vector $\vect{x} \in \mathbb{R}^n$.\\
+            \begin{itemize}
+                {\scriptsize
+                \item        
+                The model discovers {\bf a set of functions} 
+                $f: \mathbb{R}^n \rightarrow \{1,\dots,k\}$, 
+                with $m \le n$, so the $\vect{x}$ can be classified
+                regardless of which subset of its elements missing!\\
+                }
+            \end{itemize}
+            \vspace{0.1cm}
+            This task {\bf arises frequently in many real-world applications}.\\
+            \begin{itemize}
+                {\scriptsize
+                    \item
+                    E.g in medical diagnosis where filling-in the 
+                    full vector $\vect{x}$ may be invasive or expensive, 
+                    or where failures in hardware or software 
+                    lead to partial loss of data.\\
+                }
+            \end{itemize}
+        }
+    \end{itemize}
+
+\end{frame}
