@@ -1,6 +1,6 @@
 # Machine Learning 
 
-This repository includes handouts and codes I use for delivering the Machine Learning module at the Department of Physics of the University of Liverpool. This is a 15-credit FHEQ Level 7 module, currently **under preparation**.
+This repository includes handouts and codes I use for delivering the Machine Learning module at the Department of Physics of the University of Liverpool. This is a 15-credit FHEQ Level 7 (4th year) module, currently **under preparation**.
 
 ## Author
 
