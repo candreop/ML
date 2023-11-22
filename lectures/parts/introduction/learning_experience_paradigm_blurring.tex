@@ -5,29 +5,100 @@
 \begin{frame}[t,allowframebreaks]{
     Learning paradigm blurring - }
 
-    The previously used terms of
-    \index{supervised learning}\gls{supervised learning},
-    \index{unsupervised learning}\gls{unsupervised learning}, and
-    \index{reinforcement learning}\gls{reinforcement learning}
-    are {\bf not formally defined.}\\
+    There is {\bf no formal definition} 
+    of the different learning paradigms.\\
     \vspace{0.2cm}
 
     Indeed the {\bf boundaries are blurred}, especially between
-    \gls{supervised learning} and \gls{unsupervised learning},
+    \index{supervised learning}\gls{supervised learning} and 
+    \index{unsupervised learning}\gls{unsupervised learning},
     and many technologies can perform both tasks.\\
-    \vspace{0.2cm}
+    \vspace{0.3cm}
 
-    Recall that in \gls{supervised learning} the algorithm learns
-    the conditional probability $p(\vect{y}|\vect{x})$, whereas in
-    \gls{unsupervised learning} it learns the 
-    probability distribution  $p(\vect{x})$.\\
-
+    For example, for data examples $\vect{x} \in \mathbb{R}^n$,
+    we can decompose $p(\vect{x})$ as:
     \begin{equation}
         p(\vect{x}) = p(x_1 | x_2, \dots, x_n) p(x_2, \dots, x_n)
     \end{equation}
-
+    which, applied recursively, yields:
     \begin{equation}
-        p(\vect{x}) = \prod_{i=1}^{n} p(x_i | x_2, \dots, x_{i-1})
+        p(\vect{x}) = \prod_{i=1}^{n-1} p(x_i | x_{i+1}, \dots, x_{n})
+        \label{eq:prob_from_cond_probs}
     \end{equation}
+
+    Eq.~\ref{eq:prob_from_cond_probs} shows that the 
+    \index{unsupervised learning}\gls{unsupervised learning} 
+    problem of modelling $p(\vect{x})$,
+    can be solved by splitting it into a number of 
+    \index{supervised learning}\gls{supervised learning} tasks.\\
+
+    \framebreak
+
+    %
+    %
+
+    Conversely, 
+    we can solve the 
+    \index{supervised learning}\gls{supervised learning} 
+    problem of modelling the conditional probability 
+    $p(\vect{y}|\vect{x})$ using 
+    \index{unsupervised learning}\gls{unsupervised learning} algorithms.\\
+    \vspace{0.2cm}
+
+    For example, if a label $y \in \mathbb{S}$ is associated 
+    to each data example $\vect{x} \in \mathbb{R}^n$, 
+    \gls{unsupervised learning} can discover the 
+    joint probability distribution $p(\vect{x},y)$.\\
+    \vspace{0.2cm}
+    Then, the conditional probability $p(y|\vect{x})$
+    can be derived from:
+    \begin{equation}
+        \displaystyle
+        p(y|\vect{x}) = \frac{p(\vect{x},y)}{
+            \sum_{y^\prime \in \mathbb{S}} p(\vect{x},y^\prime)}
+        \label{eq:cond_prob_from_prob}
+    \end{equation}
+
+    \framebreak
+
+    %
+    %
+
+    Although the terms \gls{supervised learning} 
+    and \gls{unsupervised learning} 
+    have no rigid boundary, 
+    they generate a {\bf coarse taxonomy}
+    of \index{ML}\gls{ml} problems.\\
+    \vspace{0.2cm}
+    For example, typically, we think of:
+    \begin{itemize}
+        \item
+        \index{regression}\gls{regression},
+        \index{classification}\gls{classification}, and
+        \index{structured output}\gls{structured output} tasks
+        as instances of \gls{supervised learning} problems, and
+        \item
+        \index{density estimation}\gls{density estimation} tasks
+        as an \gls{unsupervised learning} problem.
+    \end{itemize}
+
+    \vspace{0.2cm}
+
+    Variants of the mentioned learning paradigms exist:
+    For example:\\
+    \begin{itemize}
+        \item 
+        In \index{semi-supervised learning}{\gls{semi-supervised learning}},
+        only a subset of examples includes labels.\\
+        \item 
+        In \index{multi-instance learning}{\gls{multi-instance learning}},
+        the individual examples do have no labels, 
+        but collections of examples are labelled by whether they 
+        contain an example of a class,\\
+        \begin{itemize}
+            \small 
+            \item e.g.
+        \end{itemize}
+    \end{itemize}
 
 \end{frame}

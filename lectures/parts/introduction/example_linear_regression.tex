@@ -3,7 +3,8 @@
 %
 %
 
-\begin{frame}[t]{Example: Linear regression}
+\begin{frame}[t,allowframebreaks]{
+    Example: Linear regression - }
 
     To clarify the previous ideas, 
     we will study a concrete example
@@ -39,13 +40,10 @@
       in subsequent lectures.\\
     }
 
-\end{frame}
+    \framebreak
 
-%
-%
-%
-
-\begin{frame}[t]{Example: Linear regression / Task}
+    %
+    %
 
     {\bf \Gls{linear regression} solves a 
     \index{regression}\gls{regression} problem}.\\
@@ -82,24 +80,308 @@
       with the addition of a new feature whose value is always 1.\\
     }
 
-\end{frame}
+    \framebreak
 
-%
-%
-%
+    %
+    %
 
-\begin{frame}[t,allowframebreaks]{
-    Example: Linear regression / Performance metric - }
+    The \gls{linear regression} model will be trained
+    by experiencing a dataset $\mathbb{D}$,
+    that is a collection of $N$ examples $\vect{x}_i \in \mathbb{R}^n$,
+    with $i \in \{1,\dots,N\}$.\\
+    \begin{itemize}
+     \item Note that each $\vect{x}_i$ is collection of $n$ features.\\
+    \end{itemize}
+    \vspace{0.1cm}
+    Small and simple datasets are often represented with a 
+    \index{design matrix}{\bf \gls{design matrix}} $\vect{X}$
+    that contains a single example in each row.\\
+    \vspace{0.1cm}
+    For the $N$ $n-$dimensional examples in $\mathbb{D}$, 
+    this is the $N \times n$ matrix
+    \begin{equation}
+        \vect{X} = 
+        \begin{pmatrix}
+            \vect{x}_1^T\\
+            \vdots\\
+            \vect{x}_N^T\\
+        \end{pmatrix} =
+        \begin{pmatrix}
+            x_{1;1} & x_{1;2} & \dots  & x_{1;n} \\
+            \vdots  & \vdots  & \ddots & \vdots  \\
+            x_{N;1} & x_{N;2} & \dots  & x_{N;n} \\
+        \end{pmatrix}
+        \label{eq:linear_regression_design_matrix}
+    \end{equation}
+    of collected features $x_{i;j}$, 
+    where the index $i$ enumerates the example, 
+    and the index $j$ enumerates the feature.\\
+    \vspace{0.1cm}
+    Associated with $\vect{X}$ is a $N$-dimensional vector 
+    $\vect{y} = (y_1, y_2, \dots, y_N)^{T}$, 
+    where $y_i \in \mathbb{R}$, $i \in \{1,\dots,N\}$, is the label
+    for $i^{th}$ data example $\vect{x}_i$.\\
 
-    The performance of the model can be described by the 
-    \index{MSE}\gls{mse} over the 
-    \index{test set}\gls{test set} $\mathbb{D}_{test}$:
+    \framebreak
+
+    %
+    %
+
+    Applying the linear model of Eq.~\ref{eq:intro_linear_regression_model}
+    on the \index{design matrix}\gls{design matrix} $\vect{X}$ given by 
+    Eq.~\ref{eq:linear_regression_design_matrix},
+    generates the $N$-dimensional vector $\hat{\vect{y}}$: 
+
+    \begin{equation}
+        \hat{\vect{y}} = \vect{X} \vect{w} \Rightarrow
+        \label{eq:linear_regression_pred_1}
+    \end{equation}
+
+    \begin{equation}
+        \begin{pmatrix}
+        \hat{y}_1\\
+        \hat{y}_2\\
+        \vdots\\
+        \hat{y}_N\\
+        \end{pmatrix} =
+        \begin{pmatrix}
+            x_{1;1} & x_{1;2} & \dots  & x_{1;n} \\
+            \vdots  & \vdots  & \ddots & \vdots  \\
+            x_{N;1} & x_{N;2} & \dots  & x_{N;n} \\
+        \end{pmatrix}
+        \begin{pmatrix}
+            w_1\\ 
+            w_2\\ 
+            \vdots\\
+            w_n\\
+        \end{pmatrix}
+        \label{eq:linear_regression_pred_2}
+    \end{equation}
+
+    whose elements are the complete set of the model predictions 
+    for all $N$ examples contained in the dataset $\mathbb{D}$.\\
+    \vspace{0.1cm}
+
+    For each vector of model parameters 
+    $\vect{w} = (w_1, w_2, \dots, x_n)^T$,
+    a comparison between the labels 
+    $\vect{y} = (y_1, y_2, \dots, y_N)^{T}$
+    and the corresponding predicted values 
+    $\hat{\vect{y}} = (\hat{y}_1, \hat{y}_2, \dots, \hat{y}_N)^{T}$
+    yields a measure of the model performance.\\
+
+    \framebreak
+
+    %
+    %
+
+    One way we can describe the 
+    performance of the model is by estimating the 
+    \index{MSE}\gls{mse} over a set $\mathbb{D}$:
+    \begin{equation}
+        MSE = 
+          \mathbb{E}_{(\vect{x},y) \in \mathbb{D}}
+             \Big(\hat{y} - y\Big)^2 = 
+           \frac{1}{N} 
+             \lVert \hat{\vect{y}}-\vect{y} \rVert^2 
+        \label{eq:intro_linear_regression_model_mse_1}
+    \end{equation}
+
+    The above equation
+    describes the Euclidean distance ($L^2$ norm) 
+    between the predictions and regression targets.\\
+
+    \vspace{0.2cm}
+
+    We see that, at the limit where the model predictions 
+    match the regression targets exactly 
+    ($\hat{\vect{y}}=\vect{y}$), 
+    the error measure is reduced to 0.\\
+
+    \vspace{0.2cm}
+
+    Using Eq.~\ref{eq:linear_regression_pred_1}, 
+    Eq.~\ref{eq:intro_linear_regression_model_mse_1}
+    can be rewritten as:\\
+    \begin{equation}
+        MSE = 
+           \frac{1}{N} 
+            \lVert \vect{X} \vect{w} - \vect{y} \rVert^2 
+        \label{eq:intro_linear_regression_model_mse_2}
+    \end{equation}
+
+    \framebreak
+
+    %
+    %
+
+    Assume we have a \index{test set}\gls{test set} 
+    $\mathbb{D}_{test}$,
+    out of which we construct the
+    \index{design matrix}\gls{design matrix} $\vect{X}_{test}$
+    and the vector of regression targets (labels) $\vect{y}_{test}$.\\
+    \vspace{0.1cm}
+
+    We would like to design an algorithm that finds the parameter 
+    vector $\vect{w}$ that reduces the 
+    \index{MSE}\gls{mse} over $\mathbb{D}_{test}$:\\
+    \vspace{-0.1cm}
     \begin{equation}
         MSE_{test} = 
-          \mathbb{E}_{(\vect{x},y) \in \mathbb{D}_{test}}
-           \sum_{(\vect{x},y) \in \mathbb{X}_{test}} 
-                \Big(\vect{w}^T \vect{x} - y\Big)
+           \frac{1}{N_{test}} 
+            \lVert \vect{X}_{test} \vect{w} - \vect{y}_{test} \rVert^2
         \label{eq:intro_linear_regression_model_mse_test}
     \end{equation}
+
+    We hope to achieve this 
+    by minimising the \gls{mse} over a 
+    \index{training set}\gls{training set} $\mathbb{D}_{train}$,
+    which contains data examples that are 
+    independent but identically distributed
+    as those in $\mathbb{D}_{test}$.\\
+    \begin{itemize}
+      \small
+      \item Several finer points will be discussed further in later lectures.\\
+    \end{itemize}
+
+    Let $\vect{X}_{train}$ be the \gls{design matrix} 
+    and $\vect{y}_{train}$ the vector of regression targets 
+    constructed from $\mathbb{D}_{train}$. 
+    As above, the \gls{mse} over $\mathbb{D}_{train}$ is:\\
+    \vspace{-0.1cm}
+    \begin{equation}
+        MSE_{train} = 
+           \frac{1}{N_{train}} 
+            \lVert \vect{X}_{train} \vect{w} - \vect{y}_{train} \rVert^2
+        \label{eq:intro_linear_regression_model_mse_train}
+    \end{equation}
+
+    \framebreak
+
+    %
+    %
+
+    To minimise $MSE_{train}$, 
+    we need to solve for the vector $\vect{w}$ in:
+    \begin{equation}
+        \nabla_{\vect{w}} MSE_{train} = \vect{0}
+        \label{eq:intro_linear_regression_model_grad_mse_train_0}
+    \end{equation}
+
+    Using Eq.~\ref{eq:intro_linear_regression_model_mse_train}, 
+    we find:
+    \begin{equation}
+        \nabla_{\vect{w}} 
+        \lVert \vect{X}_{train} \vect{w} - \vect{y}_{train} \rVert^2 
+        = \vect{0} \Rightarrow
+    \end{equation}
+    \begin{equation*}
+        \nabla_{\vect{w}} 
+        \Bigg\{
+            \Big(\vect{X}_{train} \vect{w} - \vect{y}_{train}\Big)^T
+            \Big(\vect{X}_{train} \vect{w} - \vect{y}_{train}\Big)     
+        \Bigg\}
+        = \vect{0} \Rightarrow
+    \end{equation*}
+    \begin{equation*}
+        \nabla_{\vect{w}} 
+        \Bigg\{
+            \Big(\vect{w}^T \vect{X}_{train}^T  - \vect{y}_{train}^T\Big)
+            \Big(\vect{X}_{train} \vect{w} - \vect{y}_{train}\Big)     
+        \Bigg\}
+        = \vect{0} \Rightarrow
+    \end{equation*}
+    \begin{equation}
+        \nabla_{\vect{w}}             
+        \Big(
+            \vect{w}^T \vect{X}_{train}^T \vect{X}_{train} \vect{w}
+            - \vect{w}^T \vect{X}_{train}^T \vect{y}_{train}
+            - \vect{y}_{train}^T \vect{X}_{train} \vect{w}
+            + \vect{y}_{train}^T \vect{y}_{train}    
+        \Big)     
+        = \vect{0} 
+        \label{eq:intro_linear_regression_model_grad_mse_train_1}
+    \end{equation}
+
+    \framebreak
+
+    %
+    %
+
+    All four terms within the parenthesis in 
+    Eq.~\ref{eq:intro_linear_regression_model_grad_mse_train_1} are 
+    \underline{scalar}, and therefore:\\
+    \vspace{-0.5cm}
+    \begin{equation*}
+        \vect{w}^T \vect{X}_{train}^T \vect{y}_{train} +
+        \vect{y}_{train}^T \vect{X}_{train} \vect{w} =
+        \vect{w}^T \vect{X}_{train}^T \vect{y}_{train} +
+        \Big( \vect{w}^T \vect{X}_{train}^T \vect{y}_{train} \Big)^T 
+    \end{equation*}
+    \begin{equation}
+        = 2 \vect{w}^T \vect{X}_{train}^T \vect{y}_{train}
+    \end{equation}
+
+    With the above,     
+    Eq.~\ref{eq:intro_linear_regression_model_grad_mse_train_1} 
+    becomes:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        \nabla_{\vect{w}}             
+        \Big(
+            \vect{w}^T \vect{X}_{train}^T \vect{X}_{train} \vect{w}
+            - 2 \vect{w}^T \vect{X}_{train}^T \vect{y}_{train}
+            + \vect{y}_{train}^T \vect{y}_{train}    
+        \Big)     
+        = \vect{0} 
+        \label{eq:intro_linear_regression_model_grad_mse_train_2}
+    \end{equation}
+
+    Using the rules for common vector and matrix 
+    derivatives \cite{MatrixCookbook}:\\
+    \vspace{-0.2cm}
+    \begin{equation}
+        \nabla_{\vect{x}} (\vect{x}^T \vect{A}) = \vect{A}
+    \end{equation}
+    \begin{equation}
+        \nabla_{\vect{x}} (\vect{x}^T \vect{A} \vect{x}) = 2\vect{A}\vect{x}
+    \end{equation}
+
+    the Eq.~\ref{eq:intro_linear_regression_model_grad_mse_train_2} 
+    can be written as:\\
+    \vspace{-0.3cm}
+    \begin{equation}
+            2 \vect{X}_{train}^T \vect{X}_{train} \vect{w}
+            - 2 \vect{X}_{train}^T \vect{y}_{train}
+            = \vect{0} 
+        \label{eq:intro_linear_regression_model_grad_mse_train_3}
+    \end{equation}
+
+    \framebreak
+
+    %
+    %
+
+    From Eq.~\ref{eq:intro_linear_regression_model_grad_mse_train_3},
+    we can trivially solve for $\vect{w}$:
+    \begin{equation*}
+        \cancel{2} \vect{X}_{train}^T \vect{X}_{train} \vect{w}
+        - \cancel{2} \vect{X}_{train}^T \vect{y}_{train}
+        = \vect{0} \Rightarrow
+        \vect{X}_{train}^T \vect{X}_{train} \vect{w} =
+        \vect{X}_{train}^T \vect{y}_{train}
+        \Rightarrow
+    \end{equation*}
+    \begin{equation}
+        \vect{w} =
+        \Big(\vect{X}_{train}^T \vect{X}_{train} \Big)^{-1} 
+        \vect{X}_{train}^T \vect{y}_{train}
+        \label{eq:intro_linear_regression_solution}
+    \end{equation}
+    assuming that the matrix 
+    $\vect{X}_{train}^T \vect{X}_{train}$ can be inverted.\\
+    \vspace{0.2cm}
+    Evaluating $\vect{w}$ from Eq.~\ref{eq:intro_linear_regression_solution}
+    {\bf constitutes a simple learning algorithm}.
 
 \end{frame}
